@@ -21,7 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BgImage" translatesAutoresizingMaskIntoConstraints="NO" id="93i-lE-jbS"/>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hpj-xu-Y1e">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="QUP-m5-jVF">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00129200515" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="QUP-m5-jVF">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="273" id="sHX-PN-NQp"/>
                                             <constraint firstAttribute="height" constant="43" id="whU-b0-RBM"/>
@@ -30,7 +30,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="42h-62-kBa">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="001000830" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="42h-62-kBa">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="273" id="cVf-AH-QhW"/>
                                             <constraint firstAttribute="height" constant="43" id="foo-jm-j6z"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                                 <state key="normal" title="Login" backgroundImage="loginButtonBgImage"/>
                                 <connections>
-                                    <segue destination="H4c-Da-CMb" kind="show" id="vzY-59-vFJ"/>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vhx-Jx-gKy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,6 +67,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="w9J-HL-70l"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="passwordTextfiled" destination="42h-62-kBa" id="wDc-Gm-wZA"/>
+                        <outlet property="userNameTextfield" destination="QUP-m5-jVF" id="iMj-jk-1rc"/>
+                        <segue destination="H4c-Da-CMb" kind="show" id="gYJ-q4-0fH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +80,7 @@
         <!--Menu Admin View Controller-->
         <scene sceneID="9r0-MX-eDu">
             <objects>
-                <viewController id="H4c-Da-CMb" customClass="MenuAdminViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="adminMenu" id="H4c-Da-CMb" customClass="MenuAdminViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B5O-xE-SRq"/>
                         <viewControllerLayoutGuide type="bottom" id="lhD-Qu-dri"/>
