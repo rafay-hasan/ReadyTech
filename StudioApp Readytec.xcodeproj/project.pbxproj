@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
 		BBD16BBB1DBCFD3B00E1427F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBA1DBCFD3B00E1427F /* main.m */; };
 		BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBD1DBCFD3B00E1427F /* AppDelegate.m */; };
 		BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BC01DBCFD3B00E1427F /* ViewController.m */; };
@@ -14,9 +15,23 @@
 		BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BC51DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld */; };
 		BBD16BC91DBCFD3B00E1427F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */; };
 		BBD16BCC1DBCFD3B00E1427F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */; };
+		BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DD91DCE008900466479 /* MenuAdminViewController.m */; };
+		BBEF0DDD1DCE00BF00466479 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DDC1DCE00BF00466479 /* NewsViewController.m */; };
+		BBEF0DEC1DCE0C5100466479 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DE11DCE0C5100466479 /* RECommonFunctions.m */; };
+		BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DE31DCE0C5100466479 /* REFrostedContainerViewController.m */; };
+		BBEF0DEE1DCE0C5100466479 /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DE51DCE0C5100466479 /* REFrostedViewController.m */; };
+		BBEF0DEF1DCE0C5100466479 /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DE71DCE0C5100466479 /* UIImage+REFrostedViewController.m */; };
+		BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DE91DCE0C5100466479 /* UIView+REFrostedViewController.m */; };
+		BBEF0DF11DCE0C5100466479 /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DEB1DCE0C5100466479 /* UIViewController+REFrostedViewController.m */; };
+		BBEF0DF41DCE0D0F00466479 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DF31DCE0D0F00466479 /* RootViewController.m */; };
+		BBEF0DF71DCE0E4300466479 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DF61DCE0E4300466479 /* DEMONavigationController.m */; };
+		BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */; };
+		BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BBD16BB61DBCFD3B00E1427F /* StudioApp Readytec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StudioApp Readytec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD16BBA1DBCFD3B00E1427F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBD16BBC1DBCFD3B00E1427F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +43,30 @@
 		BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD16BCB1DBCFD3B00E1427F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD16BCD1DBCFD3B00E1427F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBEF0DD81DCE008900466479 /* MenuAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAdminViewController.h; sourceTree = "<group>"; };
+		BBEF0DD91DCE008900466479 /* MenuAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuAdminViewController.m; sourceTree = "<group>"; };
+		BBEF0DDB1DCE00BF00466479 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		BBEF0DDC1DCE00BF00466479 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		BBEF0DE01DCE0C5100466479 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		BBEF0DE11DCE0C5100466479 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		BBEF0DE21DCE0C5100466479 /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		BBEF0DE31DCE0C5100466479 /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		BBEF0DE41DCE0C5100466479 /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		BBEF0DE51DCE0C5100466479 /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		BBEF0DE61DCE0C5100466479 /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		BBEF0DE71DCE0C5100466479 /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		BBEF0DE81DCE0C5100466479 /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		BBEF0DE91DCE0C5100466479 /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		BBEF0DEA1DCE0C5100466479 /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		BBEF0DEB1DCE0C5100466479 /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		BBEF0DF21DCE0D0F00466479 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		BBEF0DF31DCE0D0F00466479 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BBEF0DF51DCE0E4300466479 /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
+		BBEF0DF61DCE0E4300466479 /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
+		BBEF0DF81DCE0FB800466479 /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuViewController.h; sourceTree = "<group>"; };
+		BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuViewController.m; sourceTree = "<group>"; };
+		BBEF0DFB1DCE433C00466479 /* DEMOMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuTableViewCell.h; sourceTree = "<group>"; };
+		BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +101,23 @@
 			children = (
 				BBD16BBC1DBCFD3B00E1427F /* AppDelegate.h */,
 				BBD16BBD1DBCFD3B00E1427F /* AppDelegate.m */,
+				BBEF0DF21DCE0D0F00466479 /* RootViewController.h */,
+				BBEF0DF31DCE0D0F00466479 /* RootViewController.m */,
+				BBEF0DF81DCE0FB800466479 /* DEMOMenuViewController.h */,
+				BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */,
+				BBEF0DFB1DCE433C00466479 /* DEMOMenuTableViewCell.h */,
+				BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */,
+				BBEF0DF51DCE0E4300466479 /* DEMONavigationController.h */,
+				BBEF0DF61DCE0E4300466479 /* DEMONavigationController.m */,
+				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBD16BBF1DBCFD3B00E1427F /* ViewController.h */,
 				BBD16BC01DBCFD3B00E1427F /* ViewController.m */,
+				BB53838D1DC249E000BCD253 /* LoginViewController.h */,
+				BB53838E1DC249E000BCD253 /* LoginViewController.m */,
+				BBEF0DD81DCE008900466479 /* MenuAdminViewController.h */,
+				BBEF0DD91DCE008900466479 /* MenuAdminViewController.m */,
+				BBEF0DDB1DCE00BF00466479 /* NewsViewController.h */,
+				BBEF0DDC1DCE00BF00466479 /* NewsViewController.m */,
 				BBD16BC21DBCFD3B00E1427F /* Main.storyboard */,
 				BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */,
 				BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */,
@@ -80,6 +134,33 @@
 				BBD16BBA1DBCFD3B00E1427F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBEF0DDE1DCE0C3C00466479 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF0DDF1DCE0C5100466479 /* REFrostedViewController */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		BBEF0DDF1DCE0C5100466479 /* REFrostedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF0DE01DCE0C5100466479 /* RECommonFunctions.h */,
+				BBEF0DE11DCE0C5100466479 /* RECommonFunctions.m */,
+				BBEF0DE21DCE0C5100466479 /* REFrostedContainerViewController.h */,
+				BBEF0DE31DCE0C5100466479 /* REFrostedContainerViewController.m */,
+				BBEF0DE41DCE0C5100466479 /* REFrostedViewController.h */,
+				BBEF0DE51DCE0C5100466479 /* REFrostedViewController.m */,
+				BBEF0DE61DCE0C5100466479 /* UIImage+REFrostedViewController.h */,
+				BBEF0DE71DCE0C5100466479 /* UIImage+REFrostedViewController.m */,
+				BBEF0DE81DCE0C5100466479 /* UIView+REFrostedViewController.h */,
+				BBEF0DE91DCE0C5100466479 /* UIView+REFrostedViewController.m */,
+				BBEF0DEA1DCE0C5100466479 /* UIViewController+REFrostedViewController.h */,
+				BBEF0DEB1DCE0C5100466479 /* UIViewController+REFrostedViewController.m */,
+			);
+			path = REFrostedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,7 +194,7 @@
 				TargetAttributes = {
 					BBD16BB51DBCFD3B00E1427F = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -154,9 +235,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */,
+				BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */,
 				BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */,
 				BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */,
 				BBD16BBB1DBCFD3B00E1427F /* main.m in Sources */,
+				BBEF0DF11DCE0C5100466479 /* UIViewController+REFrostedViewController.m in Sources */,
+				BBEF0DEF1DCE0C5100466479 /* UIImage+REFrostedViewController.m in Sources */,
+				BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */,
+				BBEF0DF41DCE0D0F00466479 /* RootViewController.m in Sources */,
+				BBEF0DF71DCE0E4300466479 /* DEMONavigationController.m in Sources */,
+				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
+				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
+				BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */,
+				BBEF0DDD1DCE00BF00466479 /* NewsViewController.m in Sources */,
+				BBEF0DEC1DCE0C5100466479 /* RECommonFunctions.m in Sources */,
+				BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */,
+				BBEF0DEE1DCE0C5100466479 /* REFrostedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "StudioApp Readytec/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Rafay.StudioApp-Readytec";
@@ -287,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "StudioApp Readytec/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Rafay.StudioApp-Readytec";
@@ -313,6 +409,7 @@
 				BBD16BD21DBCFD3B00E1427F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
