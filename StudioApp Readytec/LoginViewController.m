@@ -19,6 +19,8 @@
 
 - (IBAction)loginButtonAction:(id)sender;
 
+
+
 @end
 
 @implementation LoginViewController
@@ -26,11 +28,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {

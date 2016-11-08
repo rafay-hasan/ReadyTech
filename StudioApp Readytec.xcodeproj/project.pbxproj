@@ -41,6 +41,8 @@
 		BBCAF5931DD21E7D00BEA62F /* UserInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5871DD21E7D00BEA62F /* UserInfoObject.m */; };
 		BBCAF5941DD21E7D00BEA62F /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5891DD21E7D00BEA62F /* UserProfile.m */; };
 		BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5971DD21ECB00BEA62F /* User Details.m */; };
+		BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */; };
+		BBCAF5A01DD24BE100BEA62F /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF59F1DD24BE100BEA62F /* NewsTableViewCell.m */; };
 		BBD16BBB1DBCFD3B00E1427F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBA1DBCFD3B00E1427F /* main.m */; };
 		BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBD1DBCFD3B00E1427F /* AppDelegate.m */; };
 		BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BC01DBCFD3B00E1427F /* ViewController.m */; };
@@ -133,6 +135,10 @@
 		BBCAF5891DD21E7D00BEA62F /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		BBCAF5961DD21ECB00BEA62F /* User Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User Details.h"; sourceTree = "<group>"; };
 		BBCAF5971DD21ECB00BEA62F /* User Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User Details.m"; sourceTree = "<group>"; };
+		BBCAF59B1DD2432F00BEA62F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		BBCAF59E1DD24BE100BEA62F /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		BBCAF59F1DD24BE100BEA62F /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		BBD16BB61DBCFD3B00E1427F /* StudioApp Readytec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StudioApp Readytec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD16BBA1DBCFD3B00E1427F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBD16BBC1DBCFD3B00E1427F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 			children = (
 				BBEF0DDB1DCE00BF00466479 /* NewsViewController.h */,
 				BBEF0DDC1DCE00BF00466479 /* NewsViewController.m */,
+				BBCAF59E1DD24BE100BEA62F /* NewsTableViewCell.h */,
+				BBCAF59F1DD24BE100BEA62F /* NewsTableViewCell.m */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -318,6 +326,15 @@
 			name = "Shared Instances";
 			sourceTree = "<group>";
 		};
+		BBCAF59A1DD2430300BEA62F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BBCAF59B1DD2432F00BEA62F /* ProfileViewController.h */,
+				BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		BBD16BAD1DBCFD3B00E1427F = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +370,7 @@
 				BBCAF5951DD21E8500BEA62F /* Webservice Object */,
 				BBCAF52C1DD21D7700BEA62F /* LogIN */,
 				BBCAF52D1DD21D9000BEA62F /* Menu Admin */,
+				BBCAF59A1DD2430300BEA62F /* Profile */,
 				BBCAF52E1DD21D9C00BEA62F /* News */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -480,12 +498,14 @@
 				BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */,
 				BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */,
 				BBCAF5481DD21DFB00BEA62F /* UIRefreshControl+AFNetworking.m in Sources */,
+				BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */,
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
 				BBCAF58F1DD21E7D00BEA62F /* ServiceDetailsObject.m in Sources */,
 				BBCAF5701DD21E2700BEA62F /* SVProgressHUD.m in Sources */,
 				BBCAF5941DD21E7D00BEA62F /* UserProfile.m in Sources */,
 				BBCAF56E1DD21E2700BEA62F /* SVIndefiniteAnimatedView.m in Sources */,
+				BBCAF5A01DD24BE100BEA62F /* NewsTableViewCell.m in Sources */,
 				BBCAF58A1DD21E7D00BEA62F /* CourseObject.m in Sources */,
 				BBCAF5921DD21E7D00BEA62F /* TicketObject.m in Sources */,
 				BBCAF5911DD21E7D00BEA62F /* TicketDetailsObject.m in Sources */,

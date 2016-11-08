@@ -11,6 +11,7 @@
 
 @interface DEMONavigationController : UINavigationController
 
+- (void)showMenu;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)sender;
 
 @end

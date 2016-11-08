@@ -8,11 +8,13 @@
 
 #import "MenuAdminViewController.h"
 #import "NewsViewController.h"
+#import "ViewController.h"
 
 @interface MenuAdminViewController ()
 
 - (IBAction)menuAction:(UIButton *)sender;
 
+- (IBAction)logoutAction:(id)sender;
 
 
 @end
@@ -45,6 +47,11 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)logoutAction:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
