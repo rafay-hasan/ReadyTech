@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="menuHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-g2-Udh">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuHeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hYz-ic-ziS">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="CKp-VZ-eMS"/>
+                                <constraint firstAttribute="width" constant="142" id="tk9-3x-DIy"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foJ-bo-bsF">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saimon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-TS-W5L">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studio name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-Xa-TfX">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.050980392156862744" green="0.2196078431372549" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="gSq-TS-W5L" firstAttribute="top" secondItem="foJ-bo-bsF" secondAttribute="bottom" constant="2" id="1aZ-7e-t9V"/>
+                        <constraint firstItem="NDu-Xa-TfX" firstAttribute="leading" secondItem="dCc-g2-Udh" secondAttribute="leading" constant="30" id="4Px-WQ-AQ9"/>
+                        <constraint firstItem="NDu-Xa-TfX" firstAttribute="top" secondItem="gSq-TS-W5L" secondAttribute="bottom" constant="2" id="7o6-pc-gW4"/>
+                        <constraint firstItem="hYz-ic-ziS" firstAttribute="leading" secondItem="dCc-g2-Udh" secondAttribute="leading" constant="30" id="9nX-YJ-aIi"/>
+                        <constraint firstAttribute="trailing" secondItem="NDu-Xa-TfX" secondAttribute="trailing" constant="8" id="EUb-As-Lbh"/>
+                        <constraint firstAttribute="trailing" secondItem="foJ-bo-bsF" secondAttribute="trailing" constant="8" id="F2I-tu-kDe"/>
+                        <constraint firstItem="hYz-ic-ziS" firstAttribute="top" secondItem="dCc-g2-Udh" secondAttribute="top" constant="20" id="F6u-o1-C74"/>
+                        <constraint firstItem="foJ-bo-bsF" firstAttribute="top" secondItem="hYz-ic-ziS" secondAttribute="bottom" constant="12" id="KSm-Rt-CEu"/>
+                        <constraint firstAttribute="trailing" secondItem="gSq-TS-W5L" secondAttribute="trailing" constant="8" id="KjF-Qr-5O3"/>
+                        <constraint firstItem="foJ-bo-bsF" firstAttribute="leading" secondItem="dCc-g2-Udh" secondAttribute="leading" constant="30" id="NeQ-Ks-GeI"/>
+                        <constraint firstItem="gSq-TS-W5L" firstAttribute="top" secondItem="foJ-bo-bsF" secondAttribute="bottom" constant="2" id="dZa-6G-FJc"/>
+                        <constraint firstItem="NDu-Xa-TfX" firstAttribute="top" secondItem="gSq-TS-W5L" secondAttribute="bottom" constant="2" id="hAL-Xt-2tb"/>
+                        <constraint firstItem="gSq-TS-W5L" firstAttribute="leading" secondItem="dCc-g2-Udh" secondAttribute="leading" constant="30" id="oVn-6X-n0Y"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dCc-g2-Udh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Qr-xp-aJm"/>
+                <constraint firstAttribute="trailing" secondItem="dCc-g2-Udh" secondAttribute="trailing" id="HBq-sq-bqn"/>
+                <constraint firstAttribute="bottom" secondItem="dCc-g2-Udh" secondAttribute="bottom" id="W8n-TG-8LC"/>
+                <constraint firstItem="dCc-g2-Udh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lNF-aV-DqT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MenuHeaderLogo" width="142" height="45"/>
+    </resources>
+</document>

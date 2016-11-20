@@ -9,6 +9,8 @@
 #import "DEMOMenuViewController.h"
 #import "DEMOMenuTableViewCell.h"
 #import "REFrostedViewController.h"
+#import "menuHeaderView.h"
+static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 
 @interface DEMOMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -30,6 +32,9 @@
     
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    UINib *sectionHeaderNib = [UINib nibWithNibName:@"View" bundle:nil];
+    [self.menuTableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:SectionHeaderViewIdentifier];
+    self.menuTableView.sectionHeaderHeight = 175.0;
 }
 
 
@@ -51,7 +56,10 @@
 
 #pragma mark table view Delegate Methods
 
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.menuItemsArray.count;
@@ -253,57 +261,12 @@
 
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    headerView.backgroundColor = [UIColor colorWithRed:7.0/255.0 green:51.0/255.0 blue:169.0/255.0 alpha:1];
+    menuHeaderView *sectionHeaderView = [self.menuTableView dequeueReusableHeaderFooterViewWithIdentifier:SectionHeaderViewIdentifier];
     
-    
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(8.0, 30.0, 142.0, 45.0)];
-    
-    imageView.image = [UIImage imageNamed:@"menuLogo"];
-    
-    [headerView addSubview:imageView];
-    
-    
-    UILabel *userTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, imageView.frame.origin.y + imageView.frame.size.height + 15, self.menuTableView.frame.size.width, 21)];
-    
-    userTypeLabel.textColor = [UIColor whiteColor];
-    
-    userTypeLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    
-    //if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-        userTypeLabel.text = @"Admin";
-   // else
-       // userTypeLabel.text = @"User";
-    
-    [headerView addSubview:userTypeLabel];
-    
-    UILabel *userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, userTypeLabel.frame.origin.y + userTypeLabel.frame.size.height , self.menuTableView.frame.size.width, 21)];
-    
-    userNameLabel.textColor = [UIColor whiteColor];
-    
-    userNameLabel.font = [UIFont systemFontOfSize:14.0];
-    
-    userNameLabel.text = @"Demo UserName";//[User_Details sharedInstance].userName;
-    
-    [headerView addSubview:userNameLabel];
-    
-    UILabel *studioNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, userNameLabel.frame.origin.y + userNameLabel.frame.size.height , self.menuTableView.frame.size.width, 21)];
-    
-    studioNameLabel.textColor = [UIColor whiteColor];
-    
-    studioNameLabel.font = [UIFont systemFontOfSize:14.0];
-    
-    studioNameLabel.text = @"Demo Studio Name";//[User_Details sharedInstance].profileName;
-    
-    [headerView addSubview:studioNameLabel];
-    
-    
-    return self.menuTableHeaderView;
+    return sectionHeaderView;
 }
- 
 
 
 

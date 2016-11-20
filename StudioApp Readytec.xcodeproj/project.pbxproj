@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
+		BBC261E81DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */; };
+		BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */; };
+		BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC261EF1DD4ECB60033B4A6 /* View.xib */; };
+		BBC8FAEC1DE171E800376F07 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC8FAEB1DE171E800376F07 /* ProfileTableViewCell.m */; };
 		BBCAF5421DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5321DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.m */; };
 		BBCAF5431DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5341DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.m */; };
 		BBCAF5441DD21DFB00BEA62F /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5361DD21DFB00BEA62F /* UIAlertView+AFNetworking.m */; };
@@ -67,6 +71,13 @@
 /* Begin PBXFileReference section */
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BBC261E61DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMenuHeaderTableViewCell.h; sourceTree = "<group>"; };
+		BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMenuHeaderTableViewCell.m; sourceTree = "<group>"; };
+		BBC261EC1DD4EC950033B4A6 /* menuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuHeaderView.h; sourceTree = "<group>"; };
+		BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuHeaderView.m; sourceTree = "<group>"; };
+		BBC261EF1DD4ECB60033B4A6 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		BBC8FAEA1DE171E800376F07 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		BBC8FAEB1DE171E800376F07 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 		BBCAF5311DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		BBCAF5321DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		BBCAF5331DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -187,6 +198,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB118C7C1DD893A100745E01 /* Slide Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF0DF81DCE0FB800466479 /* DEMOMenuViewController.h */,
+				BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */,
+				BBEF0DFB1DCE433C00466479 /* DEMOMenuTableViewCell.h */,
+				BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */,
+				BBC261EC1DD4EC950033B4A6 /* menuHeaderView.h */,
+				BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */,
+			);
+			name = "Slide Menu";
+			sourceTree = "<group>";
+		};
 		BBCAF52C1DD21D7700BEA62F /* LogIN */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +355,8 @@
 			children = (
 				BBCAF59B1DD2432F00BEA62F /* ProfileViewController.h */,
 				BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */,
+				BBC8FAEA1DE171E800376F07 /* ProfileTableViewCell.h */,
+				BBC8FAEB1DE171E800376F07 /* ProfileTableViewCell.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -358,10 +384,9 @@
 				BBD16BBD1DBCFD3B00E1427F /* AppDelegate.m */,
 				BBEF0DF21DCE0D0F00466479 /* RootViewController.h */,
 				BBEF0DF31DCE0D0F00466479 /* RootViewController.m */,
-				BBEF0DF81DCE0FB800466479 /* DEMOMenuViewController.h */,
-				BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */,
-				BBEF0DFB1DCE433C00466479 /* DEMOMenuTableViewCell.h */,
-				BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */,
+				BB118C7C1DD893A100745E01 /* Slide Menu */,
+				BBC261E61DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.h */,
+				BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */,
 				BBEF0DF51DCE0E4300466479 /* DEMONavigationController.h */,
 				BBEF0DF61DCE0E4300466479 /* DEMONavigationController.m */,
 				BBD16BBF1DBCFD3B00E1427F /* ViewController.h */,
@@ -375,6 +400,7 @@
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
 				BBD16BC21DBCFD3B00E1427F /* Main.storyboard */,
+				BBC261EF1DD4ECB60033B4A6 /* View.xib */,
 				BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */,
 				BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */,
 				BBD16BCD1DBCFD3B00E1427F /* Info.plist */,
@@ -481,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD16BCC1DBCFD3B00E1427F /* LaunchScreen.storyboard in Resources */,
+				BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */,
 				BBD16BC91DBCFD3B00E1427F /* Assets.xcassets in Resources */,
 				BBD16BC41DBCFD3B00E1427F /* Main.storyboard in Resources */,
 				BBCAF56F1DD21E2700BEA62F /* SVProgressHUD.bundle in Resources */,
@@ -498,6 +525,7 @@
 				BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */,
 				BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */,
 				BBCAF5481DD21DFB00BEA62F /* UIRefreshControl+AFNetworking.m in Sources */,
+				BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */,
 				BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */,
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
@@ -524,6 +552,7 @@
 				BBEF0DF11DCE0C5100466479 /* UIViewController+REFrostedViewController.m in Sources */,
 				BBEF0DEF1DCE0C5100466479 /* UIImage+REFrostedViewController.m in Sources */,
 				BBCAF5461DD21DFB00BEA62F /* UIImageView+AFNetworking.m in Sources */,
+				BBC261E81DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m in Sources */,
 				BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */,
 				BBCAF56D1DD21E2700BEA62F /* AFURLSessionManager.m in Sources */,
 				BBCAF5431DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -543,6 +572,7 @@
 				BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */,
 				BBEF0DEC1DCE0C5100466479 /* RECommonFunctions.m in Sources */,
 				BBCAF5491DD21DFB00BEA62F /* UIWebView+AFNetworking.m in Sources */,
+				BBC8FAEC1DE171E800376F07 /* ProfileTableViewCell.m in Sources */,
 				BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */,
 				BBEF0DEE1DCE0C5100466479 /* REFrostedViewController.m in Sources */,
 			);

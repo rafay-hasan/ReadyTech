@@ -9,7 +9,7 @@
 #import "MenuAdminViewController.h"
 #import "NewsViewController.h"
 #import "ViewController.h"
-
+#import "ProfileViewController.h"
 @interface MenuAdminViewController ()
 
 - (IBAction)menuAction:(UIButton *)sender;
@@ -44,9 +44,19 @@
 
 - (IBAction)menuAction:(UIButton *)sender {
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
-    [self.navigationController pushViewController:controller animated:YES];
+    if(sender.tag == 1000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+
 }
 
 - (IBAction)logoutAction:(id)sender {
