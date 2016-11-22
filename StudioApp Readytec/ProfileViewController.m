@@ -12,10 +12,16 @@
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "UserInfoObject.h"
-@interface ProfileViewController ()<RHWebServiceDelegate>
+#import "ProfileHeaderview.h"
+#import "ProfileTableViewCell.h"
+@interface ProfileViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) RHWebServiceManager *myWebserviceManager;
 @property (strong,nonatomic) UserInfoObject *profile;
+@property (strong,nonatomic) NSMutableArray *profileKeyArray,*profileValueArray;
+
+@property (weak, nonatomic) IBOutlet UITableView *profileTableview;
+
 
 @end
 
@@ -24,6 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.profileTableview.estimatedRowHeight = 50;
+    self.profileTableview.rowHeight = UITableViewAutomaticDimension;
+    self.profileTableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.profileTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
+    UINib *profileHeaderNib = [UINib nibWithNibName:@"profileHeaderView" bundle:nil];
+    [self.profileTableview registerNib:profileHeaderNib forHeaderFooterViewReuseIdentifier:@"profileHeader"];
+    self.profileTableview.sectionHeaderHeight = 130.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,49 +104,57 @@
     
     if(self.myWebserviceManager.requestType == HTTPRequestypeAdminProfile)
     {
-        /*
-        self.profileName.text = [User_Details sharedInstance].profileName;
         
-        self.pivaLabel.text = [responseObj valueForKey:@"studio_details_license_piva"];
+        self.profileKeyArray = [NSMutableArray new];
+        self.profileValueArray = [NSMutableArray new];
         
-        self.emailLabel.text = [responseObj valueForKey:@"studio_details_all_email_address"];
+        [self.profileKeyArray addObject:NSLocalizedString(@"P.IVA", Nil)];
+        [self.profileValueArray addObject:[responseObj valueForKey:@"studio_details_license_piva"]];
         
-        self.totalUserLabel.text = [responseObj valueForKey:@"total_users"];
+        [self.profileKeyArray addObject:NSLocalizedString(@"Email", Nil)];
+        [self.profileValueArray addObject:[responseObj valueForKey:@"studio_details_all_email_address"]];
         
-        self.totalServiceLabel.text = [responseObj valueForKey:@"total_services"];
-        
-        self.codeLabel.text = [responseObj valueForKey:@"studio_details_all_services_list"];
-        
-        CGRect frame = self.emailLabel.frame;
-        
-        frame.size.height = [self heightForText:self.emailLabel.text font:self.emailLabel.font withinWidth:self.emailLabel.frame.size.width];
-        
-        self.emailLabel.frame = frame;
-        
-        frame = self.codeLabel.frame;
-        
-        frame.size.height = [self heightForText:self.codeLabel.text font:self.codeLabel.font withinWidth:self.codeLabel.frame.size.width];
-        
-        self.codeLabel.frame = frame;
-        
-        
-        self.emailView.frame = CGRectMake(self.emailView.frame.origin.x, self.emailView.frame.origin.y, self.emailView.frame.size.width, [self heightForText:self.emailLabel.text font:self.emailLabel.font withinWidth:self.emailLabel.frame.size.width] + 16);
-        
-        self.totalUserView.frame = CGRectMake(self.totalUserView.frame.origin.x, self.emailView.frame.origin.y + self.emailView.frame.size.height + 8, self.totalUserView.frame.size.width, self.totalUserView.frame.size.height);
-        
-        self.totalServiceView.frame = CGRectMake(self.totalServiceView.frame.origin.x, self.totalUserView.frame.origin.y + self.totalUserView.frame.size.height + 8, self.totalServiceView.frame.size.width, self.totalServiceView.frame.size.height);
-        
-        self.serviceCodeView.frame = CGRectMake(self.serviceCodeView.frame.origin.x, self.totalServiceView.frame.origin.y + self.totalServiceView.frame.size.height + 8, self.serviceCodeView.frame.size.width,[self heightForText:self.codeLabel.text font:self.codeLabel.font withinWidth:self.codeLabel.frame.size.width] + 16);
-        
-        self.userScollView.contentSize = CGSizeMake(self.userScollView.frame.size.width, self.serviceCodeView.frame.origin.y + self.serviceCodeView.frame.size.height + 10);
-        */
+        [self.profileKeyArray addObject:NSLocalizedString(@"Total Users", Nil)];
+        [self.profileValueArray addObject:[responseObj valueForKey:@"total_users"]];
+
+        [self.profileKeyArray addObject:NSLocalizedString(@"Total Services", Nil)];
+        [self.profileValueArray addObject:[responseObj valueForKey:@"total_services"]];
+
+        [self.profileKeyArray addObject:NSLocalizedString(@"Service Codes", Nil)];
+        [self.profileValueArray addObject:[responseObj valueForKey:@"studio_details_all_services_list"]];
+
+         [self.profileTableview reloadData];
     }
     else if(self.myWebserviceManager.requestType == HTTPRequestypeUserProfile)
     {
         
         self.profile = (UserInfoObject *)responseObj;
         
-        //[self ShowProfileInfo];
+        self.profileKeyArray = [NSMutableArray new];
+        self.profileValueArray = [NSMutableArray new];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"First Name", Nil)];
+        [self.profileValueArray addObject:self.profile.firstName];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"Last Name", Nil)];
+        [self.profileValueArray addObject:self.profile.lastName];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"UserName", Nil)];
+        [self.profileValueArray addObject:self.profile.userName];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"Password", Nil)];
+        [self.profileValueArray addObject:self.profile.password];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"Email", Nil)];
+        [self.profileValueArray addObject:self.profile.Email];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"User Total Services", Nil)];
+        [self.profileValueArray addObject:self.profile.totalUserService];
+        
+        [self.profileKeyArray addObject:NSLocalizedString(@"Studio Total Services", Nil)];
+        [self.profileValueArray addObject:self.profile.totalStudioService];
+        
+        [self.profileTableview reloadData];
         
     }
 }
@@ -158,6 +181,91 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     
+}
+
+#pragma mark table view Delegate Methods
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSInteger numOfSections = 0;
+    
+    if (self.profileKeyArray.count > 0)
+    {
+        self.profileTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+        numOfSections                 = 1;
+        
+        self.profileTableview.backgroundView   = nil;
+    }
+    else
+    {
+        UILabel *noDataLabel         = [[UILabel alloc] initWithFrame:CGRectMake(self.profileTableview.frame.origin.x, self.profileTableview.frame.origin.y, self.profileTableview.bounds.size.width, self.profileTableview.bounds.size.height)];
+        
+        noDataLabel.text             = NSLocalizedString(@"No data available.", Nil);
+        
+        noDataLabel.textColor        = [UIColor grayColor];
+        
+        noDataLabel.textAlignment    = NSTextAlignmentCenter;
+        
+        self.profileTableview.backgroundView = noDataLabel;
+        
+        self.profileTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return numOfSections;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.profileKeyArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"profileCell";
+    ProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
+    
+    cell.keyLabel.text = [self.profileKeyArray objectAtIndex:indexPath.row];
+    cell.valueLabel.text = [self.profileValueArray objectAtIndex:indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 130.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1.00;
+}
+
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    ProfileHeaderview *profileHeaderView = [self.profileTableview dequeueReusableHeaderFooterViewWithIdentifier:@"profileHeader"];
+    
+    return profileHeaderView;}
+
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    return footerView;
 }
 
 

@@ -11,6 +11,7 @@
 #import "RHWebServiceManager.h"
 #import "User Details.h"
 #import "MenuAdminViewController.h"
+#import "MenuUserViewController.h"
 @interface LoginViewController ()<RHWebServiceDelegate>
 
 @property(strong,nonatomic) RHWebServiceManager *myWebService;
@@ -150,9 +151,10 @@
             }
             else
             {
-               // UserTypeViewController *vc = [[UserTypeViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"UserTypeViewController"] bundle:nil];
-                
-               // [self.navigationController pushViewController:vc animated:YES];
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                MenuUserViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"userMenu"];
+                [self.navigationController pushViewController:controller animated:YES];
+
             }
             
         }

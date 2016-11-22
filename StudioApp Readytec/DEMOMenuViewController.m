@@ -32,6 +32,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"View" bundle:nil];
     [self.menuTableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:SectionHeaderViewIdentifier];
     self.menuTableView.sectionHeaderHeight = 175.0;

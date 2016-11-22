@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
+		BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */; };
+		BBA4FAAC1DE1931900630913 /* profileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */; };
 		BBC261E81DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */; };
 		BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */; };
 		BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC261EF1DD4ECB60033B4A6 /* View.xib */; };
@@ -69,8 +72,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB1965441DE204CC0088BCAF /* MenuUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuUserViewController.h; sourceTree = "<group>"; };
+		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BBA4FAA81DE192E800630913 /* ProfileHeaderview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderview.h; sourceTree = "<group>"; };
+		BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderview.m; sourceTree = "<group>"; };
+		BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileHeaderView.xib; sourceTree = "<group>"; };
 		BBC261E61DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMenuHeaderTableViewCell.h; sourceTree = "<group>"; };
 		BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMenuHeaderTableViewCell.m; sourceTree = "<group>"; };
 		BBC261EC1DD4EC950033B4A6 /* menuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuHeaderView.h; sourceTree = "<group>"; };
@@ -225,6 +233,8 @@
 			children = (
 				BBEF0DD81DCE008900466479 /* MenuAdminViewController.h */,
 				BBEF0DD91DCE008900466479 /* MenuAdminViewController.m */,
+				BB1965441DE204CC0088BCAF /* MenuUserViewController.h */,
+				BB1965451DE204CC0088BCAF /* MenuUserViewController.m */,
 			);
 			name = "Menu Admin";
 			sourceTree = "<group>";
@@ -357,6 +367,8 @@
 				BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */,
 				BBC8FAEA1DE171E800376F07 /* ProfileTableViewCell.h */,
 				BBC8FAEB1DE171E800376F07 /* ProfileTableViewCell.m */,
+				BBA4FAA81DE192E800630913 /* ProfileHeaderview.h */,
+				BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -401,6 +413,7 @@
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
 				BBD16BC21DBCFD3B00E1427F /* Main.storyboard */,
 				BBC261EF1DD4ECB60033B4A6 /* View.xib */,
+				BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */,
 				BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */,
 				BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */,
 				BBD16BCD1DBCFD3B00E1427F /* Info.plist */,
@@ -509,6 +522,7 @@
 				BBD16BCC1DBCFD3B00E1427F /* LaunchScreen.storyboard in Resources */,
 				BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */,
 				BBD16BC91DBCFD3B00E1427F /* Assets.xcassets in Resources */,
+				BBA4FAAC1DE1931900630913 /* profileHeaderView.xib in Resources */,
 				BBD16BC41DBCFD3B00E1427F /* Main.storyboard in Resources */,
 				BBCAF56F1DD21E2700BEA62F /* SVProgressHUD.bundle in Resources */,
 			);
@@ -543,8 +557,10 @@
 				BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */,
 				BBCAF56A1DD21E2700BEA62F /* AFURLConnectionOperation.m in Sources */,
 				BBCAF5731DD21E4500BEA62F /* RHWebServiceManager.m in Sources */,
+				BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */,
 				BBCAF58D1DD21E7D00BEA62F /* NewsObject.m in Sources */,
 				BBCAF5661DD21E2700BEA62F /* AFHTTPRequestOperationManager.m in Sources */,
+				BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */,
 				BBCAF5931DD21E7D00BEA62F /* UserInfoObject.m in Sources */,
 				BBCAF5901DD21E7D00BEA62F /* ServiceObject.m in Sources */,
 				BBCAF5441DD21DFB00BEA62F /* UIAlertView+AFNetworking.m in Sources */,
