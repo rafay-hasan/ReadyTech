@@ -14,19 +14,42 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZC-Yc-4Xd">
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHt-l1-qOc">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHt-l1-qOc">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="dgU-iY-8rF"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-e8-O4g">
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="dgU-iY-8rF">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="7" id="Gdb-rN-Uhr"/>
+                                        <constraint firstAttribute="height" constant="10" id="bCv-3P-RNe"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITALY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf0-at-dEF">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                    <color key="textColor" red="0.031372549019607843" green="0.11764705882352941" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Lf0-at-dEF" firstAttribute="leading" secondItem="dgU-iY-8rF" secondAttribute="trailing" constant="5" id="6D8-GC-cJi"/>
+                                <constraint firstItem="dgU-iY-8rF" firstAttribute="centerY" secondItem="bAz-e8-O4g" secondAttribute="centerY" id="BG4-LR-Db6"/>
+                                <constraint firstAttribute="trailing" secondItem="Lf0-at-dEF" secondAttribute="trailing" id="JY4-YM-L1Z"/>
+                                <constraint firstAttribute="bottom" secondItem="Lf0-at-dEF" secondAttribute="bottom" id="b5l-Bg-4Q0"/>
+                                <constraint firstItem="dgU-iY-8rF" firstAttribute="leading" secondItem="bAz-e8-O4g" secondAttribute="leading" constant="8" id="ruZ-5E-9nk"/>
+                                <constraint firstItem="Lf0-at-dEF" firstAttribute="top" secondItem="bAz-e8-O4g" secondAttribute="top" id="wu3-Dw-fcW"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="dgU-iY-8rF" firstAttribute="top" secondItem="NHt-l1-qOc" secondAttribute="bottom" constant="8" id="7qM-iM-LwY"/>
+                        <constraint firstItem="bAz-e8-O4g" firstAttribute="centerX" secondItem="JZC-Yc-4Xd" secondAttribute="centerX" id="HB5-qI-GLd"/>
+                        <constraint firstItem="bAz-e8-O4g" firstAttribute="top" secondItem="NHt-l1-qOc" secondAttribute="bottom" constant="8" id="QDi-7r-VkW"/>
                         <constraint firstItem="NHt-l1-qOc" firstAttribute="centerY" secondItem="JZC-Yc-4Xd" secondAttribute="centerY" id="a0Q-Qr-8wn"/>
                         <constraint firstItem="NHt-l1-qOc" firstAttribute="leading" secondItem="JZC-Yc-4Xd" secondAttribute="leading" id="oP4-h7-geC"/>
-                        <constraint firstItem="dgU-iY-8rF" firstAttribute="centerX" secondItem="JZC-Yc-4Xd" secondAttribute="centerX" id="p54-k6-bbb"/>
                         <constraint firstAttribute="trailing" secondItem="NHt-l1-qOc" secondAttribute="trailing" id="xjp-iF-ANS"/>
                     </constraints>
                 </view>
@@ -39,6 +62,11 @@
                 <constraint firstItem="JZC-Yc-4Xd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m4c-rs-IYV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="locationName" destination="Lf0-at-dEF" id="PUs-JJ-Mh5"/>
+                <outlet property="profileName" destination="NHt-l1-qOc" id="7tU-bD-pSH"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="75"/>
         </view>
     </objects>
     <resources>

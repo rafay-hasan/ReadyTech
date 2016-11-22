@@ -944,12 +944,31 @@
                                     <outlet property="delegate" destination="MG0-XB-0HS" id="zpW-6e-GtJ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvX-no-bGT">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3ss-Ad-YCJ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="lfK-8B-D30"/>
+                                            <constraint firstAttribute="width" constant="118" id="sWR-Cp-iFL"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SYe-se-ivh"/>
+                                    <constraint firstItem="3ss-Ad-YCJ" firstAttribute="centerX" secondItem="ZvX-no-bGT" secondAttribute="centerX" id="fig-xY-Ra8"/>
+                                    <constraint firstItem="3ss-Ad-YCJ" firstAttribute="centerY" secondItem="ZvX-no-bGT" secondAttribute="centerY" id="vYo-9W-PnO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MDy-Kf-Bg8" firstAttribute="leading" secondItem="oha-Lj-MXR" secondAttribute="leading" id="4Xb-ol-YBh"/>
-                            <constraint firstItem="9Gi-q4-FdV" firstAttribute="top" secondItem="MDy-Kf-Bg8" secondAttribute="bottom" id="DZt-7K-o5B"/>
+                            <constraint firstAttribute="bottom" secondItem="ZvX-no-bGT" secondAttribute="bottom" id="66N-nZ-MpX"/>
+                            <constraint firstItem="9Gi-q4-FdV" firstAttribute="top" secondItem="MDy-Kf-Bg8" secondAttribute="bottom" constant="40" id="DZt-7K-o5B"/>
                             <constraint firstItem="MDy-Kf-Bg8" firstAttribute="top" secondItem="OOu-vV-VV0" secondAttribute="bottom" id="GFT-fp-F1y"/>
+                            <constraint firstAttribute="trailing" secondItem="ZvX-no-bGT" secondAttribute="trailing" id="ZL8-rv-9ZW"/>
+                            <constraint firstItem="ZvX-no-bGT" firstAttribute="leading" secondItem="oha-Lj-MXR" secondAttribute="leading" id="fFi-nu-Pl7"/>
                             <constraint firstAttribute="trailing" secondItem="MDy-Kf-Bg8" secondAttribute="trailing" id="jvv-H3-3ak"/>
                         </constraints>
                     </view>
@@ -1069,12 +1088,46 @@
                                     <outlet property="delegate" destination="O1R-hS-IjU" id="ZaZ-iZ-Aah"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-Eo-ffd">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="L6O-zG-ZXT">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="Wfc-dt-4j3"/>
+                                            <constraint firstAttribute="width" constant="118" id="rWr-eA-tnw"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="L6O-zG-ZXT" firstAttribute="centerY" secondItem="u4g-Eo-ffd" secondAttribute="centerY" id="50N-mp-ben"/>
+                                    <constraint firstAttribute="height" constant="40" id="jnS-JA-Rrm"/>
+                                    <constraint firstItem="L6O-zG-ZXT" firstAttribute="centerX" secondItem="u4g-Eo-ffd" secondAttribute="centerX" id="pdb-ao-DxH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8P-2f-2T8">
+                                <color key="backgroundColor" red="0.047058823529411764" green="0.14509803921568626" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="mXd-Cl-qvd"/>
+                                    <constraint firstAttribute="height" constant="30" id="oZ5-je-B8N"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="O1R-hS-IjU" eventType="touchUpInside" id="ytf-k6-ACZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="u4g-Eo-ffd" secondAttribute="bottom" id="Eev-Z0-Enq"/>
+                            <constraint firstItem="O8P-2f-2T8" firstAttribute="top" secondItem="SgG-SM-ezK" secondAttribute="bottom" constant="10" id="HDP-rJ-H6s"/>
+                            <constraint firstItem="u4g-Eo-ffd" firstAttribute="top" secondItem="O8P-2f-2T8" secondAttribute="bottom" constant="22" id="JSL-qH-uR7"/>
                             <constraint firstItem="SgG-SM-ezK" firstAttribute="top" secondItem="V0D-E5-imf" secondAttribute="bottom" id="L9m-Kd-Qc9"/>
-                            <constraint firstItem="pwj-He-VNl" firstAttribute="top" secondItem="SgG-SM-ezK" secondAttribute="bottom" constant="70" id="VJr-bi-Hra"/>
+                            <constraint firstAttribute="trailing" secondItem="u4g-Eo-ffd" secondAttribute="trailing" id="ewg-AF-ieN"/>
+                            <constraint firstItem="u4g-Eo-ffd" firstAttribute="leading" secondItem="ULO-n6-aEk" secondAttribute="leading" id="f9O-8b-Ni3"/>
                             <constraint firstItem="SgG-SM-ezK" firstAttribute="leading" secondItem="ULO-n6-aEk" secondAttribute="leading" id="fQc-fK-2Xh"/>
+                            <constraint firstItem="O8P-2f-2T8" firstAttribute="centerX" secondItem="ULO-n6-aEk" secondAttribute="centerX" id="huv-Jz-jA0"/>
                             <constraint firstAttribute="trailing" secondItem="SgG-SM-ezK" secondAttribute="trailing" id="yvC-98-xhz"/>
                         </constraints>
                     </view>
@@ -1082,6 +1135,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="qcI-AU-xcb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="O8P-2f-2T8" id="6nQ-Mf-8Qv"/>
+                        <outlet property="editButtonTopSpace" destination="HDP-rJ-H6s" id="Iz6-xN-444"/>
                         <outlet property="profileTableview" destination="SgG-SM-ezK" id="SLo-CX-e1w"/>
                     </connections>
                 </viewController>
@@ -1298,6 +1353,7 @@
     <resources>
         <image name="BgImage" width="414" height="736"/>
         <image name="eventIcon" width="40" height="43"/>
+        <image name="footerLogo" width="117" height="39"/>
         <image name="logOut" width="19" height="21"/>
         <image name="loginButtonBgImage" width="273" height="43"/>
         <image name="menuBottomBar" width="414" height="54"/>

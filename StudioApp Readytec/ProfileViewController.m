@@ -20,7 +20,12 @@
 @property (strong,nonatomic) UserInfoObject *profile;
 @property (strong,nonatomic) NSMutableArray *profileKeyArray,*profileValueArray;
 
+
+
 @property (weak, nonatomic) IBOutlet UITableView *profileTableview;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+- (IBAction)editButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *editButtonTopSpace;
 
 
 @end
@@ -30,6 +35,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+    {
+        self.editButton.hidden = YES;
+        self.editButtonTopSpace.constant = 0;
+        [self.view setNeedsLayout];
+    }
+    else
+    {
+        self.editButton.hidden = NO;
+        self.editButtonTopSpace.constant = 10;
+        [self.view setNeedsLayout];
+    }
     
     self.profileTableview.estimatedRowHeight = 50;
     self.profileTableview.rowHeight = UITableViewAutomaticDimension;
@@ -256,8 +274,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     ProfileHeaderview *profileHeaderView = [self.profileTableview dequeueReusableHeaderFooterViewWithIdentifier:@"profileHeader"];
+    profileHeaderView.profileName.text = [User_Details sharedInstance].profileName;
+    profileHeaderView.locationName.text = NSLocalizedString(@"ITALY", Nil);
     
-    return profileHeaderView;}
+    return profileHeaderView;
+}
 
 
 
@@ -269,4 +290,6 @@
 }
 
 
+- (IBAction)editButtonAction:(id)sender {
+}
 @end

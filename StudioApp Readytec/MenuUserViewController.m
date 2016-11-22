@@ -8,6 +8,7 @@
 
 #import "MenuUserViewController.h"
 #import "ProfileViewController.h"
+#import "NewsViewController.h"
 @interface MenuUserViewController ()
 
 
@@ -51,6 +52,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if (sender.tag == 3000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

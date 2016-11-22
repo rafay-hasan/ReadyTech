@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileHeaderview : UITableViewHeaderFooterView
+@property (weak, nonatomic) IBOutlet UILabel *profileName;
+@property (weak, nonatomic) IBOutlet UILabel *locationName;
 
 @end
