@@ -178,7 +178,7 @@
     cell.newsDateLabel.text = object.newsDateTime;
     cell.newsTitleLAbel.text = object.newsTitle;
     cell.newsDescriptionLabel.attributedText = object.newsDescription;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }

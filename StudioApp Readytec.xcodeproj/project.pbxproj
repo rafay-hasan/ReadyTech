@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
+		BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E511DE60B6C003DEE40 /* UsersViewController.m */; };
+		BBA39E551DE60E41003DEE40 /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */; };
 		BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */; };
 		BBA4FAAC1DE1931900630913 /* profileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */; };
 		BBC261E81DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC261E71DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m */; };
@@ -76,6 +78,10 @@
 		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BBA39E501DE60B6C003DEE40 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
+		BBA39E511DE60B6C003DEE40 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		BBA39E531DE60E41003DEE40 /* UsersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
+		BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewCell.m; sourceTree = "<group>"; };
 		BBA4FAA81DE192E800630913 /* ProfileHeaderview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderview.h; sourceTree = "<group>"; };
 		BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderview.m; sourceTree = "<group>"; };
 		BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileHeaderView.xib; sourceTree = "<group>"; };
@@ -217,6 +223,17 @@
 				BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */,
 			);
 			name = "Slide Menu";
+			sourceTree = "<group>";
+		};
+		BBA39E4F1DE60B57003DEE40 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				BBA39E501DE60B6C003DEE40 /* UsersViewController.h */,
+				BBA39E511DE60B6C003DEE40 /* UsersViewController.m */,
+				BBA39E531DE60E41003DEE40 /* UsersTableViewCell.h */,
+				BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */,
+			);
+			name = Users;
 			sourceTree = "<group>";
 		};
 		BBCAF52C1DD21D7700BEA62F /* LogIN */ = {
@@ -409,6 +426,7 @@
 				BBCAF52D1DD21D9000BEA62F /* Menu Admin */,
 				BBCAF59A1DD2430300BEA62F /* Profile */,
 				BBCAF52E1DD21D9C00BEA62F /* News */,
+				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
 				BBD16BC21DBCFD3B00E1427F /* Main.storyboard */,
@@ -544,6 +562,7 @@
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
 				BBCAF58F1DD21E7D00BEA62F /* ServiceDetailsObject.m in Sources */,
+				BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */,
 				BBCAF5701DD21E2700BEA62F /* SVProgressHUD.m in Sources */,
 				BBCAF5941DD21E7D00BEA62F /* UserProfile.m in Sources */,
 				BBCAF56E1DD21E2700BEA62F /* SVIndefiniteAnimatedView.m in Sources */,
@@ -574,6 +593,7 @@
 				BBCAF5431DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BBCAF5691DD21E2700BEA62F /* AFSecurityPolicy.m in Sources */,
 				BBCAF5421DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BBA39E551DE60E41003DEE40 /* UsersTableViewCell.m in Sources */,
 				BBCAF58B1DD21E7D00BEA62F /* EventObject.m in Sources */,
 				BBEF0DF41DCE0D0F00466479 /* RootViewController.m in Sources */,
 				BBCAF5681DD21E2700BEA62F /* AFNetworkReachabilityManager.m in Sources */,

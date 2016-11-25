@@ -10,6 +10,7 @@
 #import "NewsViewController.h"
 #import "ViewController.h"
 #import "ProfileViewController.h"
+#import "UsersViewController.h"
 @interface MenuAdminViewController ()
 
 - (IBAction)menuAction:(UIButton *)sender;
@@ -48,6 +49,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    if(sender.tag == 9000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else
