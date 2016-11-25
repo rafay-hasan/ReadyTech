@@ -12,6 +12,8 @@
 #import "SVProgressHUD.h"
 #import "UserInfoObject.h"
 #import "User Details.h"
+#import "UserDetailsViewController.h"
+
 @interface UsersViewController ()<UITableViewDataSource,UIAlertViewDelegate,RHWebServiceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *usertableView;
@@ -116,6 +118,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UserDetailsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"userDetails"];
+    UserInfoObject *obj = [self.userDataArray objectAtIndex:indexPath.row];
+    controller.object = obj;
+    [self.navigationController pushViewController:controller animated:YES];
+    
     
 }
 

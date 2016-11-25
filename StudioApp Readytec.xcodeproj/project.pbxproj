@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
+		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
 		BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E511DE60B6C003DEE40 /* UsersViewController.m */; };
 		BBA39E551DE60E41003DEE40 /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */; };
 		BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */; };
@@ -78,6 +79,8 @@
 		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		BBA39E501DE60B6C003DEE40 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		BBA39E511DE60B6C003DEE40 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
 		BBA39E531DE60E41003DEE40 /* UsersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				BBA39E511DE60B6C003DEE40 /* UsersViewController.m */,
 				BBA39E531DE60E41003DEE40 /* UsersTableViewCell.h */,
 				BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */,
+				BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */,
+				BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				BBEF0DDD1DCE00BF00466479 /* NewsViewController.m in Sources */,
 				BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */,
 				BBEF0DEC1DCE0C5100466479 /* RECommonFunctions.m in Sources */,
+				BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */,
 				BBCAF5491DD21DFB00BEA62F /* UIWebView+AFNetworking.m in Sources */,
 				BBC8FAEC1DE171E800376F07 /* ProfileTableViewCell.m in Sources */,
 				BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */,
