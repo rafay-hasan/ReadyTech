@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "ProfileViewController.h"
 #import "UsersViewController.h"
+#import "EventsViewController.h"
 @interface MenuAdminViewController ()
 
 - (IBAction)menuAction:(UIButton *)sender;
@@ -51,7 +52,13 @@
         ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
         [self.navigationController pushViewController:controller animated:YES];
     }
-    if(sender.tag == 9000)
+    else if(sender.tag == 2000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 9000)
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];

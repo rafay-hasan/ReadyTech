@@ -37,7 +37,6 @@
     self.newsTableview.estimatedRowHeight = 95;
     self.newsTableview.rowHeight = UITableViewAutomaticDimension;
     
-    
     self.newsTableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.newsTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     

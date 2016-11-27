@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C951DEB4A7200A8361B /* EventsViewController.m */; };
+		BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */; };
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
@@ -75,6 +77,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0A1C941DEB4A7200A8361B /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		BB0A1C951DEB4A7200A8361B /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
+		BB0A1C981DEB523200A8361B /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
+		BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		BB1965441DE204CC0088BCAF /* MenuUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuUserViewController.h; sourceTree = "<group>"; };
 		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -215,6 +221,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0A1C971DEB4A7A00A8361B /* events */ = {
+			isa = PBXGroup;
+			children = (
+				BB0A1C941DEB4A7200A8361B /* EventsViewController.h */,
+				BB0A1C951DEB4A7200A8361B /* EventsViewController.m */,
+				BB0A1C981DEB523200A8361B /* EventsTableViewCell.h */,
+				BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
 		BB118C7C1DD893A100745E01 /* Slide Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +448,7 @@
 				BBCAF52D1DD21D9000BEA62F /* Menu Admin */,
 				BBCAF59A1DD2430300BEA62F /* Profile */,
 				BBCAF52E1DD21D9C00BEA62F /* News */,
+				BB0A1C971DEB4A7A00A8361B /* events */,
 				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -559,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCAF5651DD21E2700BEA62F /* AFHTTPRequestOperation.m in Sources */,
+				BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */,
 				BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */,
 				BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */,
 				BBCAF5481DD21DFB00BEA62F /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -606,6 +625,7 @@
 				BBCAF5671DD21E2700BEA62F /* AFHTTPSessionManager.m in Sources */,
 				BBCAF58C1DD21E7D00BEA62F /* MessageObject.m in Sources */,
 				BBCAF56B1DD21E2700BEA62F /* AFURLRequestSerialization.m in Sources */,
+				BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */,
 				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
 				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
 				BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */,

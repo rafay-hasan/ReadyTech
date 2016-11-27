@@ -9,6 +9,7 @@
 #import "MenuUserViewController.h"
 #import "ProfileViewController.h"
 #import "NewsViewController.h"
+#import "EventsViewController.h"
 @interface MenuUserViewController ()
 
 
@@ -52,6 +53,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 2000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if (sender.tag == 3000)
