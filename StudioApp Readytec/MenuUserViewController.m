@@ -10,6 +10,8 @@
 #import "ProfileViewController.h"
 #import "NewsViewController.h"
 #import "EventsViewController.h"
+#import "TrainingViewController.h"
+
 @interface MenuUserViewController ()
 
 
@@ -65,6 +67,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 5000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TrainingViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"training"];
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

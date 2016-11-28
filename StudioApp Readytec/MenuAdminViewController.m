@@ -12,6 +12,8 @@
 #import "ProfileViewController.h"
 #import "UsersViewController.h"
 #import "EventsViewController.h"
+#import "TrainingViewController.h"
+
 @interface MenuAdminViewController ()
 
 - (IBAction)menuAction:(UIButton *)sender;
@@ -58,18 +60,24 @@
         EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
         [self.navigationController pushViewController:controller animated:YES];
     }
+    else if(sender.tag == 7000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TrainingViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"training"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     else if(sender.tag == 9000)
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];
         [self.navigationController pushViewController:controller animated:YES];
     }
-    else
-    {
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+//    else
+//    {
+//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+//        [self.navigationController pushViewController:controller animated:YES];
+//    }
 
 }
 

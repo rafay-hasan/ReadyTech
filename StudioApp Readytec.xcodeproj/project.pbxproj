@@ -74,6 +74,8 @@
 		BBEF0DF71DCE0E4300466479 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DF61DCE0E4300466479 /* DEMONavigationController.m */; };
 		BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */; };
 		BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */; };
+		BBF244841DEC9455009461D0 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF244831DEC9455009461D0 /* TrainingViewController.m */; };
+		BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +210,10 @@
 		BBEF0DF91DCE0FB800466479 /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuViewController.m; sourceTree = "<group>"; };
 		BBEF0DFB1DCE433C00466479 /* DEMOMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuTableViewCell.h; sourceTree = "<group>"; };
 		BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuTableViewCell.m; sourceTree = "<group>"; };
+		BBF244821DEC9455009461D0 /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
+		BBF244831DEC9455009461D0 /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
+		BBF244851DEC9E17009461D0 /* TrainingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTableViewCell.h; sourceTree = "<group>"; };
+		BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +455,7 @@
 				BBCAF59A1DD2430300BEA62F /* Profile */,
 				BBCAF52E1DD21D9C00BEA62F /* News */,
 				BB0A1C971DEB4A7A00A8361B /* events */,
+				BBF244811DEC9433009461D0 /* Training */,
 				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -500,6 +507,17 @@
 				BBEF0DEB1DCE0C5100466479 /* UIViewController+REFrostedViewController.m */,
 			);
 			path = REFrostedViewController;
+			sourceTree = "<group>";
+		};
+		BBF244811DEC9433009461D0 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				BBF244821DEC9455009461D0 /* TrainingViewController.h */,
+				BBF244831DEC9455009461D0 /* TrainingViewController.m */,
+				BBF244851DEC9E17009461D0 /* TrainingTableViewCell.h */,
+				BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */,
+			);
+			name = Training;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,6 +598,7 @@
 				BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */,
 				BBD16BC71DBCFD3B00E1427F /* StudioApp_Readytec.xcdatamodeld in Sources */,
 				BBEF0DED1DCE0C5100466479 /* REFrostedContainerViewController.m in Sources */,
+				BBF244841DEC9455009461D0 /* TrainingViewController.m in Sources */,
 				BBCAF5481DD21DFB00BEA62F /* UIRefreshControl+AFNetworking.m in Sources */,
 				BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */,
 				BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */,
@@ -628,6 +647,7 @@
 				BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */,
 				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
 				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
+				BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */,
 				BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */,
 				BBEF0DDD1DCE00BF00466479 /* NewsViewController.m in Sources */,
 				BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */,
