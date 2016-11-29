@@ -1675,6 +1675,12 @@
                                             <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventAccessoryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-fV-cu8">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="pii-ae-yOK"/>
+                                                        <constraint firstAttribute="height" constant="23" id="z6g-I4-VNR"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-ys-TBs">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gl-TS-d4p">
@@ -1697,10 +1703,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="7i5-ys-TBs" firstAttribute="top" secondItem="jKY-3u-47F" secondAttribute="top" constant="8" id="YQQ-H6-YI4"/>
-                                                <constraint firstItem="7i5-ys-TBs" firstAttribute="leading" secondItem="jKY-3u-47F" secondAttribute="leading" constant="15" id="atS-3S-EfH"/>
-                                                <constraint firstAttribute="trailing" secondItem="7i5-ys-TBs" secondAttribute="trailing" constant="20" id="emY-f3-Kkg"/>
-                                                <constraint firstAttribute="bottom" secondItem="7i5-ys-TBs" secondAttribute="bottom" constant="8" id="pYH-iy-dKa"/>
+                                                <constraint firstAttribute="bottom" secondItem="7i5-ys-TBs" secondAttribute="bottom" constant="8" id="BTh-Ce-4y3"/>
+                                                <constraint firstItem="SWB-fV-cu8" firstAttribute="centerY" secondItem="jKY-3u-47F" secondAttribute="centerY" id="GhZ-8z-cMl"/>
+                                                <constraint firstItem="7i5-ys-TBs" firstAttribute="leading" secondItem="jKY-3u-47F" secondAttribute="leading" constant="15" id="J6d-QQ-4Ag"/>
+                                                <constraint firstAttribute="trailing" secondItem="SWB-fV-cu8" secondAttribute="trailing" constant="20" id="NoJ-8i-yw9"/>
+                                                <constraint firstItem="SWB-fV-cu8" firstAttribute="leading" secondItem="7i5-ys-TBs" secondAttribute="trailing" constant="15" id="cyH-wP-f3l"/>
+                                                <constraint firstItem="7i5-ys-TBs" firstAttribute="top" secondItem="jKY-3u-47F" secondAttribute="top" constant="8" id="kcZ-Fh-NfR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -195,7 +195,6 @@
     cell.eventDateLabel.text = self.object.eventStartDate;
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
     
