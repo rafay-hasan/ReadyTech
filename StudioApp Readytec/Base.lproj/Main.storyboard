@@ -1815,12 +1815,20 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventAccessoryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9Wc-1V-WbM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="ElP-6n-WbF"/>
+                                                        <constraint firstAttribute="width" constant="22" id="QOY-X5-bJz"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="WOL-XR-DGz" firstAttribute="top" secondItem="lFr-i0-OEM" secondAttribute="top" constant="5" id="MQ7-yG-uQD"/>
-                                                <constraint firstAttribute="trailing" secondItem="WOL-XR-DGz" secondAttribute="trailing" constant="20" id="hD8-ex-EtE"/>
-                                                <constraint firstAttribute="bottom" secondItem="WOL-XR-DGz" secondAttribute="bottom" constant="5" id="jP1-3g-ZzO"/>
-                                                <constraint firstItem="WOL-XR-DGz" firstAttribute="leading" secondItem="lFr-i0-OEM" secondAttribute="leading" constant="20" id="jxu-iq-8wT"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Wc-1V-WbM" secondAttribute="trailing" constant="20" id="1wR-oK-JAD"/>
+                                                <constraint firstItem="WOL-XR-DGz" firstAttribute="leading" secondItem="lFr-i0-OEM" secondAttribute="leading" constant="15" id="Jqr-Kv-ZHI"/>
+                                                <constraint firstItem="9Wc-1V-WbM" firstAttribute="leading" secondItem="WOL-XR-DGz" secondAttribute="trailing" constant="15" id="T85-QQ-ese"/>
+                                                <constraint firstItem="WOL-XR-DGz" firstAttribute="top" secondItem="lFr-i0-OEM" secondAttribute="top" constant="8" id="fXh-YV-5a4"/>
+                                                <constraint firstAttribute="bottom" secondItem="WOL-XR-DGz" secondAttribute="bottom" constant="8" id="yfj-dy-TpQ"/>
+                                                <constraint firstItem="9Wc-1V-WbM" firstAttribute="centerY" secondItem="lFr-i0-OEM" secondAttribute="centerY" id="z5k-zu-xby"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
