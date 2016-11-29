@@ -622,7 +622,8 @@
         if([[response valueForKey:@"messages"] isKindOfClass:[NSArray class]])
         {
             NSArray *tempArray = [(NSArray *)response valueForKey:@"messages"];
-            
+            NSDateFormatter *formatter = [NSDateFormatter new];
+            NSDate *formattedDate = [NSDate new];
             for(NSInteger i = 0; i < tempArray.count; i++)
             {
                 MessageObject *object = [MessageObject new];
@@ -650,13 +651,20 @@
                 {
                     NSString *dateTime = [[tempArray objectAtIndex:i] valueForKey:@"message_created_date_time"];
                     
-                    
+                    NSLog(@"Date time is %@",dateTime);
                     NSArray *tempArray = [dateTime componentsSeparatedByString:@" "];
-                    
                     object.messageDate = [tempArray firstObject];
-                    
                     object.messageTime = [tempArray lastObject];
                     
+                    formatter.dateFormat = @"yyyy-MM-dd";
+                    formattedDate = [formatter dateFromString:object.messageDate];
+                    formatter.dateFormat = @"dd-MM-yyyy";
+                    object.messageDate = [formatter stringFromDate:formattedDate];
+                    
+                    formatter.dateFormat = @"hh:mm:ss";
+                    formattedDate = [formatter dateFromString:object.messageTime];
+                    formatter.dateFormat = @"hh:mm a";
+                    object.messageTime = [formatter stringFromDate:formattedDate];
                 }
                 else
                 {
