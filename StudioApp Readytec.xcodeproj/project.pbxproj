@@ -12,6 +12,7 @@
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
+		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
 		BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E511DE60B6C003DEE40 /* UsersViewController.m */; };
 		BBA39E551DE60E41003DEE40 /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */; };
 		BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA4FAA91DE192E800630913 /* ProfileHeaderview.m */; };
@@ -89,6 +90,8 @@
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		BB7526E81DEDE1EA00C89C69 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = ../MessageViewController.h; sourceTree = "<group>"; };
+		BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
 		BBA39E501DE60B6C003DEE40 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		BBA39E511DE60B6C003DEE40 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
 		BBA39E531DE60E41003DEE40 /* UsersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
@@ -249,6 +252,15 @@
 				BBC261ED1DD4EC950033B4A6 /* menuHeaderView.m */,
 			);
 			name = "Slide Menu";
+			sourceTree = "<group>";
+		};
+		BB7526E71DEDE19A00C89C69 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BB7526E81DEDE1EA00C89C69 /* MessageViewController.h */,
+				BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		BBA39E4F1DE60B57003DEE40 /* Users */ = {
@@ -456,6 +468,7 @@
 				BBCAF52E1DD21D9C00BEA62F /* News */,
 				BB0A1C971DEB4A7A00A8361B /* events */,
 				BBF244811DEC9433009461D0 /* Training */,
+				BB7526E71DEDE19A00C89C69 /* Message */,
 				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -648,6 +661,7 @@
 				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
 				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
 				BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */,
+				BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */,
 				BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */,
 				BBEF0DDD1DCE00BF00466479 /* NewsViewController.m in Sources */,
 				BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */,

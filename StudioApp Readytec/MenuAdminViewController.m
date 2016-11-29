@@ -13,6 +13,7 @@
 #import "UsersViewController.h"
 #import "EventsViewController.h"
 #import "TrainingViewController.h"
+#import "MessageViewController.h"
 
 @interface MenuAdminViewController ()
 
@@ -58,6 +59,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 5000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MessageViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"message"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if(sender.tag == 7000)
