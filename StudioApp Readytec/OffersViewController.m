@@ -65,7 +65,7 @@
     if (self.offersArray.count > 0)
     {
         self.offerTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections                 = self.offersArray.count;
+        numOfSections = 1;
         self.offerTableView.backgroundView   = nil;
     }
     else
@@ -89,7 +89,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.offersArray.count;
 }
 
 
@@ -98,7 +98,7 @@
     static NSString *MyIdentifier = @"offerCell";
     OfferTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
-    OfferObject *object = [self.offersArray objectAtIndex:indexPath.section];
+    OfferObject *object = [self.offersArray objectAtIndex:indexPath.row];
     cell.offerTitleLabel.text = object.offerTitle;
     cell.offerDescriptionLabel.text = object.offerDetails;
     [cell.offerImageView setImageWithURL:[NSURL URLWithString:object.offerImageUrlStr] placeholderImage:[UIImage imageNamed:@"placeholder"]];
@@ -118,6 +118,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
 
 #pragma mark All Web service
 

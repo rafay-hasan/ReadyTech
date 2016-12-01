@@ -697,7 +697,8 @@
         if([[response valueForKey:@"offers"] isKindOfClass:[NSArray class]])
         {
             NSArray *tempArray = [(NSArray *)response valueForKey:@"offers"];
-            
+            NSDateFormatter *formatter = [NSDateFormatter new];
+            NSDate *formattedDate = [NSDate new];
             for(NSInteger i = 0; i < tempArray.count; i++)
             {
                 OfferObject *object = [OfferObject new];
@@ -724,6 +725,10 @@
                 if([[[tempArray objectAtIndex:i] valueForKey:@"offer_starting_date"] isKindOfClass:[NSString class]])
                 {
                     object.offerStartingDate = [[tempArray objectAtIndex:i] valueForKey:@"offer_starting_date"];
+                    formatter.dateFormat = @"yyyy-MM-dd";
+                    formattedDate  = [formatter dateFromString:object.offerStartingDate];
+                    formatter.dateFormat = @"dd MMM yyyy";
+                    object.offerStartingDate = [NSString stringWithFormat:@"Start: %@",[formatter stringFromDate:formattedDate]];
                     
                 }
                 else
@@ -731,35 +736,50 @@
                     object.offerStartingDate = @"";
                 }
                 
-                if([[[tempArray objectAtIndex:i] valueForKey:@"offer_starting_time"] isKindOfClass:[NSString class]])
-                {
-                    object.offerStartingTime = [[tempArray objectAtIndex:i] valueForKey:@"offer_starting_time"];
-                    
-                }
-                else
-                {
-                    object.offerStartingTime = @"";
-                }
+//                if([[[tempArray objectAtIndex:i] valueForKey:@"offer_starting_time"] isKindOfClass:[NSString class]])
+//                {
+//                    object.offerStartingTime = [[tempArray objectAtIndex:i] valueForKey:@"offer_starting_time"];
+//                    formatter.dateFormat = @"yyyy-MM-dd";
+//                    formattedDate  = [formatter dateFromString:object.offerStartingDate];
+//                    formatter.dateFormat = @"dd MMM yyyy";
+//                    object.offerStartingDate = [NSString stringWithFormat:@"Start: %@",[formatter stringFromDate:formattedDate]];
+//                }
+//                else
+//                {
+//                    object.offerStartingTime = @"";
+//                }
                 
                 if([[[tempArray objectAtIndex:i] valueForKey:@"offer_ending_date"] isKindOfClass:[NSString class]])
                 {
                     object.offerEndDate = [[tempArray objectAtIndex:i] valueForKey:@"offer_ending_date"];
+                    formatter.dateFormat = @"yyyy-MM-dd";
+                    formattedDate  = [formatter dateFromString:object.offerEndDate];
+                    formatter.dateFormat = @"dd MMM yyyy";
                     
+                    if([[[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"] isKindOfClass:[NSString class]])
+                    {
+                        object.offerEndDate = [NSString stringWithFormat:@"%@ %@",[formatter stringFromDate:formattedDate],[[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"]];
+                        formatter.dateFormat = @"dd MMM yyyy hh:mm:ss";
+                        formattedDate  = [formatter dateFromString:object.offerEndDate];
+                        formatter.dateFormat = @"dd MMM yyyy - hh:mm a";
+                        
+                    }
+                    object.offerEndDate = [NSString stringWithFormat:@"End: %@",[formatter stringFromDate:formattedDate]];
                 }
                 else
                 {
-                    object.offerStartingDate = @"";
+                    object.offerEndDate = @"";
                 }
                 
-                if([[[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"] isKindOfClass:[NSString class]])
-                {
-                    object.offerEndTime = [[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"];
-                    
-                }
-                else
-                {
-                    object.offerEndTime = @"";
-                }
+//                if([[[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"] isKindOfClass:[NSString class]])
+//                {
+//                    object.offerEndTime = [[tempArray objectAtIndex:i] valueForKey:@"offer_ending_time"];
+//                    
+//                }
+//                else
+//                {
+//                    object.offerEndTime = @"";
+//                }
                 
                 if([[[tempArray objectAtIndex:i] valueForKey:@"offer_image_storage_base_path_ios"] isKindOfClass:[NSString class]])
                 {
