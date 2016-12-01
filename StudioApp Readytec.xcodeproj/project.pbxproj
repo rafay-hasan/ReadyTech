@@ -57,6 +57,8 @@
 		BBCAF5981DD21ECB00BEA62F /* User Details.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF5971DD21ECB00BEA62F /* User Details.m */; };
 		BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */; };
 		BBCAF5A01DD24BE100BEA62F /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF59F1DD24BE100BEA62F /* NewsTableViewCell.m */; };
+		BBCBBB9A1DEF275100BBDE9F /* OffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCBBB991DEF275100BBDE9F /* OffersViewController.m */; };
+		BBCBBB9D1DEF276A00BBDE9F /* OfferTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCBBB9C1DEF276A00BBDE9F /* OfferTableViewCell.m */; };
 		BBD16BBB1DBCFD3B00E1427F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBA1DBCFD3B00E1427F /* main.m */; };
 		BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BBD1DBCFD3B00E1427F /* AppDelegate.m */; };
 		BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD16BC01DBCFD3B00E1427F /* ViewController.m */; };
@@ -181,6 +183,10 @@
 		BBCAF59C1DD2432F00BEA62F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		BBCAF59E1DD24BE100BEA62F /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		BBCAF59F1DD24BE100BEA62F /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		BBCBBB981DEF275100BBDE9F /* OffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersViewController.h; sourceTree = "<group>"; };
+		BBCBBB991DEF275100BBDE9F /* OffersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersViewController.m; sourceTree = "<group>"; };
+		BBCBBB9B1DEF276A00BBDE9F /* OfferTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferTableViewCell.h; sourceTree = "<group>"; };
+		BBCBBB9C1DEF276A00BBDE9F /* OfferTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferTableViewCell.m; sourceTree = "<group>"; };
 		BBD16BB61DBCFD3B00E1427F /* StudioApp Readytec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StudioApp Readytec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD16BBA1DBCFD3B00E1427F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBD16BBC1DBCFD3B00E1427F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -435,6 +441,17 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		BBCBBB971DEF273400BBDE9F /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				BBCBBB981DEF275100BBDE9F /* OffersViewController.h */,
+				BBCBBB991DEF275100BBDE9F /* OffersViewController.m */,
+				BBCBBB9B1DEF276A00BBDE9F /* OfferTableViewCell.h */,
+				BBCBBB9C1DEF276A00BBDE9F /* OfferTableViewCell.m */,
+			);
+			name = Offers;
+			sourceTree = "<group>";
+		};
 		BBD16BAD1DBCFD3B00E1427F = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +491,7 @@
 				BB0A1C971DEB4A7A00A8361B /* events */,
 				BBF244811DEC9433009461D0 /* Training */,
 				BB7526E71DEDE19A00C89C69 /* Message */,
+				BBCBBB971DEF273400BBDE9F /* Offers */,
 				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -637,6 +655,7 @@
 				BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */,
 				BBCAF56A1DD21E2700BEA62F /* AFURLConnectionOperation.m in Sources */,
 				BBCAF5731DD21E4500BEA62F /* RHWebServiceManager.m in Sources */,
+				BBCBBB9A1DEF275100BBDE9F /* OffersViewController.m in Sources */,
 				BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */,
 				BBCAF58D1DD21E7D00BEA62F /* NewsObject.m in Sources */,
 				BBCAF5661DD21E2700BEA62F /* AFHTTPRequestOperationManager.m in Sources */,
@@ -675,6 +694,7 @@
 				BBCAF5491DD21DFB00BEA62F /* UIWebView+AFNetworking.m in Sources */,
 				BBC8FAEC1DE171E800376F07 /* ProfileTableViewCell.m in Sources */,
 				BB7526ED1DEDEDC900C89C69 /* MessageTableViewCell.m in Sources */,
+				BBCBBB9D1DEF276A00BBDE9F /* OfferTableViewCell.m in Sources */,
 				BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */,
 				BBEF0DEE1DCE0C5100466479 /* REFrostedViewController.m in Sources */,
 			);

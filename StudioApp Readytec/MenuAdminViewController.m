@@ -14,6 +14,7 @@
 #import "EventsViewController.h"
 #import "TrainingViewController.h"
 #import "MessageViewController.h"
+#import "OffersViewController.h"
 
 @interface MenuAdminViewController ()
 
@@ -61,6 +62,18 @@
         EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
         [self.navigationController pushViewController:controller animated:YES];
     }
+    else if(sender.tag == 3000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 4000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        OffersViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"offers"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     else if(sender.tag == 5000)
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -79,12 +92,6 @@
         UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];
         [self.navigationController pushViewController:controller animated:YES];
     }
-//    else
-//    {
-//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
-//        [self.navigationController pushViewController:controller animated:YES];
-//    }
 
 }
 
