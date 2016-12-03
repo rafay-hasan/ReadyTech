@@ -14,6 +14,10 @@
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
 		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
 		BB7526ED1DEDEDC900C89C69 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */; };
+		BB999F0D1DF3147F009E8A04 /* TicketDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */; };
+		BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */; };
+		BB999F131DF31E02009E8A04 /* TicketDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */; };
+		BB999F151DF31E2A009E8A04 /* TicketDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */; };
 		BBA323041DF2C3BA00D481D9 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */; };
 		BBA323071DF2C3CE00D481D9 /* TicketsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA323061DF2C3CE00D481D9 /* TicketsTableViewCell.m */; };
 		BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E511DE60B6C003DEE40 /* UsersViewController.m */; };
@@ -99,6 +103,13 @@
 		BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
 		BB7526EB1DEDEDC900C89C69 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		BB999F0B1DF3147F009E8A04 /* TicketDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsViewController.h; sourceTree = "<group>"; };
+		BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsViewController.m; sourceTree = "<group>"; };
+		BB999F0E1DF3151F009E8A04 /* TicketDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsTableViewCell.h; sourceTree = "<group>"; };
+		BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsTableViewCell.m; sourceTree = "<group>"; };
+		BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsHeaderView.h; sourceTree = "<group>"; };
+		BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsHeaderView.m; sourceTree = "<group>"; };
+		BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketDetailsHeaderView.xib; sourceTree = "<group>"; };
 		BBA323021DF2C3BA00D481D9 /* TicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
 		BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		BBA323051DF2C3CE00D481D9 /* TicketsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketsTableViewCell.h; sourceTree = "<group>"; };
@@ -287,6 +298,10 @@
 				BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */,
 				BBA323051DF2C3CE00D481D9 /* TicketsTableViewCell.h */,
 				BBA323061DF2C3CE00D481D9 /* TicketsTableViewCell.m */,
+				BB999F0B1DF3147F009E8A04 /* TicketDetailsViewController.h */,
+				BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */,
+				BB999F0E1DF3151F009E8A04 /* TicketDetailsTableViewCell.h */,
+				BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -300,6 +315,8 @@
 				BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */,
 				BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */,
 				BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */,
+				BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */,
+				BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -516,6 +533,7 @@
 				BBD16BC21DBCFD3B00E1427F /* Main.storyboard */,
 				BBC261EF1DD4ECB60033B4A6 /* View.xib */,
 				BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */,
+				BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */,
 				BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */,
 				BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */,
 				BBD16BCD1DBCFD3B00E1427F /* Info.plist */,
@@ -633,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD16BCC1DBCFD3B00E1427F /* LaunchScreen.storyboard in Resources */,
+				BB999F151DF31E2A009E8A04 /* TicketDetailsHeaderView.xib in Resources */,
 				BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */,
 				BBD16BC91DBCFD3B00E1427F /* Assets.xcassets in Resources */,
 				BBA4FAAC1DE1931900630913 /* profileHeaderView.xib in Resources */,
@@ -682,6 +701,7 @@
 				BBCAF5931DD21E7D00BEA62F /* UserInfoObject.m in Sources */,
 				BBCAF5901DD21E7D00BEA62F /* ServiceObject.m in Sources */,
 				BBCAF5441DD21DFB00BEA62F /* UIAlertView+AFNetworking.m in Sources */,
+				BB999F131DF31E02009E8A04 /* TicketDetailsHeaderView.m in Sources */,
 				BBD16BBB1DBCFD3B00E1427F /* main.m in Sources */,
 				BBEF0DF11DCE0C5100466479 /* UIViewController+REFrostedViewController.m in Sources */,
 				BBEF0DEF1DCE0C5100466479 /* UIImage+REFrostedViewController.m in Sources */,
@@ -701,8 +721,10 @@
 				BBCAF58C1DD21E7D00BEA62F /* MessageObject.m in Sources */,
 				BBCAF56B1DD21E2700BEA62F /* AFURLRequestSerialization.m in Sources */,
 				BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */,
+				BB999F0D1DF3147F009E8A04 /* TicketDetailsViewController.m in Sources */,
 				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
 				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
+				BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */,
 				BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */,
 				BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */,
 				BBEF0DFA1DCE0FB800466479 /* DEMOMenuViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "TicketsViewController.h"
+#import "TicketDetailsViewController.h"
 #import "TicketsTableViewCell.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
@@ -151,6 +152,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TicketDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ticketDetails"];
+    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 
