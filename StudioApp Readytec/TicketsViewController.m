@@ -29,6 +29,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBarHidden = NO;
+    
+    self.ticketTableView.estimatedRowHeight = 80;
+    self.ticketTableView.rowHeight = UITableViewAutomaticDimension;
+    self.ticketTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.ticketTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
+    [self CallTickeWebservice];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +60,6 @@
 {
     
     [SVProgressHUD show];
-    
     NSString *urlStr = [NSString stringWithFormat:@"%@app_user_ticket_list/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId];
     self.myWebService = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypTickets Delegate:self];
     [self.myWebService getDataFromWebURL:urlStr];
@@ -125,21 +133,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ticketCell";
-    
     TicketsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     self.ticket = [self.ticketsArray objectAtIndex:indexPath.row];
     
     cell.ticketIdLabel.text = self.ticket.ticketId;
-    cell.statusChangedDateLabel.text = self.ticket.statusChangedDate;
-    cell.currentStatus.text = self.ticket.currentStatus;
-    
+    cell.statusChangeDateLabel.text = self.ticket.statusChangedDate;
+    cell.ticketCurrentStatusLabel.text = self.ticket.currentStatus;
     cell.ticketDescriptionLabel.text = self.ticket.ticketDescription;
-    
     cell.ticketCreationDateLabel.text = self.ticket.ticketCreationDate;
-    
-        cell.backgroundColor = [UIColor whiteColor];
-    
+    cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;

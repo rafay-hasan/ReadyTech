@@ -1260,6 +1260,8 @@
         if([[response valueForKey:@"ticket_information"] isKindOfClass:[NSArray class]])
         {
             NSArray *tempArray = [(NSArray *)response valueForKey:@"ticket_information"];
+            NSDateFormatter *formatter = [NSDateFormatter new];
+            NSDate *formattedDate = [NSDate new];
             
             for(NSInteger i = 0; i < tempArray.count; i++)
             {
@@ -1287,7 +1289,10 @@
                 if([[[tempArray objectAtIndex:i] valueForKey:@"ticket_creating_date"] isKindOfClass:[NSString class]])
                 {
                     object.ticketCreationDate = [[tempArray objectAtIndex:i] valueForKey:@"ticket_creating_date"];
-                    
+                    formatter.dateFormat = @"dd-MM-yyyy HH:mm:ss";
+                    formattedDate  = [formatter dateFromString:object.ticketCreationDate];
+                    formatter.dateFormat = @"dd MMM yyyy hh:mm a";
+                    object.ticketCreationDate = [formatter stringFromDate:formattedDate];
                 }
                 else
                 {
@@ -1308,6 +1313,10 @@
                 if([[[tempArray objectAtIndex:i] valueForKey:@"status_changed_date"] isKindOfClass:[NSString class]])
                 {
                     object.statusChangedDate = [[tempArray objectAtIndex:i] valueForKey:@"status_changed_date"];
+                    formatter.dateFormat = @"dd-MM-yyyy HH:mm:ss";
+                    formattedDate  = [formatter dateFromString:object.statusChangedDate];
+                    formatter.dateFormat = @"dd MMM yyyy hh:mm a";
+                    object.statusChangedDate = [formatter stringFromDate:formattedDate];
                     
                 }
                 else

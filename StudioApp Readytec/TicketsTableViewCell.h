@@ -10,4 +10,13 @@
 
 @interface TicketsTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *ticketIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusChangeDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ticketCurrentStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ticketDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ticketCreationDateLabel;
+
+
+
+
 @end
