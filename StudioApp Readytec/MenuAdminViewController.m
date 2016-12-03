@@ -15,6 +15,7 @@
 #import "TrainingViewController.h"
 #import "MessageViewController.h"
 #import "OffersViewController.h"
+#import "TicketsViewController.h"
 
 @interface MenuAdminViewController ()
 
@@ -84,6 +85,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         TrainingViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"training"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 8000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TicketsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"ticket"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if(sender.tag == 9000)

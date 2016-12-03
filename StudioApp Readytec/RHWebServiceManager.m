@@ -689,8 +689,6 @@
 {
     NSMutableArray *messageItemsArray = [NSMutableArray new];
     
-    NSLog(@"RESPONSE IS %@",response);
-    
     if([[response valueForKey:@"login_status"] isEqual:[NSNumber numberWithBool:YES]])
     {
         
