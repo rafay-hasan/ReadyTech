@@ -16,6 +16,7 @@
 #import "MessageViewController.h"
 #import "OffersViewController.h"
 #import "TicketsViewController.h"
+#import "ServicesViewController.h"
 
 @interface MenuAdminViewController ()
 
@@ -79,6 +80,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         MessageViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"message"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 6000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ServicesViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"services"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if(sender.tag == 7000)

@@ -18,6 +18,8 @@
 		BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */; };
 		BB999F131DF31E02009E8A04 /* TicketDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */; };
 		BB999F151DF31E2A009E8A04 /* TicketDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */; };
+		BB9B57F81DF3B81E005100A3 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9B57F71DF3B81E005100A3 /* ServicesViewController.m */; };
+		BB9B57FC1DF3B845005100A3 /* ServicesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9B57FB1DF3B845005100A3 /* ServicesTableViewCell.m */; };
 		BBA323041DF2C3BA00D481D9 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */; };
 		BBA323071DF2C3CE00D481D9 /* TicketsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA323061DF2C3CE00D481D9 /* TicketsTableViewCell.m */; };
 		BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA39E511DE60B6C003DEE40 /* UsersViewController.m */; };
@@ -110,6 +112,10 @@
 		BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsHeaderView.h; sourceTree = "<group>"; };
 		BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsHeaderView.m; sourceTree = "<group>"; };
 		BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketDetailsHeaderView.xib; sourceTree = "<group>"; };
+		BB9B57F61DF3B81E005100A3 /* ServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
+		BB9B57F71DF3B81E005100A3 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
+		BB9B57FA1DF3B845005100A3 /* ServicesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesTableViewCell.h; sourceTree = "<group>"; };
+		BB9B57FB1DF3B845005100A3 /* ServicesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesTableViewCell.m; sourceTree = "<group>"; };
 		BBA323021DF2C3BA00D481D9 /* TicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
 		BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		BBA323051DF2C3CE00D481D9 /* TicketsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketsTableViewCell.h; sourceTree = "<group>"; };
@@ -289,6 +295,17 @@
 				BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */,
 			);
 			name = Message;
+			sourceTree = "<group>";
+		};
+		BB9B57F91DF3B825005100A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB9B57F61DF3B81E005100A3 /* ServicesViewController.h */,
+				BB9B57F71DF3B81E005100A3 /* ServicesViewController.m */,
+				BB9B57FA1DF3B845005100A3 /* ServicesTableViewCell.h */,
+				BB9B57FB1DF3B845005100A3 /* ServicesTableViewCell.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		BBA323011DF2C38900D481D9 /* Tickets */ = {
@@ -527,6 +544,7 @@
 				BB7526E71DEDE19A00C89C69 /* Message */,
 				BBCBBB971DEF273400BBDE9F /* Offers */,
 				BBA323011DF2C38900D481D9 /* Tickets */,
+				BB9B57F91DF3B825005100A3 /* Services */,
 				BBA39E4F1DE60B57003DEE40 /* Users */,
 				BBEF0DDE1DCE0C3C00466479 /* Third Party */,
 				BBCAF52F1DD21DC800BEA62F /* WebService */,
@@ -720,10 +738,12 @@
 				BBCAF5671DD21E2700BEA62F /* AFHTTPSessionManager.m in Sources */,
 				BBCAF58C1DD21E7D00BEA62F /* MessageObject.m in Sources */,
 				BBCAF56B1DD21E2700BEA62F /* AFURLRequestSerialization.m in Sources */,
+				BB9B57FC1DF3B845005100A3 /* ServicesTableViewCell.m in Sources */,
 				BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */,
 				BB999F0D1DF3147F009E8A04 /* TicketDetailsViewController.m in Sources */,
 				BBEF0DDA1DCE008900466479 /* MenuAdminViewController.m in Sources */,
 				BBEF0DF01DCE0C5100466479 /* UIView+REFrostedViewController.m in Sources */,
+				BB9B57F81DF3B81E005100A3 /* ServicesViewController.m in Sources */,
 				BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */,
 				BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */,
 				BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */,

@@ -12,6 +12,7 @@
 #import "EventsViewController.h"
 #import "TrainingViewController.h"
 #import "TicketsViewController.h"
+#import "ServicesViewController.h"
 
 @interface MenuUserViewController ()
 
@@ -68,6 +69,12 @@
     {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else if(sender.tag == 4000)
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ServicesViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"services"];
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if(sender.tag == 5000)
