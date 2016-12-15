@@ -7,6 +7,7 @@
 //
 
 #import "TicketsViewController.h"
+#import "DEMONavigationController.h"
 #import "TicketDetailsViewController.h"
 #import "TicketsTableViewCell.h"
 #import "RHWebServiceManager.h"
@@ -20,6 +21,7 @@
 @property (strong,nonatomic) NSArray *ticketsArray;
 @property (strong,nonatomic) TicketObject *ticket;
 
+- (IBAction)slideMenuAction:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *ticketTableView;
 
@@ -161,4 +163,16 @@
 }
 
 
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
+}
 @end

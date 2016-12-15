@@ -7,6 +7,7 @@
 //
 
 #import "OffersViewController.h"
+#import "DEMONavigationController.h"
 #import "OfferTableViewCell.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
@@ -18,6 +19,7 @@
 
 @property (strong,nonatomic) NSMutableArray *offersArray;
 @property (strong,nonatomic) RHWebServiceManager *myWebService;
+- (IBAction)slideMenuAction:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *offerTableView;
 
@@ -172,4 +174,16 @@
 
 
 
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
+}
 @end

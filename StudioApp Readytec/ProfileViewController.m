@@ -14,6 +14,7 @@
 #import "UserInfoObject.h"
 #import "ProfileHeaderview.h"
 #import "ProfileTableViewCell.h"
+
 @interface ProfileViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) RHWebServiceManager *myWebserviceManager;
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 - (IBAction)editButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *editButtonTopSpace;
+- (IBAction)slideMenuAction:(id)sender;
 
 
 @end
@@ -68,11 +70,11 @@
 {
     if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
     {
-        [self CallAdminProfileWebservice];
+        //[self CallAdminProfileWebservice];
     }
     else
     {
-        [self CalluserProfileWebservice];
+        //[self CalluserProfileWebservice];
     }
 }
 
@@ -291,5 +293,17 @@
 
 
 - (IBAction)editButtonAction:(id)sender {
+}
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
 }
 @end

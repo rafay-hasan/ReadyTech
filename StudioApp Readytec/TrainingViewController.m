@@ -12,6 +12,7 @@
 #import "CourseObject.h"
 #import "User Details.h"
 #import "TrainingTableViewCell.h"
+#import "DEMONavigationController.h"
 
 @interface TrainingViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -24,6 +25,7 @@
 
 - (IBAction)courseSegmentButtonAction:(UISegmentedControl *)sender;
 
+- (IBAction)slideMenuAction:(id)sender;
 
 @end
 
@@ -75,6 +77,19 @@
     {
         [self CallUpcomingCourseWebservice];
     }
+
+}
+
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
 
 }
 

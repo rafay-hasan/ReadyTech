@@ -12,11 +12,14 @@
 #import "SVProgressHUD.h"
 #import "MessageObject.h"
 #import "User Details.h"
+#import "DEMONavigationController.h"
 
 @interface MessageViewController ()<RHWebServiceDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong,nonatomic) MessageObject *object;
 @property (strong,nonatomic) RHWebServiceManager *myWebService;
+- (IBAction)slideMenuAction:(id)sender;
+
 @property (strong,nonatomic) NSMutableArray *stdioMessageArray,*generalMessageArray;
 
 - (IBAction)messageSegmentAction:(UISegmentedControl *)sender;
@@ -223,4 +226,16 @@
 }
 
 
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
+}
 @end

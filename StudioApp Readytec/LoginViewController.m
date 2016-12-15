@@ -12,6 +12,7 @@
 #import "User Details.h"
 #import "MenuAdminViewController.h"
 #import "MenuUserViewController.h"
+
 @interface LoginViewController ()<RHWebServiceDelegate>
 
 @property(strong,nonatomic) RHWebServiceManager *myWebService;
@@ -59,7 +60,11 @@
     
     if(self.userNameTextfield.text.length > 0 && self.passwordTextfiled.text.length > 0)
     {
-        [self callLoginWebservice];
+        //[self callLoginWebservice];
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MenuAdminViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
+        [self.navigationController pushViewController:controller animated:YES];
+
     }
     else
     {

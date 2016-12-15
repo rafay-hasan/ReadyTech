@@ -8,6 +8,7 @@
 
 #import "UsersViewController.h"
 #import "UsersTableViewCell.h"
+#import "DEMONavigationController.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "UserInfoObject.h"
@@ -21,6 +22,7 @@
 @property (strong,nonatomic) UserInfoObject *userObject;
 @property (strong,nonatomic) NSMutableArray *userDataArray;
 
+- (IBAction)slideMenuAction:(id)sender;
 
 @end
 
@@ -188,4 +190,16 @@
 }
 
 
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
+}
 @end

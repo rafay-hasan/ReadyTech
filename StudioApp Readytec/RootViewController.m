@@ -25,7 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.direction = REFrostedViewControllerDirectionLeft;
+    self.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
+    self.liveBlur = YES;
+    self.panGestureEnabled = NO;
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

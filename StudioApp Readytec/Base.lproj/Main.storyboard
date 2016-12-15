@@ -975,7 +975,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="News" id="kfU-JW-lx9">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="YQ7-6a-YvI">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="YQ7-6a-YvI">
                             <connections>
                                 <action selector="menuAction:" destination="MG0-XB-0HS" id="JD2-D6-Qrh"/>
                             </connections>
@@ -1008,10 +1008,10 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" rowHeight="50" id="uCQ-z1-1zG" customClass="ProfileTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uCQ-z1-1zG" id="Z5E-E4-Ugv">
-                                            <frame key="frameInset" width="1000" height="50"/>
+                                            <frame key="frameInset" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XP-CC-NrE">
@@ -1133,7 +1133,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="W4q-kY-K07">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="qcI-AU-xcb"/>
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="qcI-AU-xcb">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="O1R-hS-IjU" id="uuw-QW-yMb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editButton" destination="O8P-2f-2T8" id="6nQ-Mf-8Qv"/>
@@ -1259,7 +1263,13 @@
                             <constraint firstItem="dDa-fJ-a0T" firstAttribute="top" secondItem="LAS-F9-zGo" secondAttribute="bottom" constant="11" id="wdT-9o-k5a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Users" id="Rk9-RR-KRo"/>
+                    <navigationItem key="navigationItem" title="Users" id="Rk9-RR-KRo">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="0E3-z1-pxt">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="dDl-ZP-e7O" id="nib-2a-Us7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="usertableView" destination="fwC-Gm-X00" id="qcB-zU-I0h"/>
                     </connections>
@@ -1670,10 +1680,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" rowHeight="60" id="CqN-uq-Ujk" customClass="EventsTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CqN-uq-Ujk" id="jKY-3u-47F">
-                                            <frame key="frameInset" width="1000" height="59"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventAccessoryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-fV-cu8">
@@ -1740,7 +1750,13 @@
                             <constraint firstItem="tXh-SE-k7b" firstAttribute="top" secondItem="DaE-Js-nij" secondAttribute="bottom" constant="20" id="njd-H5-3bu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="Ri4-rM-g8n"/>
+                    <navigationItem key="navigationItem" title="Events" id="Ri4-rM-g8n">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="IxZ-DB-kOG">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="MTb-II-awg" id="x0a-l0-pAy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsSegment" destination="DaE-Js-nij" id="hzc-00-bi3"/>
                         <outlet property="eventsTableview" destination="tXh-SE-k7b" id="ok0-D9-Igw"/>
@@ -1783,10 +1799,10 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ticketCell" rowHeight="90" id="lUa-fj-558" customClass="TicketsTableViewCell">
-                                        <rect key="frame" x="0.0" y="1" width="1000" height="90"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUa-fj-558" id="iXY-UM-bkM">
-                                            <frame key="frameInset" width="1000" height="90"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-XQ-knk">
@@ -1921,7 +1937,13 @@
                             <constraint firstItem="i6r-qB-PHx" firstAttribute="leading" secondItem="ZLk-C7-yEY" secondAttribute="leading" id="X6y-l1-9cE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tickets" id="wet-3T-WVu"/>
+                    <navigationItem key="navigationItem" title="Tickets" id="wet-3T-WVu">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="8Mt-7v-t2n">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="8W2-qM-A1U" id="ohC-yc-1MM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ticketTableView" destination="5D8-EG-xz3" id="izh-JT-QdB"/>
                     </connections>
@@ -1962,10 +1984,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ticketDetailsCell" rowHeight="74" id="TbP-87-j7U" customClass="TicketDetailsTableViewCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="1000" height="74"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TbP-87-j7U" id="gm1-p3-beu">
-                                            <frame key="frameInset" width="1000" height="73"/>
+                                            <frame key="frameInset" width="375" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SO-gn-55O">
@@ -2162,7 +2184,13 @@
                             <constraint firstItem="eV3-KF-ZLf" firstAttribute="top" secondItem="LOi-eP-9Hf" secondAttribute="bottom" constant="20" id="q9x-nb-k8K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Services" id="3xA-yG-QnI"/>
+                    <navigationItem key="navigationItem" title="Services" id="3xA-yG-QnI">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="q4S-wr-TmK">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="csL-1o-sLh" id="4eQ-ub-I0x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="heightOfSegmentControl" destination="Aih-aD-slx" id="5ly-Dh-2eJ"/>
                         <outlet property="heightOfServiceAddButton" destination="Ajq-xd-lP8" id="pWm-57-Ekm"/>
@@ -2287,7 +2315,13 @@
                             <constraint firstItem="HGq-OS-rHN" firstAttribute="top" secondItem="CcW-GD-RmK" secondAttribute="bottom" constant="20" id="tFK-HC-oLn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Training" id="zCf-Mo-V4G"/>
+                    <navigationItem key="navigationItem" title="Training" id="zCf-Mo-V4G">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="YBJ-CW-3aO">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="pr3-81-PJv" id="vmk-xz-zMm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="courseSegmentControl" destination="CcW-GD-RmK" id="cPL-5p-rOY"/>
                         <outlet property="courseTableview" destination="HGq-OS-rHN" id="mOE-Tj-5jP"/>
@@ -2464,7 +2498,13 @@
                             <constraint firstItem="CB5-Pr-l1c" firstAttribute="top" secondItem="kkH-ap-KxC" secondAttribute="bottom" constant="20" id="rkU-Fm-NEf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Message" id="eqD-ze-OpQ"/>
+                    <navigationItem key="navigationItem" title="Message" id="eqD-ze-OpQ">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="TGm-mO-ziQ">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="i4K-nT-Wl9" id="spF-nc-X9P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageSegmentControl" destination="kkH-ap-KxC" id="Q1K-u4-CsN"/>
                         <outlet property="messageTableview" destination="CB5-Pr-l1c" id="SJF-4u-XMX"/>
@@ -2673,7 +2713,13 @@
                             <constraint firstAttribute="trailing" secondItem="NVe-b1-fC7" secondAttribute="trailing" id="xhC-RL-qxQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Offers" id="eys-MI-0l7"/>
+                    <navigationItem key="navigationItem" title="Offers" id="eys-MI-0l7">
+                        <barButtonItem key="rightBarButtonItem" image="slideMenuIcon" id="jMb-Rc-TRV">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="MGr-Za-j58" id="eeq-x6-4Ld"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="offerTableView" destination="5VT-kT-zvl" id="otP-E4-LfW"/>
                     </connections>
@@ -2792,6 +2838,7 @@
         <image name="profileIcon" width="39" height="31"/>
         <image name="serviceAddIcon" width="76" height="76"/>
         <image name="serviceIcon" width="38" height="34"/>
+        <image name="slideMenuIcon" width="23" height="19"/>
         <image name="textFieldBgImage" width="273" height="50"/>
         <image name="ticketIcon" width="37" height="37"/>
         <image name="trainingIcon" width="37" height="34"/>

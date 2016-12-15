@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 #import "ServiceObject.h"
 #import "User Details.h"
-
+#import "DEMONavigationController.h"
 
 @interface ServicesViewController ()<RHWebServiceDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfSegmentControl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfServiceAddButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceOfTableview;
+- (IBAction)slideMenuAction:(id)sender;
 
 
 @property (strong,nonatomic) NSMutableArray *allAdminServicesArray,*myServicesArray,*allUserServicesArray,*allUserFlagArray;
@@ -477,5 +478,17 @@
     [self.serviceTableView reloadData];
 }
 - (IBAction)serviceAddButtonAction:(id)sender {
+}
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
 }
 @end

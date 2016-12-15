@@ -8,6 +8,7 @@
 
 #import "EventsViewController.h"
 #import "EventsTableViewCell.h"
+#import "DEMONavigationController.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "EventObject.h"
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *eventsSegment;
 - (IBAction)eventSegmentButtonAction:(UISegmentedControl *)sender;
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableview;
+- (IBAction)slideMenuAction:(id)sender;
 
 @end
 
@@ -208,4 +210,16 @@
 }
 
 
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
+
+}
 @end

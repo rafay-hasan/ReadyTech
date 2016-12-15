@@ -13,5 +13,4 @@
 
 - (void)showMenu;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)sender;
-
 @end

@@ -41,7 +41,7 @@
     self.newsTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     self.newsDataArray = [NSMutableArray new];
-    [self CallNewsWebservice];
+    //[self CallNewsWebservice];
 }
 
 - (void)didReceiveMemoryWarning {
