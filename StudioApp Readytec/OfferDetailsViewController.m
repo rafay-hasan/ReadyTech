@@ -54,8 +54,7 @@
 {
     if(self.object.offerImageUrlStr.length == 0)
     {
-        //self.imageViewHeight.constant = 0;
-        self.offerImageView.image = [UIImage imageNamed:@"SplashScreen"];
+        self.imageViewHeight.constant = 0;
     }
     else
     {
@@ -70,7 +69,7 @@
     self.offerEndingDateLabel.text = self.object.offerEndDate;
     
     self.offerDetailsWebView.opaque = NO;
-    self.offerDetailsWebView.backgroundColor = [UIColor redColor];
+    self.offerDetailsWebView.backgroundColor = [UIColor clearColor];
     NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#000000;'>%@",self.object.offerDetails];
     [self.offerDetailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
     self.offerDetailsWebView.delegate = self;

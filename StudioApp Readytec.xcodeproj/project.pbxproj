@@ -11,6 +11,7 @@
 		BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */; };
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
 		BB284EF01E0C2F0D00281000 /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB284EEF1E0C2F0D00281000 /* OfferDetailsViewController.m */; };
+		BB284EF31E0C53ED00281000 /* MessageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB284EF21E0C53ED00281000 /* MessageDetailsViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
 		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
@@ -101,6 +102,8 @@
 		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
 		BB284EEE1E0C2F0D00281000 /* OfferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsViewController.h; sourceTree = "<group>"; };
 		BB284EEF1E0C2F0D00281000 /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
+		BB284EF11E0C53ED00281000 /* MessageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailsViewController.h; sourceTree = "<group>"; };
+		BB284EF21E0C53ED00281000 /* MessageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailsViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */,
 				BB7526EB1DEDEDC900C89C69 /* MessageTableViewCell.h */,
 				BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */,
+				BB284EF11E0C53ED00281000 /* MessageDetailsViewController.h */,
+				BB284EF21E0C53ED00281000 /* MessageDetailsViewController.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 				BBCAF5941DD21E7D00BEA62F /* UserProfile.m in Sources */,
 				BBCAF56E1DD21E2700BEA62F /* SVIndefiniteAnimatedView.m in Sources */,
 				BBCAF5A01DD24BE100BEA62F /* NewsTableViewCell.m in Sources */,
+				BB284EF31E0C53ED00281000 /* MessageDetailsViewController.m in Sources */,
 				BBCAF58A1DD21E7D00BEA62F /* CourseObject.m in Sources */,
 				BBCAF5921DD21E7D00BEA62F /* TicketObject.m in Sources */,
 				BBCAF5911DD21E7D00BEA62F /* TicketDetailsObject.m in Sources */,
