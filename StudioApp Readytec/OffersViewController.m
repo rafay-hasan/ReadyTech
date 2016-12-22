@@ -14,6 +14,7 @@
 #import "User Details.h"
 #import "OfferObject.h"
 #import "UIImageView+AFNetworking.h"
+#import "OfferDetailsViewController.h"
 
 @interface OffersViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -47,15 +48,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"offerDetails"])
+    {
+        NSIndexPath *inexPath = [self.offerTableView indexPathForSelectedRow];
+        OfferDetailsViewController *controller = segue.destinationViewController;
+        controller.object = [self.offersArray objectAtIndex:inexPath.row];
+    }
 }
-*/
+
 
 #pragma mark table view Delegate Methods
 

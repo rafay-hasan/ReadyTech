@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OfferObject.h"
 
 @interface OfferDetailsViewController : UIViewController
+
+@property (strong,nonatomic) OfferObject *object;
 
 @end
