@@ -10,6 +10,7 @@
 		BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C951DEB4A7200A8361B /* EventsViewController.m */; };
 		BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */; };
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
+		BB284EF01E0C2F0D00281000 /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB284EEF1E0C2F0D00281000 /* OfferDetailsViewController.m */; };
 		BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53838E1DC249E000BCD253 /* LoginViewController.m */; };
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
 		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
@@ -88,6 +89,7 @@
 		BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF0DFC1DCE433C00466479 /* DEMOMenuTableViewCell.m */; };
 		BBF244841DEC9455009461D0 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF244831DEC9455009461D0 /* TrainingViewController.m */; };
 		BBF244871DEC9E17009461D0 /* TrainingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */; };
+		BBF5582A1E0AF2E000363DB7 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF558291E0AF2E000363DB7 /* EventDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		BB1965441DE204CC0088BCAF /* MenuUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuUserViewController.h; sourceTree = "<group>"; };
 		BB1965451DE204CC0088BCAF /* MenuUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuUserViewController.m; sourceTree = "<group>"; };
+		BB284EEE1E0C2F0D00281000 /* OfferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsViewController.h; sourceTree = "<group>"; };
+		BB284EEF1E0C2F0D00281000 /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
 		BB53838D1DC249E000BCD253 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB53838E1DC249E000BCD253 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		BBF244831DEC9455009461D0 /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
 		BBF244851DEC9E17009461D0 /* TrainingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTableViewCell.h; sourceTree = "<group>"; };
 		BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTableViewCell.m; sourceTree = "<group>"; };
+		BBF558281E0AF2E000363DB7 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		BBF558291E0AF2E000363DB7 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +275,8 @@
 				BB0A1C951DEB4A7200A8361B /* EventsViewController.m */,
 				BB0A1C981DEB523200A8361B /* EventsTableViewCell.h */,
 				BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */,
+				BBF558281E0AF2E000363DB7 /* EventDetailsViewController.h */,
+				BBF558291E0AF2E000363DB7 /* EventDetailsViewController.m */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -499,6 +507,8 @@
 				BBCBBB991DEF275100BBDE9F /* OffersViewController.m */,
 				BBCBBB9B1DEF276A00BBDE9F /* OfferTableViewCell.h */,
 				BBCBBB9C1DEF276A00BBDE9F /* OfferTableViewCell.m */,
+				BB284EEE1E0C2F0D00281000 /* OfferDetailsViewController.h */,
+				BB284EEF1E0C2F0D00281000 /* OfferDetailsViewController.m */,
 			);
 			name = Offers;
 			sourceTree = "<group>";
@@ -706,6 +716,7 @@
 				BBCAF5911DD21E7D00BEA62F /* TicketDetailsObject.m in Sources */,
 				BBCAF5451DD21DFB00BEA62F /* UIButton+AFNetworking.m in Sources */,
 				BBA323041DF2C3BA00D481D9 /* TicketsViewController.m in Sources */,
+				BBF5582A1E0AF2E000363DB7 /* EventDetailsViewController.m in Sources */,
 				BBCAF5471DD21DFB00BEA62F /* UIProgressView+AFNetworking.m in Sources */,
 				BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */,
 				BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */,
@@ -714,6 +725,7 @@
 				BBCBBB9A1DEF275100BBDE9F /* OffersViewController.m in Sources */,
 				BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */,
 				BBCAF58D1DD21E7D00BEA62F /* NewsObject.m in Sources */,
+				BB284EF01E0C2F0D00281000 /* OfferDetailsViewController.m in Sources */,
 				BBCAF5661DD21E2700BEA62F /* AFHTTPRequestOperationManager.m in Sources */,
 				BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */,
 				BBCAF5931DD21E7D00BEA62F /* UserInfoObject.m in Sources */,

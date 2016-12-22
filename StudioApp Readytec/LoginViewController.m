@@ -60,10 +60,10 @@
     
     if(self.userNameTextfield.text.length > 0 && self.passwordTextfiled.text.length > 0)
     {
-        //[self callLoginWebservice];
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        MenuAdminViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
-        [self.navigationController pushViewController:controller animated:YES];
+        [self callLoginWebservice];
+//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        MenuAdminViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
+//        [self.navigationController pushViewController:controller animated:YES];
 
     }
     else

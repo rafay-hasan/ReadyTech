@@ -8,8 +8,15 @@
 
 #import "DEMOMenuViewController.h"
 #import "DEMOMenuTableViewCell.h"
+#import "DEMONavigationController.h"
 #import "REFrostedViewController.h"
 #import "menuHeaderView.h"
+#import "NewsViewController.h"
+#import "EventsViewController.h"
+#import "User Details.h"
+#import "LoginViewController.h"
+#import "MenuAdminViewController.h"
+#import "MenuUserViewController.h"
 static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 
 @interface DEMOMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -19,7 +26,11 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 @property (weak, nonatomic) IBOutlet UIView *menuTableHeaderView;
+@property (strong,nonatomic) LoginViewController *loginVc;
+@property (strong,nonatomic) DEMONavigationController *demoNavigationController;
+@property (strong,nonatomic) MenuAdminViewController *menuVc;
 
+@property (strong,nonatomic) MenuUserViewController *UserMneuVc;
 @end
 
 @implementation DEMOMenuViewController
@@ -29,6 +40,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     // Do any additional setup after loading the view.
     
     self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
+    self.demoNavigationController =  [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -93,7 +105,26 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSLog(@"Controllers %@",self.navigationController.viewControllers);
+    if ([[self.menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"News"])
+    {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
+        self.demoNavigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,controller, nil];
+        
+//        if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+//            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,controller, nil];
+//        else
+//            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,controller, nil];
+        
+       // self.navigationController.navigationBarHidden = YES;
+        
+        //self.frostedViewController.contentViewController = self.navigationController;
+        self.frostedViewController.contentViewController = self.demoNavigationController;
+        
+    }
     
+
     /*
     
     if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideEvent"])

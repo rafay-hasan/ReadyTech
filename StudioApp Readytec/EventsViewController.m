@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "EventObject.h"
 #import "User Details.h"
+#import "EventDetailsViewController.h"
 
 @interface EventsViewController ()<RHWebServiceDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -206,6 +207,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EventDetailsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"eventDetails"];
+    if(self.eventsSegment.selectedSegmentIndex == 0)
+    {
+        controller.object = [self.onGoingDataArray objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        controller.object = [self.upcomingDataArray objectAtIndex:indexPath.row];
+    }
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 

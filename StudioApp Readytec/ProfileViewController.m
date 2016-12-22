@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSLog(@"Controllers %@",self.navigationController.viewControllers);
     if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
     {
         self.editButton.hidden = YES;
@@ -70,11 +70,11 @@
 {
     if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
     {
-        //[self CallAdminProfileWebservice];
+        [self CallAdminProfileWebservice];
     }
     else
     {
-        //[self CalluserProfileWebservice];
+        [self CalluserProfileWebservice];
     }
 }
 

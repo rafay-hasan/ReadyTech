@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
-#define BASE_URL_API @"http://bbs.hiredaweb.it/"
+#define BASE_URL_API @"http://app.hiredaweb.it/"
 
 
 enum {
