@@ -16,6 +16,7 @@
 		BB5D92451DE8986600F86C69 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */; };
 		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
 		BB7526ED1DEDEDC900C89C69 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */; };
+		BB8379F01E140CB90065238C /* TrainingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8379EF1E140CB90065238C /* TrainingDetailsViewController.m */; };
 		BB999F0D1DF3147F009E8A04 /* TicketDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */; };
 		BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */; };
 		BB999F131DF31E02009E8A04 /* TicketDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */; };
@@ -112,6 +113,8 @@
 		BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
 		BB7526EB1DEDEDC900C89C69 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		BB8379EE1E140CB90065238C /* TrainingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDetailsViewController.h; sourceTree = "<group>"; };
+		BB8379EF1E140CB90065238C /* TrainingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDetailsViewController.m; sourceTree = "<group>"; };
 		BB999F0B1DF3147F009E8A04 /* TicketDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsViewController.h; sourceTree = "<group>"; };
 		BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsViewController.m; sourceTree = "<group>"; };
 		BB999F0E1DF3151F009E8A04 /* TicketDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsTableViewCell.h; sourceTree = "<group>"; };
@@ -621,6 +624,8 @@
 				BBF244831DEC9455009461D0 /* TrainingViewController.m */,
 				BBF244851DEC9E17009461D0 /* TrainingTableViewCell.h */,
 				BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */,
+				BB8379EE1E140CB90065238C /* TrainingDetailsViewController.h */,
+				BB8379EF1E140CB90065238C /* TrainingDetailsViewController.m */,
 			);
 			name = Training;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				BBF244841DEC9455009461D0 /* TrainingViewController.m in Sources */,
 				BBCAF5481DD21DFB00BEA62F /* UIRefreshControl+AFNetworking.m in Sources */,
 				BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */,
+				BB8379F01E140CB90065238C /* TrainingDetailsViewController.m in Sources */,
 				BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */,
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
