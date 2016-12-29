@@ -10,4 +10,6 @@
 
 @interface DEMOMenuViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *menuTableView;
+
 @end

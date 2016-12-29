@@ -12,6 +12,7 @@
 @interface User_Details : NSObject
 
 @property (strong,nonatomic) NSString *userDetailsId,*studio_Details_ID,*userTypeId,*groupId,*profileName,*userName;
+@property (strong,nonatomic) NSArray *menuItemsArray;
 
 -(NSString *) loadXibFile : (NSString *)name;
 

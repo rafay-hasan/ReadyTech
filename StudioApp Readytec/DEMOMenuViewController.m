@@ -11,25 +11,31 @@
 #import "DEMONavigationController.h"
 #import "REFrostedViewController.h"
 #import "menuHeaderView.h"
+#import "ProfileViewController.h"
 #import "NewsViewController.h"
 #import "EventsViewController.h"
+#import "OffersViewController.h"
+#import "MessageViewController.h"
+#import "ServicesViewController.h"
+#import "TrainingViewController.h"
+#import "TicketsViewController.h"
+#import "UsersViewController.h"
 #import "User Details.h"
 #import "LoginViewController.h"
 #import "MenuAdminViewController.h"
 #import "MenuUserViewController.h"
+
+
 static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 
 @interface DEMOMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) NSArray *menuItemsArray;
+//@property (nonatomic,strong) NSArray *menuItemsArray;
 
-@property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
-@property (weak, nonatomic) IBOutlet UIView *menuTableHeaderView;
 @property (strong,nonatomic) LoginViewController *loginVc;
-@property (strong,nonatomic) DEMONavigationController *demoNavigationController;
+@property (strong,nonatomic) DEMONavigationController *navigationController;
 @property (strong,nonatomic) MenuAdminViewController *menuVc;
-
 @property (strong,nonatomic) MenuUserViewController *UserMneuVc;
 @end
 
@@ -39,8 +45,21 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
-    self.demoNavigationController =  [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+    
+//    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+//    {
+//        self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
+//    }
+//    else
+//    {
+//        self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),nil];
+//    }
+    
+    
+    self.navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+    self.loginVc = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+    self.menuVc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
+    self.UserMneuVc = [self.storyboard instantiateViewControllerWithIdentifier:@"userMenu"];
     
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -75,7 +94,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.menuItemsArray.count;
+    return [User_Details sharedInstance].menuItemsArray.count;
 }
 
 
@@ -85,8 +104,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     static NSString *MyIdentifier = @"menuCell";
     
     DEMOMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
-    cell.slideMenuItemName.text = [self.menuItemsArray objectAtIndex:indexPath.row];
-    cell.slideMenuItemImageview.image = [UIImage imageNamed:[self.menuItemsArray objectAtIndex:indexPath.row]];
+    cell.slideMenuItemName.text = [[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row];
+    cell.slideMenuItemImageview.image = [UIImage imageNamed:[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
@@ -104,177 +123,82 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    NSLog(@"Controllers %@",self.navigationController.viewControllers);
-    if ([[self.menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"News"])
+    if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"News"])
     {
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
-        self.demoNavigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,controller, nil];
-        
-//        if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-//            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,controller, nil];
-//        else
-//            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,controller, nil];
-        
-       // self.navigationController.navigationBarHidden = YES;
-        
-        //self.frostedViewController.contentViewController = self.navigationController;
-        self.frostedViewController.contentViewController = self.demoNavigationController;
-        
-    }
-    
-
-    /*
-    
-    if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideEvent"])
-    {
-        EventViewController *vc = [[EventViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"EventViewController"] bundle:nil];
-        
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideNews"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Profile"])
     {
-        NewsViewController *vc = [[NewsViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"NewsViewController"] bundle:nil];
-        
-        
+        ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideOffer"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Events"])
     {
-        OffersViewController *vc = [[OffersViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"OffersViewController"] bundle:nil];
-        
-        
+        EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideMessage"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Offers"])
     {
-        MessageViewController *vc = [[MessageViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"MessageViewController"] bundle:nil];
-        
+        OffersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"offers"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideService"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Messages"])
     {
-        ServicesViewController *vc = [[ServicesViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"ServicesViewController"] bundle:nil];
-        
+        MessageViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"message"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideCourse"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Services"])
     {
-        CourseViewController *vc = [[CourseViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"CourseViewController"] bundle:nil];
-        
-        
+        ServicesViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"services"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideProfile"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Training"])
     {
-        
+        TrainingViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"training"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-        {
-            ProfileViewController *vc = [[ProfileViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"ProfileViewController"] bundle:nil];
-            
-            
-            if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-                self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
-            else
-                self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-            
-            self.navigationController.navigationBarHidden = YES;
-            
-            self.frostedViewController.contentViewController = self.navigationController;
-        }
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-        {
-            UserProfileViewController *vc = [[UserProfileViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"UserProfileViewController"] bundle:nil];
-            
-            if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-                self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
-            else
-                self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-            
-            self.navigationController.navigationBarHidden = YES;
-            
-            self.frostedViewController.contentViewController = self.navigationController;
-        }
-        
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideUser"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Tickets"])
     {
-        UsersViewController *vc =  [[UsersViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"UsersViewController"] bundle:nil];
-        
+        TicketsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"ticket"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[self.imageItemsArray objectAtIndex:indexPath.row] isEqualToString:@"slideTicket"])
+    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Users"])
     {
-        TicketsViewController *vc =  [[TicketsViewController alloc]initWithNibName:[[User_Details sharedInstance]loadXibFile:@"TicketsViewController"] bundle:nil];
-        
+        UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.menuVc,vc, nil];
+            self.navigationController.viewControllers = @[self.loginVc,self.menuVc,controller];
         else
-            self.navigationController.viewControllers = [NSArray arrayWithObjects:self.loginVc,self.UserMneuVc,vc, nil];
-        
-        self.navigationController.navigationBarHidden = YES;
-        
-        self.frostedViewController.contentViewController = self.navigationController;
+            self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    
-    */
-    
+   
+    self.frostedViewController.contentViewController = self.navigationController;
     [self.frostedViewController hideMenuViewController];
 }
 
@@ -296,7 +220,6 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     menuHeaderView *sectionHeaderView = [self.menuTableView dequeueReusableHeaderFooterViewWithIdentifier:SectionHeaderViewIdentifier];
-    
     return sectionHeaderView;
 }
 

@@ -38,6 +38,7 @@
     self.profileName = @"";
     
     self.userName = @"";
+
     
     return self;
 }

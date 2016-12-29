@@ -12,7 +12,7 @@
 #import "User Details.h"
 #import "MenuAdminViewController.h"
 #import "MenuUserViewController.h"
-
+#import "DEMOMenuViewController.h"
 @interface LoginViewController ()<RHWebServiceDelegate>
 
 @property(strong,nonatomic) RHWebServiceManager *myWebService;
@@ -137,27 +137,39 @@
             if(![[tempDic valueForKey:@"user_details_id"] isKindOfClass:[NSNull class]])
             {
                 user.userDetailsId = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"user_details_id"]];
-                
                 user.studio_Details_ID = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"studio_details_id"]];
-                
                 user.userTypeId = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"ref_user_details_user_type_id"]];
                 user.groupId = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"user_group_id"]];
                 user.profileName = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"studio_details_name"]];
-                
                 user.userName = [NSString stringWithFormat:@"%@",[tempDic valueForKey:@"user_details_user_name"]];
+                
+                if([user.userTypeId isEqualToString:@"1"])
+                {
+                    user.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
+                }
+                else
+                {
+                    user.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),nil];
+                }
+                
+                //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                DEMOMenuViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
+                [vc.menuTableView reloadData];
+
+                
             }
             
             
             if([user.userTypeId isEqualToString:@"1"])
             {
-                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                MenuAdminViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
+               // UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                MenuAdminViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
                 [self.navigationController pushViewController:controller animated:YES];
             }
             else
             {
-                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                MenuUserViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"userMenu"];
+                //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                MenuUserViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"userMenu"];
                 [self.navigationController pushViewController:controller animated:YES];
 
             }
