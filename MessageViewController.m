@@ -68,9 +68,9 @@
         NSIndexPath *indexpath = [self.messageTableview indexPathForSelectedRow];
         MessageDetailsViewController *controller = segue.destinationViewController;
         if(self.messageSegmentControl.selectedSegmentIndex == 0)
-            controller.object = [self.generalMessageArray objectAtIndex:indexpath.row];
+            controller.object = [self.generalMessageArray objectAtIndex:indexpath.section];
         else
-            controller.object = [self.stdioMessageArray objectAtIndex:indexpath.row];
+            controller.object = [self.stdioMessageArray objectAtIndex:indexpath.section];
 
     }
 }

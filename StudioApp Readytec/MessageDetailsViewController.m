@@ -27,6 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.titleWebView.layer.masksToBounds =YES;
+    self.titleWebView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.titleWebView.layer.borderWidth = 1;
     [self loadTitleWebview];
 }
 
@@ -48,7 +51,7 @@
 -(void) loadDetailsWebview
 {
     self.detailsWebView.opaque = NO;
-    self.detailsWebView.backgroundColor = [UIColor redColor];
+    self.detailsWebView.backgroundColor = [UIColor clearColor];
     NSString *detailsWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#000000;'>%@",self.object.messageDetails];
     [self.detailsWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",detailsWebStrstr] baseURL:nil];
     self.detailsWebView.delegate = self;
@@ -61,7 +64,7 @@
 {
     
     self.titleWebView.opaque = NO;
-    self.titleWebView.backgroundColor = [UIColor redColor];
+    self.titleWebView.backgroundColor = [UIColor clearColor];
     NSString *titleWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#0733A9;'>%@",self.object.messageTitle];
     [self.titleWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",titleWebStrstr] baseURL:nil];
     self.titleWebView.delegate = self;

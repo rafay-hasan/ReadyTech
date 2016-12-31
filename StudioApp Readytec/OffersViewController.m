@@ -60,7 +60,7 @@
     {
         NSIndexPath *inexPath = [self.offerTableView indexPathForSelectedRow];
         OfferDetailsViewController *controller = segue.destinationViewController;
-        controller.object = [self.offersArray objectAtIndex:inexPath.row];
+        controller.object = [self.offersArray objectAtIndex:inexPath.section];
     }
 }
 

@@ -52,14 +52,15 @@
 
 -(void) loadDetailaView
 {
-    if(self.object.offerImageUrlStr.length == 0)
-    {
-        self.imageViewHeight.constant = 0;
-    }
-    else
-    {
-        [self.offerImageView setImageWithURL:[NSURL URLWithString:self.object.offerImageUrlStr] placeholderImage:[UIImage imageNamed:@""]];
-    }
+//    if(self.object.offerImageUrlStr.length == 0)
+//    {
+//        self.imageViewHeight.constant = 0;
+//    }
+//    else
+//    {
+//        [self.offerImageView setImageWithURL:[NSURL URLWithString:self.object.offerImageUrlStr] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+//    }
+    [self.offerImageView setImageWithURL:[NSURL URLWithString:self.object.offerImageUrlStr] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     self.offerTitleTextView.scrollEnabled = NO;
     self.offerTitleTextView.text = self.object.offerTitle;
     CGSize sizeThatFitsTextView = [self.offerTitleTextView sizeThatFits:CGSizeMake(self.offerTitleTextView.frame.size.width, MAXFLOAT)];
@@ -81,7 +82,7 @@
 {
     aWebView.scrollView.scrollEnabled = NO;
     self.offerDetailsWebViewHeight.constant = aWebView.scrollView.contentSize.height;
-    self.ScrollContainerViewHeight.constant = aWebView.frame.origin.y + aWebView.frame.size.height + 16;
+    self.ScrollContainerViewHeight.constant = aWebView.frame.origin.y + aWebView.frame.size.height + 26;
     [self.view setNeedsLayout];
     
 }
