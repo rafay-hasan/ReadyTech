@@ -9,11 +9,19 @@
 #import "UserDetailsViewController.h"
 #import "ProfileTableViewCell.h"
 #import "ProfileHeaderview.h"
+#import "EditUserViewController.h"
+#import "User Details.h"
+#import "SVProgressHUD.h"
+#import "RHWebServiceManager.h"
 
-@interface UserDetailsViewController ()
+@interface UserDetailsViewController ()<RHWebServiceDelegate>
+
+@property (strong,nonatomic) RHWebServiceManager *myWebservice;
 
 @property (weak, nonatomic) IBOutlet UITableView *userDetailsTableview;
+@property (weak, nonatomic) IBOutlet UIButton *deactivateButton;
 
+- (IBAction)deactivateButtonAction:(id)sender;
 
 @end
 
@@ -31,6 +39,26 @@
     UINib *profileHeaderNib = [UINib nibWithNibName:@"profileHeaderView" bundle:nil];
     [self.userDetailsTableview registerNib:profileHeaderNib forHeaderFooterViewReuseIdentifier:@"profileHeader"];
     self.userDetailsTableview.sectionHeaderHeight = 130.0;
+    
+    if([self.object.userAddedByAdmin isEqualToString:@"1"])
+    {
+        self.deactivateButton.hidden = NO;
+    
+        if([self.object.userActive isEqualToString:@"1"])
+        {
+            [self.deactivateButton setTitle:NSLocalizedString(@"Deactivate", Nil) forState:UIControlStateNormal];
+        }
+        else
+        {
+            [self.deactivateButton setTitle:NSLocalizedString(@"Activate", Nil) forState:UIControlStateNormal];
+            
+        }
+    }
+    else
+    {
+        self.deactivateButton.hidden = YES;
+    }
+
 
 }
 
@@ -39,15 +67,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"userEdit"])
+    {
+        EditUserViewController *vc = segue.destinationViewController;
+        vc.userObject = self.object;
+        vc.addUser = NO;
+    }
 }
-*/
+
 
 #pragma mark table view Delegate Methods
 
@@ -159,5 +194,80 @@
     return footerView;
 }
 
+
+- (IBAction)deactivateButtonAction:(id)sender
+{
+    NSString *urlStr;
+    
+    if([self.object.userActive isEqualToString:@"1"])
+    {
+        urlStr = [NSString stringWithFormat:@"%@app_studio_deactivate_user/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.object.targetUserDetailsId];
+        
+    }
+    else
+    {
+        urlStr = [NSString stringWithFormat:@"%@app_studio_activate_user/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.object.targetUserDetailsId];
+    }
+    
+    [self MakeUserActiveDeactivateWebservice:urlStr];
+}
+
+-(void) MakeUserActiveDeactivateWebservice:(NSString *)urlStr
+{
+    [SVProgressHUD show];
+    self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeUserActiveDeactivateWebService Delegate:self];
+    [self.myWebservice getDataFromWebURL:urlStr];
+    
+}
+
+-(void) dataFromWebReceivedSuccessfully:(id) responseObj
+{
+    [SVProgressHUD dismiss];
+    
+    self.view.userInteractionEnabled = YES;
+    
+    if (self.myWebservice.requestType == HTTPRequestypeUserActiveDeactivateWebService)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:NSLocalizedString(@"Successfully done.", Nil) preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            
+            [alert dismissViewControllerAnimated:YES completion:nil];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
+}
+
+-(void) dataFromWebReceiptionFailed:(NSError*) error
+{
+    [SVProgressHUD dismiss];
+    
+    self.view.userInteractionEnabled = YES;
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
 
 @end

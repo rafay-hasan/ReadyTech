@@ -31,6 +31,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(makeKeyBoardDismiss)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -216,6 +220,12 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     
+}
+
+-(void) makeKeyBoardDismiss
+{
+    [self.userNameTextfield resignFirstResponder];
+    [self.passwordTextfiled resignFirstResponder];
 }
 
 @end

@@ -14,6 +14,7 @@
 #import "UserInfoObject.h"
 #import "ProfileHeaderview.h"
 #import "ProfileTableViewCell.h"
+#import "EditUserViewController.h"
 
 @interface ProfileViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -79,15 +80,22 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"profileEdit"])
+    {
+        EditUserViewController *vc = segue.destinationViewController;
+        vc.userObject = self.profile;
+        vc.addUser = NO;
+    }
 }
-*/
+
 -(void) CalluserProfileWebservice
 {
     
@@ -293,6 +301,7 @@
 
 
 - (IBAction)editButtonAction:(id)sender {
+    
 }
 - (IBAction)slideMenuAction:(id)sender {
     

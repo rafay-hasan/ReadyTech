@@ -21,6 +21,7 @@
 		BB999F101DF3151F009E8A04 /* TicketDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */; };
 		BB999F131DF31E02009E8A04 /* TicketDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */; };
 		BB999F151DF31E2A009E8A04 /* TicketDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */; };
+		BB9A60A21E17C113003AC63D /* EditUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A60A11E17C113003AC63D /* EditUserViewController.m */; };
 		BB9B57F81DF3B81E005100A3 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9B57F71DF3B81E005100A3 /* ServicesViewController.m */; };
 		BB9B57FC1DF3B845005100A3 /* ServicesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9B57FB1DF3B845005100A3 /* ServicesTableViewCell.m */; };
 		BBA323041DF2C3BA00D481D9 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA323031DF2C3BA00D481D9 /* TicketsViewController.m */; };
@@ -122,6 +123,8 @@
 		BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketDetailsHeaderView.h; sourceTree = "<group>"; };
 		BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketDetailsHeaderView.m; sourceTree = "<group>"; };
 		BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketDetailsHeaderView.xib; sourceTree = "<group>"; };
+		BB9A60A01E17C113003AC63D /* EditUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserViewController.h; sourceTree = "<group>"; };
+		BB9A60A11E17C113003AC63D /* EditUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserViewController.m; sourceTree = "<group>"; };
 		BB9B57F61DF3B81E005100A3 /* ServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
 		BB9B57F71DF3B81E005100A3 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
 		BB9B57FA1DF3B845005100A3 /* ServicesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesTableViewCell.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				BB999F0C1DF3147F009E8A04 /* TicketDetailsViewController.m */,
 				BB999F0E1DF3151F009E8A04 /* TicketDetailsTableViewCell.h */,
 				BB999F0F1DF3151F009E8A04 /* TicketDetailsTableViewCell.m */,
+				BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */,
+				BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -348,8 +353,8 @@
 				BBA39E541DE60E41003DEE40 /* UsersTableViewCell.m */,
 				BB5D92431DE8986600F86C69 /* UserDetailsViewController.h */,
 				BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */,
-				BB999F111DF31E02009E8A04 /* TicketDetailsHeaderView.h */,
-				BB999F121DF31E02009E8A04 /* TicketDetailsHeaderView.m */,
+				BB9A60A01E17C113003AC63D /* EditUserViewController.h */,
+				BB9A60A11E17C113003AC63D /* EditUserViewController.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 				BBCAF5431DD21DFB00BEA62F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BBCAF5691DD21E2700BEA62F /* AFSecurityPolicy.m in Sources */,
 				BBCAF5421DD21DFB00BEA62F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BB9A60A21E17C113003AC63D /* EditUserViewController.m in Sources */,
 				BBA39E551DE60E41003DEE40 /* UsersTableViewCell.m in Sources */,
 				BBCAF58B1DD21E7D00BEA62F /* EventObject.m in Sources */,
 				BBEF0DF41DCE0D0F00466479 /* RootViewController.m in Sources */,
