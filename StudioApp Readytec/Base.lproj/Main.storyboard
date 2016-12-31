@@ -2180,28 +2180,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-qB-PHx">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="drd-Y3-LDW">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="118" id="bC4-ZL-dzw"/>
-                                            <constraint firstAttribute="height" constant="39" id="nLE-sc-4Po"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="drd-Y3-LDW" firstAttribute="centerY" secondItem="i6r-qB-PHx" secondAttribute="centerY" id="0Xy-cP-V44"/>
-                                    <constraint firstItem="drd-Y3-LDW" firstAttribute="centerX" secondItem="i6r-qB-PHx" secondAttribute="centerX" id="8CL-nc-MXr"/>
-                                    <constraint firstAttribute="height" constant="40" id="Kww-1d-TEg"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="5D8-EG-xz3">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5D8-EG-xz3">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ticketCell" rowHeight="90" id="lUa-fj-558" customClass="TicketsTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="359" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="359" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUa-fj-558" id="iXY-UM-bkM">
                                             <frame key="frameInset" width="359" height="90"/>
@@ -2327,16 +2311,32 @@
                                     <outlet property="delegate" destination="8W2-qM-A1U" id="BwV-7x-o7C"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-qB-PHx">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="drd-Y3-LDW">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="3P0-jC-saE"/>
+                                            <constraint firstAttribute="width" constant="118" id="pyx-FS-iYG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Bx-Nu-HPc"/>
+                                    <constraint firstItem="drd-Y3-LDW" firstAttribute="centerY" secondItem="i6r-qB-PHx" secondAttribute="centerY" id="Nce-M0-1XE"/>
+                                    <constraint firstItem="drd-Y3-LDW" firstAttribute="centerX" secondItem="i6r-qB-PHx" secondAttribute="centerX" id="zjB-6E-bHp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="61Q-1o-Nl2" firstAttribute="top" secondItem="i6r-qB-PHx" secondAttribute="bottom" id="6Kv-0n-F3u"/>
-                            <constraint firstItem="i6r-qB-PHx" firstAttribute="top" secondItem="5D8-EG-xz3" secondAttribute="bottom" constant="8" id="7p4-TW-ijq"/>
-                            <constraint firstAttribute="trailing" secondItem="i6r-qB-PHx" secondAttribute="trailing" id="Idk-ru-wz6"/>
-                            <constraint firstItem="5D8-EG-xz3" firstAttribute="leading" secondItem="ZLk-C7-yEY" secondAttribute="leading" constant="8" id="Nl8-aK-H19"/>
-                            <constraint firstItem="5D8-EG-xz3" firstAttribute="top" secondItem="0a7-7M-gZN" secondAttribute="bottom" constant="8" id="Qo2-rf-Dhm"/>
-                            <constraint firstAttribute="trailing" secondItem="5D8-EG-xz3" secondAttribute="trailing" constant="8" id="T8R-T2-XSN"/>
-                            <constraint firstItem="i6r-qB-PHx" firstAttribute="leading" secondItem="ZLk-C7-yEY" secondAttribute="leading" id="X6y-l1-9cE"/>
+                            <constraint firstAttribute="trailing" secondItem="5D8-EG-xz3" secondAttribute="trailing" constant="8" id="Owl-6D-O7c"/>
+                            <constraint firstAttribute="trailing" secondItem="i6r-qB-PHx" secondAttribute="trailing" id="TUv-7Y-w97"/>
+                            <constraint firstItem="i6r-qB-PHx" firstAttribute="leading" secondItem="ZLk-C7-yEY" secondAttribute="leading" id="VRL-Qy-MYN"/>
+                            <constraint firstItem="5D8-EG-xz3" firstAttribute="top" secondItem="0a7-7M-gZN" secondAttribute="bottom" constant="8" id="lO6-9H-nrj"/>
+                            <constraint firstItem="61Q-1o-Nl2" firstAttribute="top" secondItem="i6r-qB-PHx" secondAttribute="bottom" id="qfU-rN-fwR"/>
+                            <constraint firstItem="5D8-EG-xz3" firstAttribute="leading" secondItem="ZLk-C7-yEY" secondAttribute="leading" constant="8" id="r9c-eS-rIX"/>
+                            <constraint firstItem="i6r-qB-PHx" firstAttribute="top" secondItem="5D8-EG-xz3" secondAttribute="bottom" constant="8" id="tat-2t-fV3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tickets" id="wet-3T-WVu">

@@ -107,7 +107,7 @@
     {
         self.ticketTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        numOfSections                 =  self.ticketsArray.count;
+        numOfSections                 =  1;
         
         self.ticketTableView.backgroundView   = nil;
     }
@@ -132,7 +132,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.ticketsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -140,7 +140,7 @@
     static NSString *CellIdentifier = @"ticketCell";
     TicketsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    self.ticket = [self.ticketsArray objectAtIndex:indexPath.section];
+    self.ticket = [self.ticketsArray objectAtIndex:indexPath.row];
     
     cell.ticketIdLabel.text = self.ticket.ticketId;
     cell.statusChangeDateLabel.text = self.ticket.statusChangedDate;
@@ -160,27 +160,10 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TicketDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ticketDetails"];
-    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.section];
+    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if(section == 0)
-        return 12.0;
-    else
-        return 1.0;
-}
-
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor clearColor];
-    return headerView;
-}
-
 
 - (IBAction)slideMenuAction:(id)sender {
     

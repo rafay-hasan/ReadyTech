@@ -108,7 +108,7 @@
     {
         self.ticketDetailsTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        numOfSections                 = self.ticketDetailsArray.count;
+        numOfSections                 = 1;
         
         self.ticketDetailsTableview.backgroundView   = nil;
     }
@@ -134,7 +134,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.ticketDetailsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -142,7 +142,7 @@
     static NSString *CellIdentifier = @"ticketDetailsCell";
     TicketDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    self.replyObject = [self.ticketDetailsArray objectAtIndex:indexPath.section];
+    self.replyObject = [self.ticketDetailsArray objectAtIndex:indexPath.row];
     
     cell.replyDateLabel.text = self.replyObject.replyDate;
     cell.replyTypeLabel.text = self.replyObject.replyType;
@@ -157,24 +157,14 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if(section == 0)
-    {
-        TicketDetailsHeaderView *ticketHeaderView = [self.ticketDetailsTableview dequeueReusableHeaderFooterViewWithIdentifier:@"ticketHeader"];
-        
-        ticketHeaderView.ticketdLabel.text = self.tickerObject.ticketId;
-        ticketHeaderView.ticketCreationDateLabel.text = self.tickerObject.statusChangedDate;
-        ticketHeaderView.ticketCurrentStatusLabel.text = self.tickerObject.currentStatus;
-        ticketHeaderView.ticketDescriptionLabel.text = self.tickerObject.ticketDescription;
-        
-        return ticketHeaderView;
-
-    }
-    else
-    {
-        UIView *headerView = [[UIView alloc] init];
-        headerView.backgroundColor = [UIColor clearColor];
-        return headerView;
-    }
+    TicketDetailsHeaderView *ticketHeaderView = [self.ticketDetailsTableview dequeueReusableHeaderFooterViewWithIdentifier:@"ticketHeader"];
+    
+    ticketHeaderView.ticketdLabel.text = self.tickerObject.ticketId;
+    ticketHeaderView.ticketCreationDateLabel.text = self.tickerObject.statusChangedDate;
+    ticketHeaderView.ticketCurrentStatusLabel.text = self.tickerObject.currentStatus;
+    ticketHeaderView.ticketDescriptionLabel.text = self.tickerObject.ticketDescription;
+    
+    return ticketHeaderView;
 }
 
 
