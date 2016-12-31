@@ -14,7 +14,7 @@
 #import "User Details.h"
 #import "NewsObject.h"
 
-@interface NewsViewController ()<RHWebServiceDelegate>
+@interface NewsViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) RHWebServiceManager *myWebService;
 @property (strong,nonatomic) NSMutableArray *newsDataArray;
@@ -139,7 +139,7 @@
     {
         self.newsTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        numOfSections                 = 1;
+        numOfSections                 = self.newsDataArray.count;
         
         self.newsTableview.backgroundView   = nil;
     }
@@ -164,7 +164,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.newsDataArray.count;
+    return 1;
 }
 
 
@@ -173,11 +173,12 @@
     static NSString *MyIdentifier = @"newsCell";
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
-    NewsObject *object = [self.newsDataArray objectAtIndex:indexPath.row];
+    NewsObject *object = [self.newsDataArray objectAtIndex:indexPath.section];
     cell.newsDateLabel.text = object.newsDateTime;
     cell.newsTitleLAbel.text = object.newsTitle;
     cell.newsDescriptionLabel.attributedText = object.newsDescription;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
     
 }
@@ -188,4 +189,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+
+}
+
 @end

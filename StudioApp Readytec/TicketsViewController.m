@@ -107,7 +107,7 @@
     {
         self.ticketTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        numOfSections                 =  1;
+        numOfSections                 =  self.ticketsArray.count;
         
         self.ticketTableView.backgroundView   = nil;
     }
@@ -132,7 +132,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.ticketsArray.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -140,7 +140,7 @@
     static NSString *CellIdentifier = @"ticketCell";
     TicketsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    self.ticket = [self.ticketsArray objectAtIndex:indexPath.row];
+    self.ticket = [self.ticketsArray objectAtIndex:indexPath.section];
     
     cell.ticketIdLabel.text = self.ticket.ticketId;
     cell.statusChangeDateLabel.text = self.ticket.statusChangedDate;
@@ -160,8 +160,32 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TicketDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ticketDetails"];
-    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.row];
+    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
     
 }
 

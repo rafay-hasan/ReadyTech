@@ -75,7 +75,7 @@
     if (self.offersArray.count > 0)
     {
         self.offerTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections = 1;
+        numOfSections = self.offersArray.count;
         self.offerTableView.backgroundView   = nil;
     }
     else
@@ -99,7 +99,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.offersArray.count;
+    return 1;
 }
 
 
@@ -108,7 +108,7 @@
     static NSString *MyIdentifier = @"offerCell";
     OfferTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
-    OfferObject *object = [self.offersArray objectAtIndex:indexPath.row];
+    OfferObject *object = [self.offersArray objectAtIndex:indexPath.section];
     cell.offerTitleLabel.text = object.offerTitle;
     cell.offerDescriptionLabel.text = object.offerDetails;
     [cell.offerImageView setImageWithURL:[NSURL URLWithString:object.offerImageUrlStr] placeholderImage:[UIImage imageNamed:@"placeholder"]];
@@ -119,6 +119,30 @@
     
     return cell;
 
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
     
 }
 

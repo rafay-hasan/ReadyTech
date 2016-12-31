@@ -100,7 +100,7 @@
     if (tempArray.count > 0)
     {
         self.messageTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections                 = 1;
+        numOfSections                 = tempArray.count;
         self.messageTableview.backgroundView   = nil;
     }
     else
@@ -119,11 +119,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.messageSegmentControl.selectedSegmentIndex == 0)
-        return self.generalMessageArray.count;
-    else
-        return self.stdioMessageArray.count;
-    
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,11 +128,9 @@
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if(self.messageSegmentControl.selectedSegmentIndex == 0)
-        self.object = [self.generalMessageArray objectAtIndex:indexPath.row];
+        self.object = [self.generalMessageArray objectAtIndex:indexPath.section];
     else
-        self.object = [self.stdioMessageArray objectAtIndex:indexPath.row];
-    
-    
+        self.object = [self.stdioMessageArray objectAtIndex:indexPath.section];
     
     cell.messageDateLabel.text = self.object.messageDate;
     cell.messageTimeLabel.text = self.object.messageTime;
@@ -147,6 +141,31 @@
     
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+    
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
