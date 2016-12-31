@@ -153,27 +153,28 @@
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 90.0;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-//{
-//    return 1.00;
-//}
-
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    TicketDetailsHeaderView *ticketHeaderView = [self.ticketDetailsTableview dequeueReusableHeaderFooterViewWithIdentifier:@"ticketHeader"];
-    
-    ticketHeaderView.ticketdLabel.text = self.tickerObject.ticketId;
-    ticketHeaderView.ticketCreationDateLabel.text = self.tickerObject.statusChangedDate;
-    ticketHeaderView.ticketCurrentStatusLabel.text = self.tickerObject.currentStatus;
-    ticketHeaderView.ticketDescriptionLabel.text = self.tickerObject.ticketDescription;
-    
-    return ticketHeaderView;
+    if(section == 0)
+    {
+        TicketDetailsHeaderView *ticketHeaderView = [self.ticketDetailsTableview dequeueReusableHeaderFooterViewWithIdentifier:@"ticketHeader"];
+        
+        ticketHeaderView.ticketdLabel.text = self.tickerObject.ticketId;
+        ticketHeaderView.ticketCreationDateLabel.text = self.tickerObject.statusChangedDate;
+        ticketHeaderView.ticketCurrentStatusLabel.text = self.tickerObject.currentStatus;
+        ticketHeaderView.ticketDescriptionLabel.text = self.tickerObject.ticketDescription;
+        
+        return ticketHeaderView;
+
+    }
+    else
+    {
+        UIView *headerView = [[UIView alloc] init];
+        headerView.backgroundColor = [UIColor clearColor];
+        return headerView;
+    }
 }
 
 

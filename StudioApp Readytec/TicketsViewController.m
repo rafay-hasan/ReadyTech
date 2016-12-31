@@ -35,6 +35,8 @@
     
     self.navigationController.navigationBarHidden = NO;
     
+    self.ticketTableView.clipsToBounds = NO;
+    self.ticketTableView.layer.masksToBounds = NO;
     self.ticketTableView.estimatedRowHeight = 80;
     self.ticketTableView.rowHeight = UITableViewAutomaticDimension;
     self.ticketTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -105,7 +107,7 @@
     {
         self.ticketTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        numOfSections                 = 1;
+        numOfSections                 =  self.ticketsArray.count;
         
         self.ticketTableView.backgroundView   = nil;
     }
@@ -130,7 +132,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.ticketsArray.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -138,7 +140,7 @@
     static NSString *CellIdentifier = @"ticketCell";
     TicketsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    self.ticket = [self.ticketsArray objectAtIndex:indexPath.row];
+    self.ticket = [self.ticketsArray objectAtIndex:indexPath.section];
     
     cell.ticketIdLabel.text = self.ticket.ticketId;
     cell.statusChangeDateLabel.text = self.ticket.statusChangedDate;
@@ -147,6 +149,7 @@
     cell.ticketCreationDateLabel.text = self.ticket.ticketCreationDate;
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
     
     return cell;
 }
@@ -157,9 +160,25 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TicketDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ticketDetails"];
-    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.row];
+    vc.tickerObject = [self.ticketsArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+        return 12.0;
+    else
+        return 1.0;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
 }
 
 
