@@ -168,7 +168,7 @@
     if (tempArray.count > 0)
     {
         self.courseTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections = 1;
+        numOfSections = tempArray.count;
         self.courseTableview.backgroundView   = nil;
     }
     else
@@ -186,10 +186,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.courseSegmentControl.selectedSegmentIndex == 0)
-        return self.onGoingCoursedataArray.count;
-    else
-        return self.upComingCoursedataArray.count;
+    return 1;
     
 }
 
@@ -200,9 +197,9 @@
     TrainingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
     if(self.courseSegmentControl.selectedSegmentIndex == 0)
-        self.object = [self.onGoingCoursedataArray objectAtIndex:indexPath.row];
+        self.object = [self.onGoingCoursedataArray objectAtIndex:indexPath.section];
     else
-        self.object = [self.upComingCoursedataArray objectAtIndex:indexPath.row];
+        self.object = [self.upComingCoursedataArray objectAtIndex:indexPath.section];
 
     cell.trainingTypeLabel.text = self.object.courseType;
     cell.trainingTitleLabel.text = self.object.courseTitle;
@@ -231,6 +228,31 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+    
+}
+
 
 
 

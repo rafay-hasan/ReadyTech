@@ -2732,7 +2732,7 @@
         <!--Training-->
         <scene sceneID="WIV-M0-LAk">
             <objects>
-                <viewController storyboardIdentifier="training" id="pr3-81-PJv" customClass="TrainingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="training" automaticallyAdjustsScrollViewInsets="NO" id="pr3-81-PJv" customClass="TrainingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ii-hW-g5t"/>
                         <viewControllerLayoutGuide type="bottom" id="yh2-sf-EMm"/>
@@ -2741,17 +2741,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wh6-Q6-kkn">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dia-Su-hc2"/>
-                                </subviews>
-                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="762-33-2gf"/>
-                                    <constraint firstItem="dia-Su-hc2" firstAttribute="centerY" secondItem="Wh6-Q6-kkn" secondAttribute="centerY" id="DeF-85-msO"/>
-                                    <constraint firstItem="dia-Su-hc2" firstAttribute="centerX" secondItem="Wh6-Q6-kkn" secondAttribute="centerX" id="Gz6-Zr-3n2"/>
-                                </constraints>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CcW-GD-RmK">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="ipx-Ft-GgW"/>
@@ -2765,14 +2754,14 @@
                                     <action selector="courseSegmentButtonAction:" destination="pr3-81-PJv" eventType="valueChanged" id="7hb-jr-oFI"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HGq-OS-rHN">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HGq-OS-rHN">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="70" id="bhZ-pC-b4p" customClass="TrainingTableViewCell">
-                                        <rect key="frame" x="0.0" y="1" width="1000" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="70" id="bhZ-pC-b4p" customClass="TrainingTableViewCell">
+                                        <rect key="frame" x="0.0" y="56" width="359" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bhZ-pC-b4p" id="lFr-i0-OEM">
-                                            <frame key="frameInset" width="1000" height="69.5"/>
+                                            <frame key="frameInset" width="359" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-XR-DGz">
@@ -2824,20 +2813,34 @@
                                     <outlet property="delegate" destination="pr3-81-PJv" id="qaD-SJ-G2p"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wh6-Q6-kkn">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dia-Su-hc2">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="0Bh-bK-aw2"/>
+                                            <constraint firstAttribute="width" constant="118" id="HBL-EC-p3R"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dia-Su-hc2" firstAttribute="centerY" secondItem="Wh6-Q6-kkn" secondAttribute="centerY" id="36B-AG-1u9"/>
+                                    <constraint firstAttribute="height" constant="40" id="4iw-Rb-FwZ"/>
+                                    <constraint firstItem="dia-Su-hc2" firstAttribute="centerX" secondItem="Wh6-Q6-kkn" secondAttribute="centerX" id="zaX-gL-gEX"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.92156862745098034" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wh6-Q6-kkn" firstAttribute="top" secondItem="HGq-OS-rHN" secondAttribute="bottom" id="9XF-OI-HXF"/>
-                            <constraint firstItem="Wh6-Q6-kkn" firstAttribute="leading" secondItem="uWG-RJ-lMX" secondAttribute="leading" id="GbB-dZ-mZ0"/>
+                            <constraint firstItem="HGq-OS-rHN" firstAttribute="top" secondItem="CcW-GD-RmK" secondAttribute="bottom" constant="8" id="Do6-lo-vOu"/>
                             <constraint firstItem="CcW-GD-RmK" firstAttribute="top" secondItem="2ii-hW-g5t" secondAttribute="bottom" constant="20" id="M0n-Lw-90j"/>
-                            <constraint firstItem="HGq-OS-rHN" firstAttribute="top" secondItem="CcW-GD-RmK" secondAttribute="bottom" constant="20" id="RUe-Zh-HMn"/>
-                            <constraint firstAttribute="trailing" secondItem="Wh6-Q6-kkn" secondAttribute="trailing" id="U6Q-VF-33f"/>
-                            <constraint firstAttribute="trailing" secondItem="HGq-OS-rHN" secondAttribute="trailing" id="bmP-5Y-G14"/>
+                            <constraint firstItem="Wh6-Q6-kkn" firstAttribute="top" secondItem="HGq-OS-rHN" secondAttribute="bottom" constant="8" id="Min-td-t4n"/>
                             <constraint firstItem="CcW-GD-RmK" firstAttribute="centerX" secondItem="uWG-RJ-lMX" secondAttribute="centerX" id="eqs-G4-Tdl"/>
-                            <constraint firstItem="yh2-sf-EMm" firstAttribute="top" secondItem="Wh6-Q6-kkn" secondAttribute="bottom" id="jFM-jd-rXs"/>
-                            <constraint firstItem="HGq-OS-rHN" firstAttribute="leading" secondItem="uWG-RJ-lMX" secondAttribute="leading" id="jOQ-tJ-N9B"/>
-                            <constraint firstItem="Wh6-Q6-kkn" firstAttribute="top" secondItem="HGq-OS-rHN" secondAttribute="bottom" id="oxp-nZ-VoZ"/>
-                            <constraint firstItem="HGq-OS-rHN" firstAttribute="top" secondItem="CcW-GD-RmK" secondAttribute="bottom" constant="20" id="tFK-HC-oLn"/>
+                            <constraint firstItem="Wh6-Q6-kkn" firstAttribute="leading" secondItem="uWG-RJ-lMX" secondAttribute="leading" id="hny-h9-u2v"/>
+                            <constraint firstAttribute="trailing" secondItem="HGq-OS-rHN" secondAttribute="trailing" constant="8" id="iro-DP-BYX"/>
+                            <constraint firstItem="HGq-OS-rHN" firstAttribute="leading" secondItem="uWG-RJ-lMX" secondAttribute="leading" constant="8" id="pBx-vT-pjU"/>
+                            <constraint firstItem="yh2-sf-EMm" firstAttribute="top" secondItem="Wh6-Q6-kkn" secondAttribute="bottom" id="wZl-Ks-mT6"/>
+                            <constraint firstAttribute="trailing" secondItem="Wh6-Q6-kkn" secondAttribute="trailing" id="xog-Qu-dFu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Training" id="zCf-Mo-V4G">
@@ -2854,7 +2857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWG-7g-rjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8622" y="890"/>
+            <point key="canvasLocation" x="8864.7999999999993" y="975.56221889055485"/>
         </scene>
         <!--Training Details View Controller-->
         <scene sceneID="9JQ-oj-9ep">
@@ -2900,7 +2903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXS-e8-pcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9528.7999999999993" y="890.10494752623697"/>
+            <point key="canvasLocation" x="9665" y="938"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BRe-vV-gXA">
@@ -2918,7 +2921,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvu-DZ-LIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10220" y="930"/>
+            <point key="canvasLocation" x="10353" y="946"/>
         </scene>
         <!--Message-->
         <scene sceneID="CXP-WR-hnm">
@@ -3213,7 +3216,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvx-5Y-ArS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8009" y="913"/>
+            <point key="canvasLocation" x="7953" y="976"/>
         </scene>
         <!--Offers-->
         <scene sceneID="A5j-yO-xR1">
