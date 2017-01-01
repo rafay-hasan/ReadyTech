@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB04BD581E1930D800B85881 /* UserServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04BD571E1930D800B85881 /* UserServicesViewController.m */; };
 		BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C951DEB4A7200A8361B /* EventsViewController.m */; };
 		BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */; };
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
@@ -96,6 +97,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB04BD561E1930D800B85881 /* UserServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserServicesViewController.h; sourceTree = "<group>"; };
+		BB04BD571E1930D800B85881 /* UserServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserServicesViewController.m; sourceTree = "<group>"; };
 		BB0A1C941DEB4A7200A8361B /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		BB0A1C951DEB4A7200A8361B /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		BB0A1C981DEB523200A8361B /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
@@ -355,6 +358,8 @@
 				BB5D92441DE8986600F86C69 /* UserDetailsViewController.m */,
 				BB9A60A01E17C113003AC63D /* EditUserViewController.h */,
 				BB9A60A11E17C113003AC63D /* EditUserViewController.m */,
+				BB04BD561E1930D800B85881 /* UserServicesViewController.h */,
+				BB04BD571E1930D800B85881 /* UserServicesViewController.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				BBC261EE1DD4EC950033B4A6 /* menuHeaderView.m in Sources */,
 				BB8379F01E140CB90065238C /* TrainingDetailsViewController.m in Sources */,
 				BBCAF59D1DD2432F00BEA62F /* ProfileViewController.m in Sources */,
+				BB04BD581E1930D800B85881 /* UserServicesViewController.m in Sources */,
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
 				BBCAF58F1DD21E7D00BEA62F /* ServiceDetailsObject.m in Sources */,

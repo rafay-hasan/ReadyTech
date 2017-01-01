@@ -13,6 +13,7 @@
 #import "User Details.h"
 #import "SVProgressHUD.h"
 #import "RHWebServiceManager.h"
+#import "UserServicesViewController.h"
 
 @interface UserDetailsViewController ()<RHWebServiceDelegate>
 
@@ -80,6 +81,11 @@
         EditUserViewController *vc = segue.destinationViewController;
         vc.userObject = self.object;
         vc.addUser = NO;
+    }
+    else if ([segue.identifier isEqualToString:@"userService"])
+    {
+        UserServicesViewController *vc = segue.destinationViewController;
+        vc.userObject = self.object;
     }
 }
 
