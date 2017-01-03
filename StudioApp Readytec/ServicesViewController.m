@@ -175,6 +175,7 @@
     {
         [self.myServicesArray addObjectsFromArray:(NSArray *)responseObj];
         [self.serviceTableView reloadData];
+        [self CallUserAllServiceWebservice];
     }
     else if (self.myWebservice.requestType == HTTPRequestypeUserAllWebservice)
     {
@@ -217,7 +218,7 @@
                 
                 [alert dismissViewControllerAnimated:YES completion:nil];
                 
-                //self.serviceSegmentControl.selectedSegmentIndex = 0;
+                self.mySegmentControl.selectedSegmentIndex = 0;
                 
                 [self CallMyServicesWebservices];
             }];
@@ -352,35 +353,27 @@
         if(self.mySegmentControl.selectedSegmentIndex == 0)
         {
             self.object = [self.myServicesArray objectAtIndex:indexPath.row];
+            [cell.serviceAccessoryButton setImage:nil forState:UIControlStateNormal];
             [cell.serviceAccessoryButton setTitle:self.object.totalUpdateCount forState:UIControlStateNormal];
+            [cell.serviceAccessoryButton setBackgroundColor:[UIColor colorWithRed:8.0/255.0 green:30.0/255.0 blue:152.0/255.0 alpha:1]];
+            cell.serviceAccessoryButton.clipsToBounds = YES;
+            cell.serviceAccessoryButton.layer.cornerRadius = 20.0;
             
         }
         else
         {
             self.object = [self.allUserServicesArray objectAtIndex:indexPath.row];
             cell.serviceAccessoryButton.backgroundColor = [UIColor whiteColor];
+            [cell.serviceAccessoryButton setTitle:@"" forState:UIControlStateNormal];
             
             if([[self.allUserFlagArray objectAtIndex:indexPath.row] isEqualToString:@"1"])
                 [cell.serviceAccessoryButton setImage:[UIImage imageNamed:@"serviceAdd"] forState:UIControlStateNormal];
             else
                 [cell.serviceAccessoryButton setImage:[UIImage imageNamed:@"serviceRemove"] forState:UIControlStateNormal];
             
-//            cell.totalUpdateLabel.hidden = YES;serviceRemove
-//            
-//            cell.addremoveView.hidden = NO;
-//            
-//            cell.addRemoveImageVew.hidden = NO;
-//            
-//            cell.addRemoveButton.hidden = NO;
-//            
-//            if([[self.allUserFlagArray objectAtIndex:indexPath.row] isEqualToString:@"1"])
-//                cell.addRemoveImageVew.image = [UIImage imageNamed:@"serviceAdd"];
-//            else
-//                cell.addRemoveImageVew.image = [UIImage imageNamed:@"serviceRemove"];
-//            
-//            cell.addRemoveButton.tag = 1000 + indexPath.row;
-//            
-//            [cell.addRemoveButton addTarget:self action:@selector(serviceAddRemoveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            cell.serviceAccessoryButton.tag = 1000 + indexPath.row;
+            [cell.serviceAccessoryButton addTarget:self action:@selector(serviceAddRemoveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            
                 if(self.mySegmentControl.selectedSegmentIndex == 1)
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 else
@@ -444,20 +437,27 @@
         }
         else
         {
-//            if(self.serviceSegmentControl.selectedSegmentIndex == 0)
-//            {
-//                [self CallMyServicesWebservices];
-//            }
-//            else
-//            {
-//                [self CallUserAllServiceWebservice];
-//            }
+            if(self.mySegmentControl.selectedSegmentIndex == 0)
+            {
+                [self CallMyServicesWebservices];
+            }
+            else
+            {
+                [self CallUserAllServiceWebservice];
+            }
         }
         
     }
+}
+
+-(void) serviceAddRemoveButtonAction:(UIButton *)sender
+{
+    if([[self.allUserFlagArray objectAtIndex:sender.tag - 1000] isEqualToString:@"1"])
+        [self.allUserFlagArray replaceObjectAtIndex:sender.tag - 1000 withObject:@"0"];
+    else
+        [self.allUserFlagArray replaceObjectAtIndex:sender.tag - 1000 withObject:@"1"];
     
-    
-    
+    [self.serviceTableView reloadData];
 }
 
 
@@ -478,6 +478,40 @@
     [self.serviceTableView reloadData];
 }
 - (IBAction)serviceAddButtonAction:(id)sender {
+    
+    NSInteger totalSelected = 0;
+    NSString *allServiceId = [NSString new];
+    
+    for(NSInteger i=0; i< self.allUserFlagArray.count; i++)
+    {
+        if([[self.allUserFlagArray objectAtIndex:i] isEqualToString:@"1"])
+        {
+            self.object = [self.allUserServicesArray objectAtIndex:i];
+            
+            if(totalSelected == 0)
+                allServiceId = self.object.serviceId;
+            else
+                allServiceId = [NSString stringWithFormat:@"%@,%@",allServiceId,self.object.serviceId];
+            
+            totalSelected = totalSelected + 1;
+            
+        }
+    }
+    
+    [self.myServicesArray removeAllObjects];
+    [self.allUserServicesArray removeAllObjects];
+    
+    [SVProgressHUD show];
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)totalSelected];
+    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:allServiceId,@"selected_services_id", nil];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"%@app_studio_add_users_services/%@/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].userDetailsId,str];
+    
+    self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeAddRemoveService Delegate:self];
+    
+    [self.myWebservice getPostDataFromWebURLWithUrlString:urlStr dictionaryData:dic];
+
 }
 - (IBAction)slideMenuAction:(id)sender {
     
