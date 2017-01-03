@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseObject.h"
 
 @interface TrainingDetailsViewController : UIViewController
+
+@property (strong,nonatomic) CourseObject *object;
 
 @end

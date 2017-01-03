@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BB04BD581E1930D800B85881 /* UserServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04BD571E1930D800B85881 /* UserServicesViewController.m */; };
+		BB04BD5B1E19538300B85881 /* TrainingDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04BD5A1E19538300B85881 /* TrainingDetailsHeaderView.m */; };
+		BB04BD5D1E1953A800B85881 /* TrainingDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04BD5C1E1953A800B85881 /* TrainingDetailsHeaderView.xib */; };
+		BB04BD601E1959B000B85881 /* TrainingDetailsFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04BD5F1E1959B000B85881 /* TrainingDetailsFooterView.m */; };
+		BB04BD621E1959CE00B85881 /* TrainingDetailsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB04BD611E1959CE00B85881 /* TrainingDetailsFooterView.xib */; };
+		BB04BD651E196A5000B85881 /* TrainingDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04BD641E196A5000B85881 /* TrainingDetailsTableViewCell.m */; };
 		BB0A1C961DEB4A7200A8361B /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C951DEB4A7200A8361B /* EventsViewController.m */; };
 		BB0A1C9A1DEB523200A8361B /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A1C991DEB523200A8361B /* EventsTableViewCell.m */; };
 		BB1965461DE204CC0088BCAF /* MenuUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1965451DE204CC0088BCAF /* MenuUserViewController.m */; };
@@ -99,6 +104,14 @@
 /* Begin PBXFileReference section */
 		BB04BD561E1930D800B85881 /* UserServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserServicesViewController.h; sourceTree = "<group>"; };
 		BB04BD571E1930D800B85881 /* UserServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserServicesViewController.m; sourceTree = "<group>"; };
+		BB04BD591E19538300B85881 /* TrainingDetailsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDetailsHeaderView.h; sourceTree = "<group>"; };
+		BB04BD5A1E19538300B85881 /* TrainingDetailsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDetailsHeaderView.m; sourceTree = "<group>"; };
+		BB04BD5C1E1953A800B85881 /* TrainingDetailsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainingDetailsHeaderView.xib; sourceTree = "<group>"; };
+		BB04BD5E1E1959B000B85881 /* TrainingDetailsFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDetailsFooterView.h; sourceTree = "<group>"; };
+		BB04BD5F1E1959B000B85881 /* TrainingDetailsFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDetailsFooterView.m; sourceTree = "<group>"; };
+		BB04BD611E1959CE00B85881 /* TrainingDetailsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainingDetailsFooterView.xib; sourceTree = "<group>"; };
+		BB04BD631E196A5000B85881 /* TrainingDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDetailsTableViewCell.h; sourceTree = "<group>"; };
+		BB04BD641E196A5000B85881 /* TrainingDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDetailsTableViewCell.m; sourceTree = "<group>"; };
 		BB0A1C941DEB4A7200A8361B /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		BB0A1C951DEB4A7200A8361B /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		BB0A1C981DEB523200A8361B /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
@@ -580,6 +593,8 @@
 				BBC261EF1DD4ECB60033B4A6 /* View.xib */,
 				BBA4FAAB1DE1931900630913 /* profileHeaderView.xib */,
 				BB999F141DF31E2A009E8A04 /* TicketDetailsHeaderView.xib */,
+				BB04BD5C1E1953A800B85881 /* TrainingDetailsHeaderView.xib */,
+				BB04BD611E1959CE00B85881 /* TrainingDetailsFooterView.xib */,
 				BBD16BC81DBCFD3B00E1427F /* Assets.xcassets */,
 				BBD16BCA1DBCFD3B00E1427F /* LaunchScreen.storyboard */,
 				BBD16BCD1DBCFD3B00E1427F /* Info.plist */,
@@ -636,6 +651,12 @@
 				BBF244861DEC9E17009461D0 /* TrainingTableViewCell.m */,
 				BB8379EE1E140CB90065238C /* TrainingDetailsViewController.h */,
 				BB8379EF1E140CB90065238C /* TrainingDetailsViewController.m */,
+				BB04BD631E196A5000B85881 /* TrainingDetailsTableViewCell.h */,
+				BB04BD641E196A5000B85881 /* TrainingDetailsTableViewCell.m */,
+				BB04BD591E19538300B85881 /* TrainingDetailsHeaderView.h */,
+				BB04BD5A1E19538300B85881 /* TrainingDetailsHeaderView.m */,
+				BB04BD5E1E1959B000B85881 /* TrainingDetailsFooterView.h */,
+				BB04BD5F1E1959B000B85881 /* TrainingDetailsFooterView.m */,
 			);
 			name = Training;
 			sourceTree = "<group>";
@@ -702,7 +723,9 @@
 				BB999F151DF31E2A009E8A04 /* TicketDetailsHeaderView.xib in Resources */,
 				BBC261F01DD4ECB60033B4A6 /* View.xib in Resources */,
 				BBD16BC91DBCFD3B00E1427F /* Assets.xcassets in Resources */,
+				BB04BD5D1E1953A800B85881 /* TrainingDetailsHeaderView.xib in Resources */,
 				BBA4FAAC1DE1931900630913 /* profileHeaderView.xib in Resources */,
+				BB04BD621E1959CE00B85881 /* TrainingDetailsFooterView.xib in Resources */,
 				BBD16BC41DBCFD3B00E1427F /* Main.storyboard in Resources */,
 				BBCAF56F1DD21E2700BEA62F /* SVProgressHUD.bundle in Resources */,
 			);
@@ -742,6 +765,7 @@
 				BBF5582A1E0AF2E000363DB7 /* EventDetailsViewController.m in Sources */,
 				BBCAF5471DD21DFB00BEA62F /* UIProgressView+AFNetworking.m in Sources */,
 				BBD16BC11DBCFD3B00E1427F /* ViewController.m in Sources */,
+				BB04BD651E196A5000B85881 /* TrainingDetailsTableViewCell.m in Sources */,
 				BBD16BBE1DBCFD3B00E1427F /* AppDelegate.m in Sources */,
 				BBCAF56A1DD21E2700BEA62F /* AFURLConnectionOperation.m in Sources */,
 				BBCAF5731DD21E4500BEA62F /* RHWebServiceManager.m in Sources */,
@@ -759,6 +783,7 @@
 				BBEF0DF11DCE0C5100466479 /* UIViewController+REFrostedViewController.m in Sources */,
 				BBEF0DEF1DCE0C5100466479 /* UIImage+REFrostedViewController.m in Sources */,
 				BBCAF5461DD21DFB00BEA62F /* UIImageView+AFNetworking.m in Sources */,
+				BB04BD5B1E19538300B85881 /* TrainingDetailsHeaderView.m in Sources */,
 				BBC261E81DD4E3B10033B4A6 /* DemoMenuHeaderTableViewCell.m in Sources */,
 				BB53838F1DC249E000BCD253 /* LoginViewController.m in Sources */,
 				BBCAF56D1DD21E2700BEA62F /* AFURLSessionManager.m in Sources */,
@@ -792,6 +817,7 @@
 				BBCAF5491DD21DFB00BEA62F /* UIWebView+AFNetworking.m in Sources */,
 				BBC8FAEC1DE171E800376F07 /* ProfileTableViewCell.m in Sources */,
 				BB7526ED1DEDEDC900C89C69 /* MessageTableViewCell.m in Sources */,
+				BB04BD601E1959B000B85881 /* TrainingDetailsFooterView.m in Sources */,
 				BBCBBB9D1DEF276A00BBDE9F /* OfferTableViewCell.m in Sources */,
 				BBEF0DFD1DCE433C00466479 /* DEMOMenuTableViewCell.m in Sources */,
 				BBEF0DEE1DCE0C5100466479 /* REFrostedViewController.m in Sources */,

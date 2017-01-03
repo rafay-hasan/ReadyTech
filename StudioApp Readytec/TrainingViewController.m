@@ -13,6 +13,7 @@
 #import "User Details.h"
 #import "TrainingTableViewCell.h"
 #import "DEMONavigationController.h"
+#import "TrainingDetailsViewController.h"
 
 @interface TrainingViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -55,15 +56,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"trainingDetails"])
+    {
+        NSIndexPath *index = [self.courseTableview indexPathForSelectedRow];
+        
+        if(self.courseSegmentControl.selectedSegmentIndex == 0)
+            self.object = [self.onGoingCoursedataArray objectAtIndex:index.section];
+        else
+            self.object = [self.upComingCoursedataArray objectAtIndex:index.section];
+        
+        TrainingDetailsViewController *vc = segue.destinationViewController;
+        vc.object = self.object;
+    }
 }
-*/
+
 
 - (IBAction)courseSegmentButtonAction:(UISegmentedControl *)sender {
     
