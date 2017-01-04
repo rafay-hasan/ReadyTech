@@ -13,6 +13,7 @@
 #import "ServiceDetailsObject.h"
 #import "ServiceItemTableViewCell.h"
 #import "ServiceItemHeaderView.h"
+#import "ServiceDetailsViewController.h"
 
 @interface ServiceItemsViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -54,19 +55,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"detaails"])
+    {
+        NSIndexPath *indexPath = [self.serviceItemTableView indexPathForSelectedRow];
+        ServiceDetailsViewController *vc = segue.destinationViewController;
+        vc.detailsObject = [self.serviceDetailsArray objectAtIndex:indexPath.row];
+    }
 }
-*/
+
 
 #pragma mark Webservice Method Call
-
-
 
 -(void) CallServiceDetailsWebService
 {

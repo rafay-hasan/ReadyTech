@@ -24,6 +24,8 @@
 		BB7351D21E1D484A000EA8A0 /* ServiceItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7351D11E1D484A000EA8A0 /* ServiceItemTableViewCell.m */; };
 		BB7351D41E1D4CE0000EA8A0 /* ServiceItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7351D31E1D4CE0000EA8A0 /* ServiceItemHeaderView.xib */; };
 		BB7351D71E1D4D6D000EA8A0 /* ServiceItemHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7351D61E1D4D6D000EA8A0 /* ServiceItemHeaderView.m */; };
+		BB7351DA1E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7351D91E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.m */; };
+		BB7351DD1E1D61F0000EA8A0 /* ServiceDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7351DC1E1D61F0000EA8A0 /* ServiceDetailsViewController.m */; };
 		BB7526EA1DEDE1EA00C89C69 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */; };
 		BB7526ED1DEDEDC900C89C69 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7526EC1DEDEDC900C89C69 /* MessageTableViewCell.m */; };
 		BB8379F01E140CB90065238C /* TrainingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8379EF1E140CB90065238C /* TrainingDetailsViewController.m */; };
@@ -137,6 +139,10 @@
 		BB7351D31E1D4CE0000EA8A0 /* ServiceItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceItemHeaderView.xib; sourceTree = "<group>"; };
 		BB7351D51E1D4D6D000EA8A0 /* ServiceItemHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceItemHeaderView.h; sourceTree = "<group>"; };
 		BB7351D61E1D4D6D000EA8A0 /* ServiceItemHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceItemHeaderView.m; sourceTree = "<group>"; };
+		BB7351D81E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceDetailsTableViewCell.h; sourceTree = "<group>"; };
+		BB7351D91E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceDetailsTableViewCell.m; sourceTree = "<group>"; };
+		BB7351DB1E1D61F0000EA8A0 /* ServiceDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceDetailsViewController.h; sourceTree = "<group>"; };
+		BB7351DC1E1D61F0000EA8A0 /* ServiceDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceDetailsViewController.m; sourceTree = "<group>"; };
 		BB7526E81DEDE1EA00C89C69 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = ../MessageViewController.h; sourceTree = "<group>"; };
 		BB7526E91DEDE1EA00C89C69 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
 		BB7526EB1DEDEDC900C89C69 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -356,6 +362,10 @@
 				BB7351D11E1D484A000EA8A0 /* ServiceItemTableViewCell.m */,
 				BB7351D51E1D4D6D000EA8A0 /* ServiceItemHeaderView.h */,
 				BB7351D61E1D4D6D000EA8A0 /* ServiceItemHeaderView.m */,
+				BB7351DB1E1D61F0000EA8A0 /* ServiceDetailsViewController.h */,
+				BB7351DC1E1D61F0000EA8A0 /* ServiceDetailsViewController.m */,
+				BB7351D81E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.h */,
+				BB7351D91E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -772,6 +782,7 @@
 				BBCAF56C1DD21E2700BEA62F /* AFURLResponseSerialization.m in Sources */,
 				BBCAF58E1DD21E7D00BEA62F /* OfferObject.m in Sources */,
 				BBCAF58F1DD21E7D00BEA62F /* ServiceDetailsObject.m in Sources */,
+				BB7351DD1E1D61F0000EA8A0 /* ServiceDetailsViewController.m in Sources */,
 				BBA39E521DE60B6C003DEE40 /* UsersViewController.m in Sources */,
 				BBCAF5701DD21E2700BEA62F /* SVProgressHUD.m in Sources */,
 				BBCAF5941DD21E7D00BEA62F /* UserProfile.m in Sources */,
@@ -796,6 +807,7 @@
 				BB284EF01E0C2F0D00281000 /* OfferDetailsViewController.m in Sources */,
 				BBCAF5661DD21E2700BEA62F /* AFHTTPRequestOperationManager.m in Sources */,
 				BBA4FAAA1DE192E800630913 /* ProfileHeaderview.m in Sources */,
+				BB7351DA1E1D5A70000EA8A0 /* ServiceDetailsTableViewCell.m in Sources */,
 				BBCAF5931DD21E7D00BEA62F /* UserInfoObject.m in Sources */,
 				BBCAF5901DD21E7D00BEA62F /* ServiceObject.m in Sources */,
 				BBCAF5441DD21DFB00BEA62F /* UIAlertView+AFNetworking.m in Sources */,
