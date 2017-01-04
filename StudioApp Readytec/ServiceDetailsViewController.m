@@ -8,8 +8,12 @@
 
 #import "ServiceDetailsViewController.h"
 #import "ServiceDetailsTableViewCell.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ServiceDetailsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ServiceDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate>
+{
+    MFMailComposeViewController *mailComposer;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *serviceDetailsTableview;
 
@@ -46,6 +50,9 @@
     cell.itemNameLabel.text = self.detailsObject.updateTitle;
     cell.itemDateLabe.text = self.detailsObject.updateDateTime;
     cell.itemDescriptionNameLabel.text = self.detailsObject.updateDetails;
+    [cell.detailsEmailButton addTarget:self action:@selector(mailButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.detailsCopyButton addTarget:self action:@selector(copyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -59,6 +66,97 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+-(void) copyButtonAction:(UIButton *)sender
+{
+    
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    
+    NSString *messageBody;
+    
+    messageBody = [NSString stringWithFormat:@"%@\n%@\n%@/n",self.detailsObject.updateTitle,self.detailsObject.updateDetails,self.detailsObject.updateWeblink];
+    
+    [pb setString:messageBody];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Copied" preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void) mailButtonAction:(UIButton *)sender
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        mailComposer = [[MFMailComposeViewController alloc]init];
+        mailComposer.mailComposeDelegate = self;
+        [mailComposer setSubject:@"BBS"];
+        
+        NSString *mailMessageBody;
+        
+        mailMessageBody = [NSString stringWithFormat:@"<p>%@</p><br><p>%@</p><br><p>%@</p>",self.detailsObject.updateTitle,self.detailsObject.updateDetails,self.detailsObject.updateWeblink];
+        
+        [mailComposer setMessageBody:mailMessageBody isHTML:YES];
+        [self presentViewController:mailComposer animated:YES completion:nil];
+    }
+    else
+    {
+         NSLog(@"This device cannot send email");
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    
+    NSString *message;
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            message = @"Email Cancelled";
+            break;
+        case MFMailComposeResultSaved:
+            message = @"Email Saved";
+            break;
+        case MFMailComposeResultSent:
+            message = @"Email Sent";
+            break;
+        case MFMailComposeResultFailed:
+            message = @"Email Failed";
+            break;
+        default:
+            message = @"Email Not Sent";
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
 
 
 /*
