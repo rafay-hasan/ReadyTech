@@ -13,6 +13,7 @@
 #import "ServiceObject.h"
 #import "User Details.h"
 #import "DEMONavigationController.h"
+#import "ServiceItemsViewController.h"
 
 @interface ServicesViewController ()<RHWebServiceDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -391,6 +392,38 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ServiceItemsViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"serviceItem"];
+    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+    {
+        self.object = [self.allAdminServicesArray objectAtIndex:indexPath.row];
+        
+        NSString *detailsUrlString = [NSString stringWithFormat:@"%@app_service_update_details/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.object.serviceId];
+        
+        
+        controller.urlString = detailsUrlString;
+        
+        controller.service = self.object;
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else
+    {
+        if(self.mySegmentControl.selectedSegmentIndex == 0)
+        {
+            self.object = [self.myServicesArray objectAtIndex:indexPath.row];
+            
+            NSString *detailsUrlString = [NSString stringWithFormat:@"%@app_service_update_details/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.object.serviceId];
+            
+            
+            controller.urlString = detailsUrlString;
+            
+            controller.service = self.object;
+            
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }
+
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
