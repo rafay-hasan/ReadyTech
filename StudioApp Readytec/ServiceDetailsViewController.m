@@ -8,13 +8,16 @@
 
 #import "ServiceDetailsViewController.h"
 #import "ServiceDetailsTableViewCell.h"
+#import "RHWebServiceManager.h"
+#import "SVProgressHUD.h"
 #import <MessageUI/MessageUI.h>
 
-@interface ServiceDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate>
+@interface ServiceDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate,RHWebServiceDelegate>
 {
     MFMailComposeViewController *mailComposer;
 }
 
+@property (strong,nonatomic) RHWebServiceManager *myWebservice;
 @property (weak, nonatomic) IBOutlet UITableView *serviceDetailsTableview;
 
 @end
@@ -36,6 +39,13 @@
     self.navigationItem.title = @"Service details";
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    if([self.serviceObject.unreadServicesArray containsObject:self.detailsObject.serviceUpdateId])
+    {
+        [self CallMakeServiceReadWebService];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -165,6 +175,47 @@
     
 }
 
+-(void) CallMakeServiceReadWebService
+{
+    [SVProgressHUD show];
+    self.view.userInteractionEnabled = NO;
+    NSString *str = [NSString stringWithFormat:@"%@app_user_services_list_update_remove_unread_counting/%@/%@/",BASE_URL_API,self.serviceObject.serviceId,self.detailsObject.serviceUpdateId];
+    self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeMakeServiceRead Delegate:self];
+    [self.myWebservice getDataFromWebURL:str];
+
+}
+
+-(void) dataFromWebReceivedSuccessfully:(id) responseObj
+{
+    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
+    NSLog(@"Response is %@",responseObj);
+    
+}
+
+-(void) dataFromWebReceiptionFailed:(NSError*) error
+{
+    [SVProgressHUD dismiss];
+    
+    NSLog(@"Error is %@",error.debugDescription);
+    self.view.userInteractionEnabled = YES;
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
 
 
 /*

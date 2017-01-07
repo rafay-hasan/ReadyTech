@@ -11,6 +11,7 @@
 @interface ServiceObject : NSObject
 
 @property (strong,nonatomic) NSString *serviceId,*serviceName,*serviceCode,*totalUpdateCount,*refUserServiceUserDetailsId;
+@property (strong,nonatomic) NSArray *unreadServicesArray;
 
 
 

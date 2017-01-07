@@ -109,8 +109,6 @@
 
 #pragma mark Webservice Method Call
 
-
-
 -(void) CallAllServicesWithUrl
 {
     
@@ -120,7 +118,8 @@
     if(!self.allAdminServicesArray)
         self.allAdminServicesArray = [NSMutableArray new];
     
-    NSString *str = [NSString stringWithFormat:@"%@app_studio_services_list_update_counting/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].studio_Details_ID];
+    NSString *str = [NSString stringWithFormat:@"%@app_studio_services_list_update_unread_counting/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].studio_Details_ID];
+    NSLog(@"url is %@",str);
     
     NSString *startingLimit = [NSString stringWithFormat:@"%li",self.allAdminServicesArray.count];
     str = [NSString stringWithFormat:@"%@%@",str,startingLimit];
@@ -138,7 +137,8 @@
         self.myServicesArray = [NSMutableArray new];
     
     NSString *startingLimit = [NSString stringWithFormat:@"%li",self.myServicesArray.count];
-    NSString *str = [NSString stringWithFormat:@"%@app_user_services_list_update_counting/%@/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].studio_Details_ID,startingLimit];
+    NSString *str = [NSString stringWithFormat:@"%@app_user_services_list_update_unread_counting/%@/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].studio_Details_ID,startingLimit];
+    NSLog(@"url is %@",str);
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeMyWebservice Delegate:self];
     [self.myWebservice getDataFromWebURL:str];
     
@@ -147,7 +147,6 @@
 
 -(void) CallUserAllServiceWebservice
 {
-    
     
     [SVProgressHUD show];
     self.view.userInteractionEnabled = NO;
@@ -406,7 +405,6 @@
         self.object = [self.allAdminServicesArray objectAtIndex:indexPath.row];
         
         NSString *detailsUrlString = [NSString stringWithFormat:@"%@app_service_update_details/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.object.serviceId];
-        
         
         controller.urlString = detailsUrlString;
         

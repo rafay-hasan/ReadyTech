@@ -10,7 +10,7 @@
 
 @interface ServiceDetailsObject : NSObject
 
-@property (strong,nonatomic) NSString *updateTitle,*updateDetails,*updateWeblink;
+@property (strong,nonatomic) NSString *updateTitle,*updateDetails,*updateWeblink,*serviceUpdateId;
 
 
 @property (strong,nonatomic) NSString *updateDateTime;

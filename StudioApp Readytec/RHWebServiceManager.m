@@ -18,6 +18,7 @@
 #import "UserProfile.h"
 #import "TicketObject.h"
 #import "TicketDetailsObject.h"
+#import "User Details.h"
 
 @implementation RHWebServiceManager
 
@@ -834,8 +835,6 @@
                 tempArray = [(NSArray *)response valueForKey:@"user_services"];
         }
         
-        
-        
         for(NSInteger i = 0; i < tempArray.count; i++)
         {
             ServiceObject *object = [ServiceObject new];
@@ -869,15 +868,37 @@
                 object.serviceName = @"";
             }
             
-            if([[[tempArray objectAtIndex:i] valueForKey:@"total_update_last_7_days"] isKindOfClass:[NSString class]])
+            if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
             {
-                object.totalUpdateCount = [[tempArray objectAtIndex:i] valueForKey:@"total_update_last_7_days"];
-                
+                if([[[tempArray objectAtIndex:i] valueForKey:@"studio_services_unread_update"] isKindOfClass:[NSString class]])
+                {
+                    NSString *str = [NSString stringWithFormat:@"%@",[[tempArray objectAtIndex:i] valueForKey:@"studio_services_unread_update"]];
+                    object.unreadServicesArray = [str componentsSeparatedByString:@","];
+                    object.totalUpdateCount = [NSString stringWithFormat:@"%li",object.unreadServicesArray.count];
+                    
+                }
+                else
+                {
+                    object.unreadServicesArray = [NSArray new];
+                    object.totalUpdateCount = @"0";
+                }
             }
             else
             {
-                object.totalUpdateCount = @"0";
+                if([[[tempArray objectAtIndex:i] valueForKey:@"user_services_unread_update"] isKindOfClass:[NSString class]])
+                {
+                    NSString *str = [NSString stringWithFormat:@"%@",[[tempArray objectAtIndex:i] valueForKey:@"user_services_unread_update"]];
+                    object.unreadServicesArray = [str componentsSeparatedByString:@","];
+                    object.totalUpdateCount = [NSString stringWithFormat:@"%li",object.unreadServicesArray.count];
+                }
+                else
+                {
+                    object.unreadServicesArray = [NSArray new];
+                    object.totalUpdateCount = @"0";
+                }
+
             }
+            
 
             if([[[tempArray objectAtIndex:i] valueForKey:@"ref_user_services_user_details_id"] isKindOfClass:[NSString class]])
             {
@@ -911,6 +932,14 @@
             for(NSInteger i = 0; i < tempArray.count; i++)
             {
                 ServiceDetailsObject *object = [ServiceDetailsObject new];
+                if([[[tempArray objectAtIndex:i] valueForKey:@"services_update_id"] isKindOfClass:[NSString class]])
+                {
+                    object.serviceUpdateId = [[tempArray objectAtIndex:i] valueForKey:@"services_update_id"];
+                }
+                else
+                {
+                    object.serviceUpdateId = @"";
+                }
                 
                 if([[[tempArray objectAtIndex:i] valueForKey:@"services_update_title"] isKindOfClass:[NSString class]])
                 {

@@ -33,7 +33,8 @@ enum {
     HTTPRequestypeUserProfile,
     HTTPRequestypeAdminProfile,
     HTTPRequestypTickets,
-    HTTPRequestypTicketDetails
+    HTTPRequestypTicketDetails,
+    HTTPRequestypeMakeServiceRead
     
     
 };

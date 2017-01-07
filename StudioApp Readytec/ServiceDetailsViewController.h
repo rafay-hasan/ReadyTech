@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ServiceDetailsObject.h"
+#import "ServiceObject.h"
 
 @interface ServiceDetailsViewController : UIViewController
 
 @property (strong,nonatomic) ServiceDetailsObject *detailsObject;
+@property (strong,nonatomic) ServiceObject *serviceObject;
 
 @end

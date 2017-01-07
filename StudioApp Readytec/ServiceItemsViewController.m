@@ -73,6 +73,7 @@
         NSIndexPath *indexPath = [self.serviceItemTableView indexPathForSelectedRow];
         ServiceDetailsViewController *vc = segue.destinationViewController;
         vc.detailsObject = [self.serviceDetailsArray objectAtIndex:indexPath.row];
+        vc.serviceObject =  self.service;
     }
 }
 
@@ -179,7 +180,10 @@
     self.detailsObject = [self.serviceDetailsArray objectAtIndex:indexPath.row];
     cell.itemDateLabel.text = self.detailsObject.updateDateTime;
     cell.itemNameLabel.text = self.detailsObject.updateTitle;
-    cell.backgroundColor = [UIColor whiteColor];
+    if([self.service.unreadServicesArray containsObject:self.detailsObject.serviceUpdateId])
+        cell.backgroundColor = [UIColor redColor];
+    else
+        cell.backgroundColor = [UIColor blueColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;
