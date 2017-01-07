@@ -29,6 +29,7 @@
 - (IBAction)editButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *editButtonTopSpace;
 - (IBAction)slideMenuAction:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *eidtButtonHeight;
 
 
 @end
@@ -38,17 +39,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"Controllers %@",self.navigationController.viewControllers);
+    self.navigationItem.title = NSLocalizedString(@"Profile", Nil);
+    [self.editButton setTitle:NSLocalizedString(@"EDIT", Nil) forState:UIControlStateNormal];
     if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
     {
         self.editButton.hidden = YES;
-        self.editButtonTopSpace.constant = 0;
+        self.eidtButtonHeight.constant = 0;
         [self.view setNeedsLayout];
     }
     else
     {
         self.editButton.hidden = NO;
-        self.editButtonTopSpace.constant = 10;
+        self.eidtButtonHeight.constant =30;
         [self.view setNeedsLayout];
     }
     

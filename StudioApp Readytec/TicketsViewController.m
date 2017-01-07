@@ -45,6 +45,12 @@
     [self CallTickeWebservice];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Tickets", Nil);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

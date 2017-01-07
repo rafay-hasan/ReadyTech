@@ -50,7 +50,10 @@
 
 }
 
-
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Events", Nil);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

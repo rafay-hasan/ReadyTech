@@ -57,6 +57,8 @@
     }
     else
     {
+        [self.mySegmentControl setTitle:NSLocalizedString(@"MY SERVICES", Nil) forSegmentAtIndex:0];
+        [self.mySegmentControl setTitle:NSLocalizedString(@"+/-", Nil) forSegmentAtIndex:1];
         self.mySegmentControl.hidden = NO;
         self.heightOfServiceAddButton.constant = 0;
         [self.view setNeedsLayout];
@@ -73,6 +75,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Services", Nil);
 }
 
 /*

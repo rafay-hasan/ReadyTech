@@ -50,6 +50,11 @@
     self.serviceItemTableView.sectionHeaderHeight = UITableViewAutomaticDimension;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = self.service.serviceCode;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -185,7 +190,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -199,7 +203,6 @@
     headerView.serviceNameLabel.text = self.service.serviceCode;
     return headerView;
 }
-
 
 - ( UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {

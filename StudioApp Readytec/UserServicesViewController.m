@@ -37,6 +37,12 @@
     self.adminServiceTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Services", Nil);
+}
+
+
 -(void) viewDidAppear:(BOOL)animated
 {
     [self CallAllServiceWebservice];
@@ -73,8 +79,6 @@
     NSString *startingLimit = [NSString stringWithFormat:@"%li",self.adminServicelistArray.count];
     
     NSString *str = [NSString stringWithFormat:@"%@app_studio_user_services/%@/%@/%@/%@",BASE_URL_API,[User_Details sharedInstance].userDetailsId,[User_Details sharedInstance].studio_Details_ID,self.userObject.targetUserDetailsId,startingLimit];
-    
-    NSLog(@"str is %@",str);
     
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeUserAllWebservice Delegate:self];
     

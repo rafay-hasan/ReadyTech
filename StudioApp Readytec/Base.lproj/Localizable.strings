@@ -1,0 +1,167 @@
+/* 
+  Localizable.strings
+  StudioApp Readytec
+
+  Created by Rafay Hasan on 1/6/17.
+  Copyright © 2017 Rafay Hasan. All rights reserved.
+*/
+
+"Profile" = "Profile";
+
+"Profile" = "Profilo";
+
+"Events" = "Eventi";
+
+"News" = "News";
+
+"Offers" = "Offerte";
+
+"Messages" = "Messaggi";
+
+"Services" = "Servizi";
+
+"Training" = "Corsi";
+
+"Tickets" = "Assistenza";
+
+"Users" = "Utenti";
+
+"Menu" = "StudioApp Readytec";
+
+"Login" = "Login";
+
+"ITALY" = "ITALIA";
+
+"P.IVA" = "P.IVA";
+
+"Email" = "Email";
+
+"Total Users" = "Totale utenti";
+
+"Total Services" = "Totale servizi";
+
+"Service Codes" = "Codice servizi";
+
+"User Total Services" = "Totale Servizi utente";
+
+"Studio Total Services" = "Totale Servizi utente";
+
+"Edit" = "Modifica";
+
+"First Name" = "Nome";
+
+"Last Name" = "Cognome";
+
+"UserName" = "UserName";
+
+"Password" = "Password";
+
+"Email" = "Email";
+
+"User Total Services" = "Totale Servizi utente";
+
+"Studio Total Services" = "Studio Services totali";
+
+"ONGOING" = "In corso";
+
+"UPCOMING" = "In Arrivo";
+
+"Event Details" = "Dettagli evento";
+
+"Training Details" = "Dettaglio corso";
+
+"COURSE DAYS IN WEEK" = "Durata del corso";
+
+"COURSE STARTING DATE" = "Data inizio corso";
+
+"COURSE ENDING DATE" = "Data fine corso";
+
+"COURSE START TIME" = "Orario díinizio ";
+
+"COURSE END TIME" = "Orario fine";
+
+"PER CLASS DURATION" = "Durata della singola sessione";
+
+"ORIENTATION" = "Orientatamento";
+
+"LOCATION" = "Localit‡";
+
+"LAST DATE OF REGISTRATION" = "Data ultima per la registrazione";
+
+"MORE" = "PIU";
+
+"GENERAL" = "Generici";
+
+"STUDIO" = "Studio";
+
+"Message Details" = "Dettagli messaggio";
+
+"Offer Details" = "Dettagli offerta";
+
+"MY SERVICES" = "I miei servizi";
+
+"+/-" = "+/-";
+
+"You have total" = "Sono disponibili";
+
+"updates." = "aggiornamenti.";
+
+"Copy" = "COPIA";
+
+"User Details" = "Dettagli utente";
+
+"Cell Phone" = "Cellulare";
+
+"City" = "Citta";
+
+"Country" = "Nazione";
+
+"Activate" = "Abilitato";
+
+"Deactivate" = "Disabilitato";
+
+"Message" = "Messaggi";
+
+"(+) services (-)" = "(+) Servizi (-)";
+
+"EDIT" = "Modifica";
+
+"Re Password" = "Re Password";
+
+"SAVE" = "Salva";
+
+"Add User" = "Aggiungi utente";
+
+"Edit User" = "Modifica info utente";
+
+"LESSONS" = "LEZIONI";
+
+"No training available." = "Nessuna formazione disponibile.";
+
+"No news available." = "Nessuna notizia disponibile.";
+
+"No events available." = "Non ci sono eventi disponibili.";
+
+"No message available." = "Nessun messaggio disponibile.";
+
+"No offer available." = "Nessuna offerta disponibile.";
+
+"No user available." = "Nessun utente disponibile.";
+
+"No service available." = "Nessun servizio disponibile.";
+
+"No tickets available." = "Nessun biglietto disponibile.";
+
+"No reply available." = "Nessuna risposta disponibile.";
+
+"Not available." = "Non disponibile.";
+
+"User added successfully." = "Utente aggiunto correttamente.";
+
+"User edited successfully." = "User modificato con successo.";
+
+"Error" = "Errore";
+
+"Successfully done." = "Fatto con successo.";
+
+"Something went wrong.Please try again later." = "Qualcosa è andato wrong.Please riprovare più tardi.";

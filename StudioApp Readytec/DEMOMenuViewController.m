@@ -45,17 +45,6 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-//    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
-//    {
-//        self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
-//    }
-//    else
-//    {
-//        self.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),nil];
-//    }
-    
-    
     self.navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.loginVc = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
     self.menuVc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
@@ -105,7 +94,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     DEMOMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     cell.slideMenuItemName.text = [[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row];
-    cell.slideMenuItemImageview.image = [UIImage imageNamed:[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row]];
+    cell.slideMenuItemImageview.image = [UIImage imageNamed:[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
@@ -125,7 +114,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"News"])
+    if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"News"])
     {
         NewsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"newsVc"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -133,7 +122,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Profile"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Profile"])
     {
         ProfileViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"profile"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -141,7 +130,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Events"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Events"])
     {
         EventsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"events"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -149,7 +138,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Offers"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Offers"])
     {
         OffersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"offers"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -157,7 +146,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Messages"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Messages"])
     {
         MessageViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"message"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -165,7 +154,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Services"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Services"])
     {
         ServicesViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"services"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -173,7 +162,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Training"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Training"])
     {
         TrainingViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"training"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -181,7 +170,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Tickets"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Tickets"])
     {
         TicketsViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"ticket"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
@@ -189,7 +178,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         else
             self.navigationController.viewControllers = @[self.loginVc,self.UserMneuVc,controller];
     }
-    else if ([[[User_Details sharedInstance].menuItemsArray objectAtIndex:indexPath.row] isEqualToString:@"Users"])
+    else if ([[[User_Details sharedInstance].imageArray objectAtIndex:indexPath.row] isEqualToString:@"Users"])
     {
         UsersViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"usersVc"];
         if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])

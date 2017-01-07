@@ -41,15 +41,15 @@
     
     self.eventStartDateLabel.text = self.object.eventStartDate;
     self.eventEndDateLabel.text = self.object.eventEndDate;
-    self.object.eventName = @"At the lowest level, executable code consists of machine language instructions specific to an individual processor—typically a central processing unit (CPU). A machine language consists of groups of binary values signifying processor instructions that change the state of the computer from its preceding state. For example, an instruction may change the value stored in a particular storage ";
     
-    self.object.eventDescription  = @"At the lowest level, executable code consists of machine language instructions specific to an individual processor—typically a central processing unit (CPU). A machine language consists of groups of binary values signifying processor instructions that change the state of the computer from ";
     [self loadTitleWebview];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
+    self.navigationItem.title = NSLocalizedString(@"Event Details", Nil);
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,26 +142,9 @@
     
 }
 
-//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-//{
-//    if(navigationType == UIWebViewNavigationTypeLinkClicked)
-//    {
-//        NSURL *requestedURL = [request URL];
-//        
-//        
-//        [[UIApplication sharedApplication] openURL:requestedURL];
-//        
-//        return NO;
-//        
-//    }
-//    
-//    return YES;
-//}
-
 - (void)orientationChanged:(NSNotification *)notification
 {
     [self loadTitleWebview];
-    //[self.view setNeedsLayout];
 }
 
 @end

@@ -10,7 +10,7 @@
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "User Details.h"
-
+#import "DEMONavigationController.h"
 @interface EditUserViewController ()<RHWebServiceDelegate>
 
 @property (strong,nonatomic) RHWebServiceManager *myWebservice;
@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 - (IBAction)submitButtonAction:(id)sender;
+- (IBAction)slideMenuAction:(id)sender;
 
 
 @end
@@ -105,31 +106,31 @@
 -(void) makeViewLocalized
 {
     
-    UILabel *firstName = (UILabel *)[self.view viewWithTag:10001];
+    UILabel *firstName = (UILabel *)[self.view viewWithTag:1001];
     
     firstName.text = NSLocalizedString(@"First Name", Nil);
     
-    UILabel *lastName = (UILabel *)[self.view viewWithTag:10002];
+    UILabel *lastName = (UILabel *)[self.view viewWithTag:1002];
     
     lastName.text = NSLocalizedString(@"Last Name", Nil);
     
-    UILabel *username = (UILabel *)[self.view viewWithTag:10003];
+    UILabel *username = (UILabel *)[self.view viewWithTag:1003];
     
     username.text = NSLocalizedString(@"UserName", Nil);
     
-    UILabel *password = (UILabel *)[self.view viewWithTag:10004];
+    UILabel *password = (UILabel *)[self.view viewWithTag:1004];
     
     password.text = NSLocalizedString(@"Password", Nil);
     
-    UILabel *rePassword = (UILabel *)[self.view viewWithTag:10005];
+    UILabel *rePassword = (UILabel *)[self.view viewWithTag:1005];
     
     rePassword.text = NSLocalizedString(@"Re Password", Nil);
     
-    UILabel *email = (UILabel *)[self.view viewWithTag:10006];
+    UILabel *email = (UILabel *)[self.view viewWithTag:1006];
     
     email.text = NSLocalizedString(@"Email", Nil);
     
-    UIButton *random = (UIButton *)[self.view viewWithTag:10007];
+    UIButton *random = (UIButton *)[self.view viewWithTag:1007];
     
     [random setTitle:NSLocalizedString(@"SAVE", Nil) forState:UIControlStateNormal];
 }
@@ -298,5 +299,17 @@
     {
         [self saveUserDetailsInfo];
     }
+}
+
+- (IBAction)slideMenuAction:(id)sender {
+    
+    // Dismiss keyboard (optional)
+    //
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    //
+    [self.frostedViewController presentMenuViewController];
 }
 @end

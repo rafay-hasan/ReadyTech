@@ -29,12 +29,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+    
+    [self makeViewLocalized];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Menu", Nil);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) makeViewLocalized
+{
+    UILabel *profile = (UILabel *)[self.view viewWithTag:1001];
+    profile.text = NSLocalizedString(@"Profile", Nil);
+    
+    UILabel *Events = (UILabel *)[self.view viewWithTag:1002];
+    Events.text = NSLocalizedString(@"Events", Nil);
+    
+    UILabel *news = (UILabel *)[self.view viewWithTag:1003];
+    news.text = NSLocalizedString(@"News", Nil);
+    
+    UILabel *service = (UILabel *)[self.view viewWithTag:1004];
+    service.text = NSLocalizedString(@"Services", Nil);
+    
+    UILabel *training = (UILabel *)[self.view viewWithTag:1005];
+    training.text = NSLocalizedString(@"Training", Nil);
+    
+    UILabel *tickets = (UILabel *)[self.view viewWithTag:1006];
+    tickets.text = NSLocalizedString(@"Tickets", Nil);
+    
+    self.navigationItem.title = NSLocalizedString(@"Menu", Nil);
+}
+
 
 /*
 #pragma mark - Navigation

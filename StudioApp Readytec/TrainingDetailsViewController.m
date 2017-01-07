@@ -47,6 +47,12 @@
 
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Training Details", Nil);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -128,7 +134,8 @@
     static NSString *MyIdentifier = @"trainingDetailsCell";
     TrainingDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
-    cell.headerNameLabel.text = [self.customCourseArray objectAtIndex:indexPath.row];
+    NSString *str = [self.customCourseArray objectAtIndex:indexPath.row];
+    cell.headerNameLabel.text = NSLocalizedString(str, Nil);
     cell.headerValueLabel.text = [self.valueDic valueForKey: [self.customCourseArray objectAtIndex:indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
@@ -161,11 +168,15 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     TrainingDetailsFooterView *footerView = [self.trainingDetailsTableView dequeueReusableHeaderFooterViewWithIdentifier:@"footer"];
+    footerView.orientationHeaderLabel.text = NSLocalizedString(@"ORIENTATION", Nil);
+    footerView.locationHeaderLabel.text = NSLocalizedString(@"LOCATION", Nil);
+    footerView.registrationHeaderLabel.text = NSLocalizedString(@"LAST DATE OF REGISTRATION", Nil);
     footerView.orientationLabel.text = self.object.orientationDateTime;
     footerView.locationLabel.text = self.object.orientationLocation;
     footerView.registrationDateLabel.text = self.object.lastDateOfRegistration;
     if(self.object.webLink.length > 0)
     {
+        [footerView.moreButton setTitle:NSLocalizedString(@"MORE", Nil) forState:UIControlStateNormal];
         footerView.moreButton.hidden = NO;
         [footerView.moreButton addTarget:self action:@selector(moreButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }

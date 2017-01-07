@@ -51,6 +51,12 @@
     [self CallOngoingCourseWebservice];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Training", Nil);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -267,6 +273,23 @@
     
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    NSInteger currentOffset = scrollView.contentOffset.y;
+    NSInteger maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+    
+    if (maximumOffset - currentOffset <= -40)
+    {
+        
+        if(self.courseSegmentControl.selectedSegmentIndex == 0)
+            [self CallOngoingCourseWebservice];
+        else
+            [self CallUpcomingCourseWebservice];
+        
+        
+    }
+    
+}
 
 
 

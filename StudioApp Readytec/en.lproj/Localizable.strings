@@ -1,0 +1,165 @@
+/* 
+  Localizable.strings
+  StudioApp Readytec
+
+  Created by Rafay Hasan on 1/6/17.
+  Copyright © 2017 Rafay Hasan. All rights reserved.
+*/
+
+"Profile" = "Profile";
+
+"Events" = "Events";
+
+"News" = "News";
+
+"Offers" = "Offers";
+
+"Messages" = "Messages";
+
+"Services" = "Services";
+
+"Training" = "Training";
+
+"Tickets" = "Tickets";
+
+"Users" = "Users";
+
+"Menu" = "StudioApp Readytec";
+
+"Login" = "Login";
+
+"ITALY" = "ITALY";
+
+"P.IVA" = "P.IVA";
+
+"Email" = "Email";
+
+"Total Users" = "Total Users";
+
+"Total Services" = "Total Services";
+
+"Service Codes" = "Service Codes";
+
+"User Total Services" = "User Total Services";
+
+"Studio Total Services" = "Studio Total Services";
+
+"Edit" = "Edit";
+
+"First Name" = "First Name";
+
+"Last Name" = "Last Name";
+
+"UserName" = "UserName";
+
+"Password" = "Password";
+
+"Email" = "Email";
+
+"User Total Services" = "User Total Services";
+
+"Studio Total Services" = "Studio Total Services";
+
+"ONGOING" = "ONGOING";
+
+"UPCOMING" = "UPCOMING";
+
+"Event Details" = "Event Details";
+
+"Training Details" = "Training Details";
+
+"COURSE DAYS IN WEEK" = "COURSE DAYS IN WEEK";
+
+"COURSE STARTING DATE" = "COURSE STARTING DATE";
+
+"COURSE ENDING DATE" = "COURSE ENDING DATE";
+
+"COURSE START TIME" = "COURSE START TIME";
+
+"COURSE END TIME" = "COURSE END TIME";
+
+"PER CLASS DURATION" = "PER CLASS DURATION";
+
+"ORIENTATION" = "ORIENTATION";
+
+"LOCATION" = "LOCATION";
+
+"LAST DATE OF REGISTRATION" = "LAST DATE OF REGISTRATION";
+
+"MORE" = "MORE";
+
+"GENERAL" = "GENERAL";
+
+"STUDIO" = "STUDIO";
+
+"Message Details" = "Message Details";
+
+"Offer Details" = "Offer Details";
+
+"MY SERVICES" = "MY SERVICES";
+
+"+/-" = "+/-";
+
+"You have total" = "You have total";
+
+"updates." = "updates.";
+
+"Copy" = "Copy";
+
+"User Details" = "User Details";
+
+"Cell Phone" = "Cell Phone";
+
+"City" = "City";
+
+"Country" = "Country";
+
+"Activate" = "Activate";
+
+"Deactivate" = "Deactivate";
+
+"Message" = "Message";
+
+"(+) services (-)" = "(+) services (-)";
+
+"EDIT" = "EDIT";
+
+"Re Password" = "Re Password";
+
+"SAVE" = "SAVE";
+
+"Add User" = "Add User";
+
+"Edit User" = "Edit User";
+
+"LESSONS" = "LESSONS";
+
+"No training available." = "No training available.";
+
+"No news available." = "No news available.";
+
+"No events available." = "No events available.";
+
+"No message available." = "No message available.";
+
+"No offer available." = "No offer available.";
+
+"No user available." = "No user available.";
+
+"No service available." = "No service available.";
+
+"No tickets available." = "No tickets available.";
+
+"No reply available." = "No reply available.";
+
+"Not available." = "Not available.";
+
+"User added successfully." = "User added successfully.";
+
+"User edited successfully." = "User edited successfully.";
+
+"Error" = "Error";
+
+"Successfully done." = "Successfully done.";
+
+"Something went wrong.Please try again later." = "Something went wrong.Please try again later.";

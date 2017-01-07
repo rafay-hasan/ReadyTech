@@ -31,6 +31,12 @@
     self.serviceDetailsTableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = @"Service details";
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,6 +56,8 @@
     cell.itemNameLabel.text = self.detailsObject.updateTitle;
     cell.itemDateLabe.text = self.detailsObject.updateDateTime;
     cell.itemDescriptionNameLabel.text = self.detailsObject.updateDetails;
+    [cell.detailsEmailButton setTitle:NSLocalizedString(@"Email", Nil) forState:UIControlStateNormal];
+    [cell.detailsCopyButton setTitle:NSLocalizedString(@"Copy", Nil) forState:UIControlStateNormal];
     [cell.detailsEmailButton addTarget:self action:@selector(mailButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.detailsCopyButton addTarget:self action:@selector(copyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 

@@ -42,6 +42,11 @@
     self.userDataArray = [NSMutableArray new];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"Users", Nil);
+}
+
 -(void) viewDidAppear:(BOOL)animated
 {
     [self.userDataArray removeAllObjects];

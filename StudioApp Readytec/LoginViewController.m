@@ -150,13 +150,14 @@
                 if([user.userTypeId isEqualToString:@"1"])
                 {
                     user.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Offers",Nil),NSLocalizedString(@"Messages",Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),NSLocalizedString(@"Users",Nil),nil];
+                    user.imageArray = [NSArray arrayWithObjects:@"Profile",@"Events",@"News",@"Offers",@"Messages",@"Services",@"Training",@"Tickets",@"Users", nil];
                 }
                 else
                 {
                     user.menuItemsArray = [[NSArray alloc]initWithObjects:NSLocalizedString(@"Profile", Nil),NSLocalizedString(@"Events", Nil),NSLocalizedString(@"News", Nil),NSLocalizedString(@"Services",Nil),NSLocalizedString(@"Training",Nil),NSLocalizedString(@"Tickets",Nil),nil];
+                    user.imageArray = [NSArray arrayWithObjects:@"Profile",@"Events",@"News",@"Services",@"Training",@"Tickets", nil];
                 }
                 
-                //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DEMOMenuViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
                 [vc.menuTableView reloadData];
 
@@ -166,13 +167,11 @@
             
             if([user.userTypeId isEqualToString:@"1"])
             {
-               // UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 MenuAdminViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"adminMenu"];
                 [self.navigationController pushViewController:controller animated:YES];
             }
             else
             {
-                //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 MenuUserViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"userMenu"];
                 [self.navigationController pushViewController:controller animated:YES];
 

@@ -21,8 +21,11 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *userDetailsTableview;
 @property (weak, nonatomic) IBOutlet UIButton *deactivateButton;
-
 - (IBAction)deactivateButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIButton *servicesBtton;
+
+
 
 @end
 
@@ -61,6 +64,13 @@
     }
 
 
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = NSLocalizedString(@"User Details", Nil);
+    [self.servicesBtton setTitle:NSLocalizedString(@"(+) services (-)", Nil) forState:UIControlStateNormal];
+     [self.editButton setTitle:NSLocalizedString(@"EDIT", Nil) forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

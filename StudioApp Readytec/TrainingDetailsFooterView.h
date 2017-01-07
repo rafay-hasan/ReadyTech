@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *registrationDateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UILabel *orientationHeaderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationHeaderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *registrationHeaderLabel;
+
+
 
 
 @end

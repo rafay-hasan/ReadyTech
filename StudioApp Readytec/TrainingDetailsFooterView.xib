@@ -108,10 +108,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="locationHeaderLabel" destination="h0Y-Kq-A6o" id="bC2-c6-LsR"/>
                 <outlet property="locationLabel" destination="0D0-I5-uEC" id="xzB-pN-TZi"/>
                 <outlet property="moreButton" destination="cUg-ok-spg" id="61v-dZ-W94"/>
+                <outlet property="orientationHeaderLabel" destination="LFj-Q7-D7i" id="rh2-pX-318"/>
                 <outlet property="orientationLabel" destination="qO0-AP-34W" id="tOw-Gf-dQ9"/>
                 <outlet property="registrationDateLabel" destination="sjd-W5-mge" id="5Jy-PJ-zUZ"/>
+                <outlet property="registrationHeaderLabel" destination="h71-Ju-20l" id="mlh-0N-4Lr"/>
             </connections>
         </view>
     </objects>
