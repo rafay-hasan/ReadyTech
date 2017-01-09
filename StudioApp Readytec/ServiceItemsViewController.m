@@ -183,7 +183,7 @@
     if([self.service.unreadServicesArray containsObject:self.detailsObject.serviceUpdateId])
         cell.backgroundColor = [UIColor redColor];
     else
-        cell.backgroundColor = [UIColor blueColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;

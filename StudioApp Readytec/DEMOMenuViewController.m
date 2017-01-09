@@ -209,6 +209,14 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     menuHeaderView *sectionHeaderView = [self.menuTableView dequeueReusableHeaderFooterViewWithIdentifier:SectionHeaderViewIdentifier];
+    
+    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+        sectionHeaderView.userTypeLabel.text = @"Admin";
+    else
+        sectionHeaderView.userTypeLabel.text = @"User";
+    sectionHeaderView.userANmeLabel.text =  [User_Details sharedInstance].userName;;
+    sectionHeaderView.profileNameLAbel.text =  [User_Details sharedInstance].profileName;
+    
     return sectionHeaderView;
 }
 

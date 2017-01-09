@@ -69,7 +69,6 @@
     self.serviceTableView.estimatedRowHeight = 55;
     self.serviceTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
-    [self makeRequiredWebServices];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +79,11 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     self.navigationItem.title = NSLocalizedString(@"Services", Nil);
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [self makeRequiredWebServices];
 }
 
 /*

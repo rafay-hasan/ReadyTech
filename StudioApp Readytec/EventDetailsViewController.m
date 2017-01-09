@@ -83,7 +83,7 @@
     
     self.eventDescriptionWebView.opaque = NO;
     self.eventDescriptionWebView.backgroundColor = [UIColor clearColor];
-    NSString *titleWebStrstr = [NSString stringWithFormat:@"<div style='font-family:Helvetica Neue;color:#000000;'>%@",self.object.eventDescription];
+    NSString *titleWebStrstr = [NSString stringWithFormat:@"<div style='font-family:HelveticaNeue-Bold;color:#000000;'>%@",self.object.eventDescription];
     [self.eventDescriptionWebView loadHTMLString:[NSString stringWithFormat:@"<style type='text/css'>img { display: inline;height: auto;max-width: 100%%; }</style>%@",titleWebStrstr] baseURL:nil];
     self.eventDescriptionWebView.delegate = self;
     self.eventDescriptionWebView.scrollView.scrollEnabled = NO;

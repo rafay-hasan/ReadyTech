@@ -10,4 +10,9 @@
 
 @interface menuHeaderView : UITableViewHeaderFooterView
 
+@property (weak, nonatomic) IBOutlet UILabel *userTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userANmeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profileNameLAbel;
+
+
 @end

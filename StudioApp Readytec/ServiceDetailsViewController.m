@@ -10,6 +10,7 @@
 #import "ServiceDetailsTableViewCell.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
+#import "User Details.h"
 #import <MessageUI/MessageUI.h>
 
 @interface ServiceDetailsViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate,RHWebServiceDelegate>
@@ -179,8 +180,17 @@
 {
     [SVProgressHUD show];
     self.view.userInteractionEnabled = NO;
-    NSString *str = [NSString stringWithFormat:@"%@app_user_services_list_update_remove_unread_counting/%@/%@/",BASE_URL_API,self.serviceObject.serviceId,self.detailsObject.serviceUpdateId];
+    NSString *str;
+    if([[User_Details sharedInstance].userTypeId isEqualToString:@"1"])
+    {
+        str = [NSString stringWithFormat:@"%@app_studio_services_list_update_remove_unread_counting/%@/%@/%@/",BASE_URL_API,[User_Details sharedInstance].studio_Details_ID,self.serviceObject.serviceId,self.detailsObject.serviceUpdateId];
+    }
+    else
+    {
+        str = [NSString stringWithFormat:@"%@app_user_services_list_update_remove_unread_counting/%@/%@/%@/",BASE_URL_API,[User_Details sharedInstance].userDetailsId,self.serviceObject.serviceId,self.detailsObject.serviceUpdateId];
+    }
     self.myWebservice = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeMakeServiceRead Delegate:self];
+    NSLog(@"Str is %@",str);
     [self.myWebservice getDataFromWebURL:str];
 
 }
@@ -190,31 +200,22 @@
     [SVProgressHUD dismiss];
     self.view.userInteractionEnabled = YES;
     NSLog(@"Response is %@",responseObj);
-    
 }
 
 -(void) dataFromWebReceiptionFailed:(NSError*) error
 {
     [SVProgressHUD dismiss];
-    
     NSLog(@"Error is %@",error.debugDescription);
     self.view.userInteractionEnabled = YES;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-    
-    
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
         
         [alert dismissViewControllerAnimated:YES completion:nil];
     }];
-    
-    
     [alert addAction:ok];
-    
     [self presentViewController:alert animated:YES completion:nil];
-    
-    
+
 }
 
 

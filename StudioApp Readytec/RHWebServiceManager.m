@@ -817,6 +817,8 @@
 
 -(NSMutableArray *) parseServicesItems :(id) response
 {
+    NSLog(@"Response is %@",response);
+    
     NSMutableArray *serviceItemsArray = [NSMutableArray new];
     
     if([[response valueForKey:@"login_status"] isEqual:[NSNumber numberWithBool:YES]])
