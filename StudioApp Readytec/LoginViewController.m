@@ -21,6 +21,7 @@
 
 - (IBAction)loginButtonAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewContentHeight;
 
 
 @end
@@ -35,12 +36,28 @@
                                            initWithTarget:self
                                            action:@selector(makeKeyBoardDismiss)];
     [self.view addGestureRecognizer:tapGesture];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardDidShow:)
+//                                                 name:UIKeyboardDidShowNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardDidHide:)
+//                                                 name:UIKeyboardDidHideNotification
+//                                               object:nil];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+   // [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [self.userNameTextfield resignFirstResponder];
+    [self.passwordTextfiled resignFirstResponder];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
-    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.scrollViewContentHeight.constant = self.view.frame.size.height;
     
 }
 
@@ -59,6 +76,15 @@
 }
 */
 
+- (void)keyboardDidShow: (NSNotification *) notif
+{
+    self.scrollViewContentHeight.constant = self.view.frame.size.height + 230;
+}
+
+- (void)keyboardDidHide: (NSNotification *) notif
+{
+    self.scrollViewContentHeight.constant = self.view.frame.size.height;
+}
 
 - (IBAction)loginButtonAction:(id)sender {
     
@@ -160,7 +186,6 @@
                 
                 DEMOMenuViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
                 [vc.menuTableView reloadData];
-
                 
             }
             

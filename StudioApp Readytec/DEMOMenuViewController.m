@@ -195,16 +195,16 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 {
     return 55.00;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 175.00;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 1.00;
 }
-
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
